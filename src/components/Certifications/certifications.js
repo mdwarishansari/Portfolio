@@ -63,6 +63,31 @@ const Certifications = () => {
   // Certifications data - sorted in descending order (newest first)
   const certifications = [
     {
+      id: 42,
+      name: "MERN Stack Internship Certificate",
+      authority: "Soft Nexis Technology",
+      date: "January 2025",
+      description:
+        "Successfully completed an internship at Soft Nexis Technology in the MERN Stack domain. Demonstrated dedication, technical skill, and teamwork in developing full-stack web applications using MongoDB, Express.js, React, and Node.js.",
+      thumbnail:
+        "https://i.postimg.cc/525LKyTw/Soft-Nexis-Internship-page-0001.jpg",
+      fullImage:
+        "https://i.postimg.cc/525LKyTw/Soft-Nexis-Internship-page-0001.jpg",
+      verifyUrl: "https://www.softnexis.com/",
+      Credential: "SN1000356",
+      skills: [
+        "MERN Stack Development",
+        "MongoDB",
+        "Express.js",
+        "React.js",
+        "Node.js",
+        "API Development",
+        "Team Collaboration",
+        "Web Application Deployment",
+      ],
+    },
+
+    {
       id: 41,
       name: "Software Engineering Job Simulation",
       authority: "Forage",

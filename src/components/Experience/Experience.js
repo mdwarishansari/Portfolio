@@ -46,6 +46,34 @@ const Experience = () => {
   // Experience data - most recent first
   const experiences = [
     {
+      id: 3,
+      role: "MERN Stack Intern ",
+      company: "Soft Nexis Technology",
+      duration: "January 2025 – January 2025",
+      location: "Remote / Online",
+      description:
+        "Successfully completed a hands-on internship in the MERN Stack domain at Soft Nexis Technology, where I worked on real-world full-stack development projects and enhanced my technical and collaborative skills.",
+      responsibilities: [
+        "Worked on building and optimizing full-stack web applications using MongoDB, Express.js, React.js, and Node.js",
+        "Integrated RESTful APIs for seamless front-end and back-end communication",
+        "Improved web app performance and responsiveness with React and Node.js optimizations",
+        "Participated in code reviews and debugging sessions to ensure clean and maintainable code",
+        "Collaborated with mentors to understand modern development workflows and project lifecycles",
+      ],
+      skills: [
+        "MongoDB",
+        "Express.js",
+        "React.js",
+        "Node.js",
+        "Full Stack Development",
+        "RESTful APIs",
+        "Version Control (Git)",
+        "Team Collaboration",
+      ],
+      link: "https://www.softnexis.com/",
+    },
+
+    {
       id: 2,
       role: "Full Stack Web Development Intern",
       company: "CodeAlpha",
