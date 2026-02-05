@@ -12,10 +12,8 @@ import {
 import "./projects.css";
 
 // imgs
-import first_project from "./cover_img/first_project.png";
-import boot_port from "./cover_img/boot_port.png";
+
 import moviesvibe from "./cover_img/moviesvibe.png";
-import portfolio from "./cover_img/portfolio.png";
 import nexusshop from "./cover_img/nexusshop.png";
 import shecanintern from "./cover_img/shecanintern.png";
 import travelease from "./cover_img/travelease.png";
@@ -51,7 +49,7 @@ const Projects = () => {
 
   const projects = [
     {
-      id: 7,
+      id: 4,
       title: "TravelEase",
       subtitle: "Travel Booking Platform",
       description: "A Django-based travel booking platform where users can sign up, log in, and manage their travel bookings.",
@@ -64,7 +62,7 @@ const Projects = () => {
       emoji: "✈️",
     },
     {
-      id: 6,
+      id: 3,
       title: "NexusShop",
       subtitle: "E-commerce Platform",
       description: "A full-featured MERN-stack E-commerce web app with product management, cart, and orders.",
@@ -78,7 +76,7 @@ const Projects = () => {
       emoji: "🛒",
     },
     {
-      id: 5,
+      id: 2,
       title: "She Can Intern",
       subtitle: "Fundraising Portal",
       description: "Full-stack MERN application for referral-based fundraising internship selection.",
@@ -92,7 +90,7 @@ const Projects = () => {
       emoji: "🎯",
     },
     {
-      id: 4,
+      id: 1,
       title: "MoviesVibe",
       subtitle: "Movie Discovery App",
       description: "Interactive React web app with OMDB API integration for movie data display.",
@@ -104,48 +102,6 @@ const Projects = () => {
       date: "February 2025",
       category: "major",
       emoji: "🎬",
-    },
-    {
-      id: 3,
-      title: "React-Portfolio",
-      subtitle: "Developer Portfolio",
-      description: "Modern developer website showcasing skills, projects, and experience.",
-      longDescription: "Journey into component-driven development with React hooks, conditional rendering, and module-based styling.",
-      skills: ["React", "React-Bootstrap", "Responsive Design"],
-      image: portfolio,
-      projectLink: "https://portfolio-m9f0.onrender.com/",
-      githubLink: "https://github.com/mdwarishansari/React-Portfolio",
-      date: "May 2025",
-      category: "minor",
-      emoji: "🚀",
-    },
-    {
-      id: 2,
-      title: "Portfolio-Bootstrap",
-      subtitle: "Static Portfolio",
-      description: "Sleek, mobile-responsive developer portfolio with HTML, CSS, and Bootstrap 5.",
-      longDescription: "Demonstrates ability to craft clean UI and responsive layouts without JavaScript.",
-      skills: ["HTML5", "CSS3", "Bootstrap5"],
-      image: boot_port,
-      projectLink: "https://mdwarishansari.github.io/Portfolio_Bootstrap/",
-      githubLink: "https://github.com/mdwarishansari/Portfolio_Bootstrap.git",
-      date: "November 2024",
-      category: "minor",
-      emoji: "🎨",
-    },
-    {
-      id: 1,
-      title: "Course Website",
-      subtitle: "Course Selling Interface",
-      description: "Clean and responsive multi-page course-selling website.",
-      longDescription: "Designed for smooth user experience for students and course providers.",
-      skills: ["HTML5", "CSS3", "GitHub"],
-      image: first_project,
-      projectLink: "https://mdwarishansari.github.io/FirstProject/",
-      githubLink: "https://github.com/mdwarishansari/FirstProject.git",
-      date: "April 2024",
-      category: "minor",
-      emoji: "📘",
     },
   ];
 

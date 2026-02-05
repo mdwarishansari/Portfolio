@@ -61,7 +61,7 @@ const Social = () => {
     {
       name: "X (Twitter)",
       icon: <FaXTwitter />,
-      url: "https://x.com/mdwarish888",
+      url: "https://x.com/mdwarishansari0",
       color: "#ffffff",
       hoverBg: "linear-gradient(135deg, #333, #000000)",
     },
@@ -75,7 +75,7 @@ const Social = () => {
     {
       name: "Stack Overflow",
       icon: <SiStackoverflow />,
-      url: "https://stackoverflow.com/users/your-id",
+      url: "https://stackoverflow.com/users/31790291/codewarish",
       color: "#F48024",
       hoverBg: "linear-gradient(135deg, #F48024, #f7a550)",
     },
@@ -103,7 +103,7 @@ const Social = () => {
     {
       name: "Instagram",
       icon: <FaInstagram />,
-      url: "https://www.instagram.com/mohammadwarish2024/",
+      url: "https://www.instagram.com/mohammadwarish_ansari",
       color: "#E1306C",
       hoverBg: "linear-gradient(135deg, #833AB4, #E1306C, #FCAF45)",
     },

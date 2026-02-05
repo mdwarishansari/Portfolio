@@ -67,13 +67,17 @@ const Experience = () => {
       duration: "January 2025 – January 2025",
       location: "Remote / Online",
       description:
-        "Successfully completed a hands-on internship in the MERN Stack domain at Soft Nexis Technology, where I worked on real-world full-stack development projects and enhanced my technical and collaborative skills.",
+        "Completed a structured internship focused on MERN stack development, strengthening my understanding of full-stack architecture, API integration, and real-world development workflows.",
       responsibilities: [
-        "Worked on building and optimizing full-stack web applications using MongoDB, Express.js, React.js, and Node.js",
-        "Integrated RESTful APIs for seamless front-end and back-end communication",
-        "Improved web app performance and responsiveness with React and Node.js optimizations",
-        "Participated in code reviews and debugging sessions to ensure clean and maintainable code",
-        "Collaborated with mentors to understand modern development workflows and project lifecycles",
+        "Practiced building modular backend APIs using Node.js and Express",
+
+        "Worked with MongoDB for schema design and data handling",
+
+        "Developed responsive UI components using React",
+
+        "Understood authentication flows and RESTful API integration",
+
+        "Followed Git-based version control and collaborative development practices",
       ],
       skills: [
         "MongoDB",
@@ -101,13 +105,17 @@ const Experience = () => {
       duration: "July 2025 - August 2025",
       location: "Remote",
       description:
-        "Completed a project-based internship where I developed a full-fledged E-commerce web application using Django, MySQL, and Bootstrap.",
+        "Built “NexusShop,” a full-stack e-commerce web application using the MERN stack, implementing authentication, product management, and dynamic cart functionality with clean backend architecture.",
       responsibilities: [
-        "Designed and developed 'NexusShop' — a scalable E-commerce platform",
-        "Implemented user authentication, product listings, and cart management",
-        "Worked with PostgreSQL for database design and CRUD operations",
-        "Deployed the project on Render with PostgreSQL integration",
-        "Collaborated with mentors for code reviews and feature enhancements",
+        "Designed and developed a complete e-commerce platform using MongoDB, Express.js, React.js, and Node.js",
+
+        "Implemented secure user authentication and authorization",
+
+        "Built product listing, cart management, and order processing features",
+
+        "Created RESTful APIs for structured frontend-backend communication",
+
+        "Deployed and tested the application in a live environment",
       ],
       skills: [
         "Django",

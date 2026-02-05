@@ -10,7 +10,7 @@ import {
   FaStar,
   FaCode,
   FaDesktop,
-  FaLayerGroup,
+  FaCloud,
 } from "react-icons/fa";
 import "./certifications.css";
 
@@ -67,38 +67,14 @@ const Certifications = () => {
   // Categories for certifications
   const categories = [
     { id: "highlighted", label: "Highlighted", icon: <FaStar /> },
-    { id: "programming", label: "Programming", icon: <FaCode /> },
-    { id: "computer", label: "Computer Skills", icon: <FaDesktop /> },
-    { id: "all", label: "All Certificates", icon: <FaLayerGroup /> },
+    { id: "cloud", label: "Cloud & DevOps", icon: <FaCloud /> },
+    { id: "development", label: "Development", icon: <FaCode /> },
+    { id: "foundations", label: "Foundations", icon: <FaDesktop /> },
   ];
 
   // Certifications data with categories
   const certifications = [
-    // HIGHLIGHTED - Oracle & Forage certifications
-    {
-      id: 42,
-      name: "MERN Stack Internship Certificate",
-      authority: "Soft Nexis Technology",
-      date: "January 2025",
-      description: "Successfully completed an internship at Soft Nexis Technology in the MERN Stack domain.",
-      thumbnail: "https://i.postimg.cc/525LKyTw/Soft-Nexis-Internship-page-0001.jpg",
-      fullImage: "https://i.postimg.cc/525LKyTw/Soft-Nexis-Internship-page-0001.jpg",
-      verifyUrl: "https://www.softnexis.com/",
-      category: "highlighted",
-      skills: ["MERN Stack Development", "MongoDB", "Express.js", "React.js", "Node.js"],
-    },
-    {
-      id: 41,
-      name: "Software Engineering Job Simulation",
-      authority: "Forage",
-      date: "October 2025",
-      description: "Completed the Forage Software Engineering Job Simulation with real-world developer tasks.",
-      thumbnail: "https://i.postimg.cc/cHZrQkcJ/Forage-Software-Engineering-Job-Simulation-page-0001.jpg",
-      fullImage: "https://i.postimg.cc/cHZrQkcJ/Forage-Software-Engineering-Job-Simulation-page-0001.jpg",
-      verifyUrl: "https://www.theforage.com",
-      category: "highlighted",
-      skills: ["Software Engineering", "Object-Oriented Programming", "Debugging", "System Design"],
-    },
+    // HIGHLIGHTED
     {
       id: 36,
       name: "Oracle Cloud Infrastructure 2025 Certified Architect Associate",
@@ -148,6 +124,32 @@ const Certifications = () => {
       skills: ["Oracle Cloud Infrastructure", "Data Science", "Machine Learning", "Model Deployment"],
     },
     {
+      id: 39,
+      name: "Software Engineer Role Certification",
+      authority: "HackerRank",
+      date: "September 2025",
+      description: "End-to-end expertise in Data Structures, Algorithms, and System Design.",
+      thumbnail: "https://i.postimg.cc/SN9WBrK0/software-engineer-certificate-page-0001.jpg",
+      fullImage: "https://i.postimg.cc/SN9WBrK0/software-engineer-certificate-page-0001.jpg",
+      verifyUrl: "https://www.hackerrank.com/certificates/b9f974b5601c",
+      category: "highlighted",
+      skills: ["Software Engineering", "Algorithms", "Data Structures", "System Design"],
+    },
+    {
+      id: 41,
+      name: "Software Engineering Job Simulation",
+      authority: "Forage",
+      date: "October 2025",
+      description: "Completed the Forage Software Engineering Job Simulation with real-world developer tasks.",
+      thumbnail: "https://i.postimg.cc/cHZrQkcJ/Forage-Software-Engineering-Job-Simulation-page-0001.jpg",
+      fullImage: "https://i.postimg.cc/cHZrQkcJ/Forage-Software-Engineering-Job-Simulation-page-0001.jpg",
+      verifyUrl: "https://www.theforage.com",
+      category: "highlighted",
+      skills: ["Software Engineering", "Object-Oriented Programming", "Debugging", "System Design"],
+    },
+
+    // CLOUD & DEVOPS
+    {
       id: 32,
       name: "Oracle Cloud Infrastructure 2025 Certified Foundations Associate",
       authority: "Oracle",
@@ -156,7 +158,7 @@ const Certifications = () => {
       thumbnail: "https://i.postimg.cc/XY286NND/Oracle-Cloud-Infrastructure-2025.png",
       fullImage: "https://i.postimg.cc/wBZQ3WmX/Oracle-Cloud-Infrastructure-2025-IMAGE.png",
       verifyUrl: "https://catalog-education.oracle.com/pls/certview/sharebadge?id=43BFB0289215229E1FE3388733C77596707BCAB3704848035660F9F6A994C5C8",
-      category: "highlighted",
+      category: "cloud",
       skills: ["Oracle Cloud Infrastructure", "Compute", "Storage", "Networking", "IAM"],
     },
     {
@@ -168,23 +170,11 @@ const Certifications = () => {
       thumbnail: "https://i.postimg.cc/3wTNdGBb/Oracle-Data-Platform-2025-Batch.png",
       fullImage: "https://i.postimg.cc/G2XWn0tx/Oracle-Data-Platform-2025-page-0001.jpg",
       verifyUrl: "https://catalog-education.oracle.com/pls/certview/sharebadge?id=0CB6CA864152BF6108440503359F41C21C8CC578C9935A7AEB8B642F9DF3B61C",
-      category: "highlighted",
+      category: "cloud",
       skills: ["Oracle Data Platform", "Oracle Cloud Infrastructure", "Database Services"],
     },
-    {
-      id: 25,
-      name: "Deloitte Australia Technology Virtual Internship",
-      authority: "Deloitte Australia",
-      date: "July 2025",
-      description: "Virtual Internship Program simulating real-world client scenarios.",
-      thumbnail: "https://i.postimg.cc/3wZ117nS/Deloitte-Virtual-Internship-page-0001.jpg",
-      fullImage: "https://i.postimg.cc/3wZ117nS/Deloitte-Virtual-Internship-page-0001.jpg",
-      verifyUrl: "https://www.theforage.com/virtual-internships/prototype/B4rT7WznWzqL9BfF4/Deloitte-Australia-Technology",
-      category: "highlighted",
-      skills: ["Data Standardization", "Dashboard Proposal Writing", "Technology Consulting"],
-    },
 
-    // PROGRAMMING - All programming related certifications
+    // DEVELOPMENT & PROGRAMMING
     {
       id: 40,
       name: "Software Engineer Intern Role Certification",
@@ -194,20 +184,8 @@ const Certifications = () => {
       thumbnail: "https://i.postimg.cc/28W4sw5r/software-engineer-intern-certificate-page-0001.jpg",
       fullImage: "https://i.postimg.cc/28W4sw5r/software-engineer-intern-certificate-page-0001.jpg",
       verifyUrl: "https://www.hackerrank.com/certificates/8a277fbcbfeo",
-      category: "programming",
+      category: "development",
       skills: ["Software Engineering", "Technical Skills", "Problem Solving", "Coding Practice"],
-    },
-    {
-      id: 39,
-      name: "Software Engineer Role Certification",
-      authority: "HackerRank",
-      date: "September 2025",
-      description: "End-to-end expertise in Data Structures, Algorithms, and System Design.",
-      thumbnail: "https://i.postimg.cc/SN9WBrK0/software-engineer-certificate-page-0001.jpg",
-      fullImage: "https://i.postimg.cc/SN9WBrK0/software-engineer-certificate-page-0001.jpg",
-      verifyUrl: "https://www.hackerrank.com/certificates/b9f974b5601c",
-      category: "programming",
-      skills: ["Software Engineering", "Algorithms", "Data Structures", "System Design"],
     },
     {
       id: 38,
@@ -218,7 +196,7 @@ const Certifications = () => {
       thumbnail: "https://i.postimg.cc/J4Xbfqhm/java-basic-certificate-page-0001.jpg",
       fullImage: "https://i.postimg.cc/J4Xbfqhm/java-basic-certificate-page-0001.jpg",
       verifyUrl: "https://www.hackerrank.com/certificates/90d2c55da3a1",
-      category: "programming",
+      category: "development",
       skills: ["Java", "Object-Oriented Programming (OOP)", "Programming Fundamentals"],
     },
     {
@@ -230,20 +208,44 @@ const Certifications = () => {
       thumbnail: "https://i.postimg.cc/SN9WBrKh/javascript-intermediate-certificate-page-0001.jpg",
       fullImage: "https://i.postimg.cc/SN9WBrKh/javascript-intermediate-certificate-page-0001.jpg",
       verifyUrl: "https://www.hackerrank.com/certificates/21f78682bfd6",
-      category: "programming",
+      category: "development",
       skills: ["JavaScript", "Asynchronous Programming", "Web Development", "ES6"],
     },
     {
-      id: 30,
-      name: "Full Stack Development Internship",
-      authority: "CodeAlpha",
-      date: "August 2025",
-      description: "Practical experience in MERN Stack and Django.",
-      thumbnail: "https://i.postimg.cc/BQ9z2Mm7/Code-Alpha-Certificate-page-0001.jpg",
-      fullImage: "https://i.postimg.cc/BQ9z2Mm7/Code-Alpha-Certificate-page-0001.jpg",
-      verifyUrl: "http://www.codealpha.tech",
-      category: "programming",
-      skills: ["Full Stack Development", "MERN Stack", "Django", "Problem Solving"],
+      id: 22,
+      name: "Data Structures and Algorithms Using Java",
+      authority: "Infosys Springboard",
+      date: "July 2025",
+      description: "Enhanced problem-solving skills with arrays, linked lists, stacks, queues, trees.",
+      thumbnail: "https://i.postimg.cc/Wzr89fG4/Data-Structures-and-Algorithms-Using-Java-An-Interactive-Way-page-0001.jpg",
+      fullImage: "https://i.postimg.cc/Wzr89fG4/Data-Structures-and-Algorithms-Using-Java-An-Interactive-Way-page-0001.jpg",
+      verifyUrl: "https://verify.onwingspan.com/",
+      category: "development",
+      skills: ["Data Structures", "Algorithms", "Java Programming", "Problem Solving"],
+    },
+    {
+      id: 13,
+      name: "Full Stack Web Development With MERN STACK & GenAI 2025",
+      authority: "Udemy",
+      date: "July 2025",
+      description: "89.5-hour hands-on course on MERN Stack and GenAI.",
+      thumbnail: "https://i.postimg.cc/qvLgqCDk/MERN-STACK-UDEMY-CERTIFICATE.jpg",
+      fullImage: "https://i.postimg.cc/qvLgqCDk/MERN-STACK-UDEMY-CERTIFICATE.jpg",
+      verifyUrl: "https://ude.my/UC-43346e61-36dd-4374-a30d-d97f8855ebe1",
+      category: "development",
+      skills: ["MongoDB", "Express.js", "React.js", "Node.js", "GenAI Integrations"],
+    },
+    {
+      id: 21,
+      name: "Learning Full Stack Development",
+      authority: "Infosys Springboard",
+      date: "July 2025",
+      description: "Frontend & backend development, API integration, and deployment workflows.",
+      thumbnail: "https://i.postimg.cc/JnSK5WBg/Learning-Full-Stack-Development-page-0001.jpg",
+      fullImage: "https://i.postimg.cc/JnSK5WBg/Learning-Full-Stack-Development-page-0001.jpg",
+      verifyUrl: "https://verify.onwingspan.com/",
+      category: "development",
+      skills: ["Full Stack Development", "Frontend Development", "Backend Development"],
     },
     {
       id: 29,
@@ -254,7 +256,7 @@ const Certifications = () => {
       thumbnail: "https://i.postimg.cc/8kw4LvMK/infosys-bootstrap-page-0001.jpg",
       fullImage: "https://i.postimg.cc/8kw4LvMK/infosys-bootstrap-page-0001.jpg",
       verifyUrl: "https://verify.onwingspan.com",
-      category: "programming",
+      category: "development",
       skills: ["Bootstrap 4", "Responsive Design", "Frontend Development", "UI/UX Best Practices"],
     },
     {
@@ -266,7 +268,7 @@ const Certifications = () => {
       thumbnail: "https://i.postimg.cc/tCZqWv6Y/Completion-Certificate-Web-Dev-Basics-Skills-Build-page-0001.jpg",
       fullImage: "https://i.postimg.cc/tCZqWv6Y/Completion-Certificate-Web-Dev-Basics-Skills-Build-page-0001.jpg",
       verifyUrl: "https://skillsbuild.org/",
-      category: "programming",
+      category: "development",
       skills: ["HTML", "CSS", "Responsive Design", "Web Accessibility"],
     },
     {
@@ -278,32 +280,8 @@ const Certifications = () => {
       thumbnail: "https://i.postimg.cc/BZwZ8fXr/Completion-Certificate-Skills-Build-page-0001-Java.jpg",
       fullImage: "https://i.postimg.cc/BZwZ8fXr/Completion-Certificate-Skills-Build-page-0001-Java.jpg",
       verifyUrl: "https://skillsbuild.org/",
-      category: "programming",
+      category: "development",
       skills: ["Java Programming", "Object-Oriented Programming", "Problem Solving"],
-    },
-    {
-      id: 22,
-      name: "Data Structures and Algorithms Using Java",
-      authority: "Infosys Springboard",
-      date: "July 2025",
-      description: "Enhanced problem-solving skills with arrays, linked lists, stacks, queues, trees.",
-      thumbnail: "https://i.postimg.cc/Wzr89fG4/Data-Structures-and-Algorithms-Using-Java-An-Interactive-Way-page-0001.jpg",
-      fullImage: "https://i.postimg.cc/Wzr89fG4/Data-Structures-and-Algorithms-Using-Java-An-Interactive-Way-page-0001.jpg",
-      verifyUrl: "https://verify.onwingspan.com/",
-      category: "programming",
-      skills: ["Data Structures", "Algorithms", "Java Programming", "Problem Solving"],
-    },
-    {
-      id: 21,
-      name: "Learning Full Stack Development",
-      authority: "Infosys Springboard",
-      date: "July 2025",
-      description: "Frontend & backend development, API integration, and deployment workflows.",
-      thumbnail: "https://i.postimg.cc/JnSK5WBg/Learning-Full-Stack-Development-page-0001.jpg",
-      fullImage: "https://i.postimg.cc/JnSK5WBg/Learning-Full-Stack-Development-page-0001.jpg",
-      verifyUrl: "https://verify.onwingspan.com/",
-      category: "programming",
-      skills: ["Full Stack Development", "Frontend Development", "Backend Development"],
     },
     {
       id: 14,
@@ -314,71 +292,11 @@ const Certifications = () => {
       thumbnail: "https://i.postimg.cc/cHvX3J6w/IBM-PY0101-EN-Certificate-Cognitive-Class-page-0001.jpg",
       fullImage: "https://i.postimg.cc/cHvX3J6w/IBM-PY0101-EN-Certificate-Cognitive-Class-page-0001.jpg",
       verifyUrl: "https://courses.cognitiveclass.ai/certificates/ee529c26a0cd43ebbf39c812f7fd6352",
-      category: "programming",
+      category: "development",
       skills: ["Python Programming Basics", "Data Structures in Python", "Data Science Fundamentals"],
     },
-    {
-      id: 13,
-      name: "Full Stack Web Development With MERN STACK & GenAI 2025",
-      authority: "Udemy",
-      date: "July 2025",
-      description: "89.5-hour hands-on course on MERN Stack and GenAI.",
-      thumbnail: "https://i.postimg.cc/qvLgqCDk/MERN-STACK-UDEMY-CERTIFICATE.jpg",
-      fullImage: "https://i.postimg.cc/qvLgqCDk/MERN-STACK-UDEMY-CERTIFICATE.jpg",
-      verifyUrl: "https://ude.my/UC-43346e61-36dd-4374-a30d-d97f8855ebe1",
-      category: "programming",
-      skills: ["MongoDB", "Express.js", "React.js", "Node.js", "GenAI Integrations"],
-    },
-    {
-      id: 12,
-      name: "Full Stack Web Development with Python",
-      authority: "SHASHI INFOTECH RANCHI",
-      date: "March 2025",
-      description: "Hands-on internship in Full Stack Web Development using Python.",
-      thumbnail: "https://i.postimg.cc/fWGsQ52w/INTERNSHIP-FULL-STACK-WITH-PYTHON-page-0001.jpg",
-      fullImage: "https://i.postimg.cc/fWGsQ52w/INTERNSHIP-FULL-STACK-WITH-PYTHON-page-0001.jpg",
-      verifyUrl: "https://i.postimg.cc/fWGsQ52w/INTERNSHIP-FULL-STACK-WITH-PYTHON-page-0001.jpg",
-      category: "programming",
-      skills: ["HTML, CSS, JavaScript", "Python for Web Development", "Frontend and Backend Integration"],
-    },
-    {
-      id: 10,
-      name: "Full Stack Web Development",
-      authority: "CODEC TECHNOLOGIES",
-      date: "May 2025",
-      description: "Comprehensive training covering frontend and backend technologies.",
-      thumbnail: "https://i.postimg.cc/d113bDSz/MD-WARISH-ANSARI-Certificate-page-0001.jpg",
-      fullImage: "https://i.postimg.cc/d113bDSz/MD-WARISH-ANSARI-Certificate-page-0001.jpg",
-      verifyUrl: "https://codectechnologies.in/",
-      category: "programming",
-      skills: ["HTML, CSS & JavaScript", "Frontend Frameworks", "Backend with Node.js or PHP"],
-    },
-    {
-      id: 6,
-      name: "Web Development with PHP",
-      authority: "STP COMPUTER EDUCATION",
-      date: "August 2024",
-      description: "Build dynamic websites using HTML, CSS, JavaScript, and PHP.",
-      thumbnail: "https://i.postimg.cc/k4B8xj96/STP-WEB-DEVELOPMENT-COURSE-CERTIFICATE-page-0001.jpg",
-      fullImage: "https://i.postimg.cc/k4B8xj96/STP-WEB-DEVELOPMENT-COURSE-CERTIFICATE-page-0001.jpg",
-      verifyUrl: "https://www.stpcomputereducation.com/certificate-verification",
-      category: "programming",
-      skills: ["HTML & CSS", "JavaScript Basics", "PHP Programming", "MySQL Database Integration"],
-    },
 
-    // COMPUTER SKILLS - STP and UIDAI certificates
-    {
-      id: 7,
-      name: "Enrolment & Update Process",
-      authority: "UIDAI",
-      date: "April 2022",
-      description: "Training on Aadhaar Enrolment and Update Process.",
-      thumbnail: "https://i.postimg.cc/Jh7jhr2Q/UIDAI-CERTIFICATE-page-0001.jpg",
-      fullImage: "https://i.postimg.cc/Jh7jhr2Q/UIDAI-CERTIFICATE-page-0001.jpg",
-      verifyUrl: "https://uidai.gov.in/",
-      category: "computer",
-      skills: ["Aadhaar Enrolment Procedure", "Update Process Handling", "Data Verification Protocols"],
-    },
+    // FOUNDATIONS / COMPUTER SKILLS
     {
       id: 5,
       name: "Advanced Diploma in Computer Applications (ADCA)",
@@ -388,20 +306,8 @@ const Certifications = () => {
       thumbnail: "https://i.postimg.cc/vZXLdxZz/STP-ADCA-COURSE-CERTIFICATE-page-0001.jpg",
       fullImage: "https://i.postimg.cc/vZXLdxZz/STP-ADCA-COURSE-CERTIFICATE-page-0001.jpg",
       verifyUrl: "https://www.stpcomputereducation.com/certificate-verification",
-      category: "computer",
+      category: "foundations",
       skills: ["Advanced Microsoft Office", "Tally with GST", "Database Management"],
-    },
-    {
-      id: 4,
-      name: "Graphic Design Course",
-      authority: "STP COMPUTER EDUCATION",
-      date: "November 2024",
-      description: "Visual storytelling skills using industry-standard design tools.",
-      thumbnail: "https://i.postimg.cc/DzCL4VV3/STP-GRAPHIC-DESIGN-COURSE-CERTIFICATE-page-0001.jpg",
-      fullImage: "https://i.postimg.cc/DzCL4VV3/STP-GRAPHIC-DESIGN-COURSE-CERTIFICATE-page-0001.jpg",
-      verifyUrl: "https://www.stpcomputereducation.com/certificate-verification",
-      category: "computer",
-      skills: ["Graphic Design Principles", "Adobe Photoshop Basics", "Adobe Illustrator Basics"],
     },
     {
       id: 3,
@@ -412,20 +318,8 @@ const Certifications = () => {
       thumbnail: "https://i.postimg.cc/HkgQf40R/STP-DCA-COURSE-CERTIFICATE-page-0001.jpg",
       fullImage: "https://i.postimg.cc/HkgQf40R/STP-DCA-COURSE-CERTIFICATE-page-0001.jpg",
       verifyUrl: "https://www.stpcomputereducation.com/certificate-verification",
-      category: "computer",
+      category: "foundations",
       skills: ["Basic Computer Fundamentals", "Microsoft Office", "Internet and Email Handling"],
-    },
-    {
-      id: 2,
-      name: "Adobe Photoshop Course",
-      authority: "STP COMPUTER EDUCATION",
-      date: "August 2023",
-      description: "Image editing, retouching, and graphic designing techniques.",
-      thumbnail: "https://i.postimg.cc/mDJ9VQ2d/STPPHOTOSHOPCOURSECERTIFICATE-page-0001.jpg",
-      fullImage: "https://i.postimg.cc/mDJ9VQ2d/STPPHOTOSHOPCOURSECERTIFICATE-page-0001.jpg",
-      verifyUrl: "https://www.stpcomputereducation.com/certificate-verification",
-      category: "computer",
-      skills: ["Adobe Photoshop Interface", "Image Editing and Retouching", "Photo Manipulation"],
     },
     {
       id: 1,
@@ -436,8 +330,32 @@ const Certifications = () => {
       thumbnail: "https://i.postimg.cc/tCP3Sm6F/STP-BASIC-COMPUTER-COURSE-CERTIFICATE-page-0001.jpg",
       fullImage: "https://i.postimg.cc/tCP3Sm6F/STP-BASIC-COMPUTER-COURSE-CERTIFICATE-page-0001.jpg",
       verifyUrl: "https://www.stpcomputereducation.com/certificate-verification",
-      category: "computer",
+      category: "foundations",
       skills: ["Basic Computer Operations", "Microsoft Office", "Windows OS Fundamentals"],
+    },
+    {
+      id: 4,
+      name: "Graphic Design Course",
+      authority: "STP COMPUTER EDUCATION",
+      date: "November 2024",
+      description: "Visual storytelling skills using industry-standard design tools.",
+      thumbnail: "https://i.postimg.cc/DzCL4VV3/STP-GRAPHIC-DESIGN-COURSE-CERTIFICATE-page-0001.jpg",
+      fullImage: "https://i.postimg.cc/DzCL4VV3/STP-GRAPHIC-DESIGN-COURSE-CERTIFICATE-page-0001.jpg",
+      verifyUrl: "https://www.stpcomputereducation.com/certificate-verification",
+      category: "foundations",
+      skills: ["Graphic Design Principles", "Adobe Photoshop Basics", "Adobe Illustrator Basics"],
+    },
+    {
+      id: 2,
+      name: "Adobe Photoshop Course",
+      authority: "STP COMPUTER EDUCATION",
+      date: "August 2023",
+      description: "Image editing, retouching, and graphic designing techniques.",
+      thumbnail: "https://i.postimg.cc/mDJ9VQ2d/STPPHOTOSHOPCOURSECERTIFICATE-page-0001.jpg",
+      fullImage: "https://i.postimg.cc/mDJ9VQ2d/STPPHOTOSHOPCOURSECERTIFICATE-page-0001.jpg",
+      verifyUrl: "https://www.stpcomputereducation.com/certificate-verification",
+      category: "foundations",
+      skills: ["Adobe Photoshop Interface", "Image Editing and Retouching", "Photo Manipulation"],
     },
     {
       id: 8,
@@ -448,21 +366,35 @@ const Certifications = () => {
       thumbnail: "https://i.postimg.cc/L4JBfs6C/RKDF-AUTOCAD-CERTIFICATE-page-0001.jpg",
       fullImage: "https://i.postimg.cc/L4JBfs6C/RKDF-AUTOCAD-CERTIFICATE-page-0001.jpg",
       verifyUrl: "https://rkdfuniversity.org/",
-      category: "computer",
+      category: "foundations",
       skills: ["2D Drawing Techniques in AutoCAD", "3D Modelling Basics", "Layer and Dimension Tools"],
+    },
+    {
+      id: 7,
+      name: "Enrolment & Update Process",
+      authority: "UIDAI",
+      date: "April 2022",
+      description: "Training on Aadhaar Enrolment and Update Process.",
+      thumbnail: "https://i.postimg.cc/Jh7jhr2Q/UIDAI-CERTIFICATE-page-0001.jpg",
+      fullImage: "https://i.postimg.cc/Jh7jhr2Q/UIDAI-CERTIFICATE-page-0001.jpg",
+      verifyUrl: "https://uidai.gov.in/",
+      category: "foundations",
+      skills: ["Aadhaar Enrolment Procedure", "Update Process Handling", "Data Verification Protocols"],
     },
   ];
 
-  // Sort certifications in descending order by ID
-  const sortedCerts = [...certifications].sort((a, b) => b.id - a.id);
+  // No longer sorting by ID, preserving the manual order requested
+  const filteredCerts = activeCategory === "highlighted"
+    ? certifications.filter(cert => cert.category === "highlighted")
+    : activeCategory === "all" // Keep "all" behavior just in case, or we can remove it. For now, let's just make it filter by category if not highlighted or just filter.
+    ? certifications
+    : certifications.filter(cert => cert.category === activeCategory);
   
-  // Filter based on active category
-  const filteredCerts = activeCategory === "all" 
-    ? sortedCerts 
-    : sortedCerts.filter(cert => cert.category === activeCategory);
+  // Show all for category unless "highlighted" has a limit? User said "Highlighted (MAX 6)". 
+  // I will just use the pre-filtered list logic but cleaner.
   
-  // Display only 6 certificates initially
-  const displayedCerts = showAll ? filteredCerts : filteredCerts.slice(0, 6);
+  // The user said: "Keep ONLY these here... This section must scream: 'Serious technical capability.'"
+  // My list above respects that order.
 
   return (
     <section
@@ -494,7 +426,7 @@ const Certifications = () => {
         </div>
 
         <Row className="g-4 justify-content-center">
-          {displayedCerts.map((cert, index) => (
+          {filteredCerts.slice(0, showAll ? filteredCerts.length : 6).map((cert, index) => (
             <Col key={cert.id} lg={6} className="cert-col">
               <div
                 className={`cert-card ${expandedCert === index ? "expanded" : ""} ${cert.category === "highlighted" ? "highlighted-cert" : ""}`}
@@ -550,7 +482,7 @@ const Certifications = () => {
           ))}
         </Row>
 
-        {/* Show More/Less Button */}
+        {/* Show More/Less Button - Only if more than 6 in the category */}
         {filteredCerts.length > 6 && (
           <div className="text-center mt-5">
             <button className="btn-show-more" onClick={toggleShowAll}>

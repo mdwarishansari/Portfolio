@@ -72,7 +72,7 @@ const Hero = () => {
                       position: "relative",
                       fontWeight: "800",
                     }}
-                    repeat={0}
+                    repeat={50}
                     cursor={cursorVisible}
                   />
                 </>
@@ -81,10 +81,12 @@ const Hero = () => {
               )}
             </h1>
             <p className="lead text-light mb-4">
-              As a CSE student with a passion for tech, I build clean,
-              responsive websites and explore cutting-edge fields like AI and
-              cybersecurity. I'm always learning, always building—and ready to
-              take on the next challenge.
+              Full Stack Developer <br></br>
+Cloud & DevOps Certified <br></br>
+Problem Solver <br></br>
+AI-Focused Engineer <br></br>
+Specialized in MERN Stack Development
+
             </p>
             <div className="d-flex flex-wrap gap-3">
               <Button

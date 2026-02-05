@@ -65,12 +65,7 @@ const About = () => {
               </h1>
 
               <p className="about-text">
-                I'm a B.Tech Computer Science & Engineering student who loves
-                solving problems through code. I specialize in creating clean,
-                responsive websites and continuously explore emerging tech like
-                AI, cybersecurity, and ethical hacking. With multiple
-                certifications, self-initiated projects, and an eagerness to
-                grow, I’m actively building my path in the tech world.
+                I’m a B.Tech Computer Science student specializing in Full Stack Development with the MERN stack. I focus on building scalable, responsive, and performance-driven web applications using modern technologies. Alongside web development, I’m actively strengthening my foundations in machine learning with the goal of integrating intelligent systems into real-world applications. My approach is practical — build meaningful projects, solve real problems, and continuously improve through hands-on experience.
               </p>
 
               <div className="cta-container">
@@ -105,7 +100,7 @@ const About = () => {
                     <i className="bi bi-lightning-charge"></i>
                   </div>
                   <div className="exp-details">
-                    <div className="exp-count">2+</div>
+                    <div className="exp-count">4+</div>
                     <div className="exp-title">Internships</div>
                   </div>
                 </div>
