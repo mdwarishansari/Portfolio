@@ -1,6 +1,6 @@
 // src/components/Social.js
 import React, { useRef, useEffect, useState } from "react";
-import { Container, Row, Col } from "react-bootstrap";
+import { Container } from "react-bootstrap";
 import {
   SiGmail,
   SiLeetcode,

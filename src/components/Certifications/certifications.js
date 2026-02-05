@@ -1,6 +1,6 @@
 // src/components/Certifications.js
 import React, { useState, useRef, useEffect } from "react";
-import { Container, Row, Col, Button } from "react-bootstrap";
+import { Container, Row, Col } from "react-bootstrap";
 import {
   FaChevronDown,
   FaChevronUp,
