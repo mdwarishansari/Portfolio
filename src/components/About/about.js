@@ -1,7 +1,8 @@
 import React, { useEffect } from "react";
 import { Container, Row, Col, Button } from "react-bootstrap";
 import "./about.css";
-import profileImage from "./img/dp.jpeg"; // Import your profile image
+// import profileImage from "./img/dp.jpeg"; // Import your profile image
+import profileGif from "./img/DP.gif";
 
 const About = () => {
   useEffect(() => {
@@ -34,16 +35,23 @@ const About = () => {
             <div className="about-photo-container">
               <div className="photo-frame">
                 <div className="photo-img">
-                  <div
+                  {/* <div
                     className="profile-image"
                     style={{ backgroundImage: `url(${profileImage})` }}
-                  ></div>
+                  ></div> */}
+                  <img
+  src={profileGif}
+  alt="Warish animated"
+  className="profile-image"
+/>
+
                   <div className="decoration-circle blue"></div>
                   <div className="decoration-circle purple"></div>
                   <div className="decoration-ring"></div>
                   <div className="tech-dot dot1"></div>
                   <div className="tech-dot dot2"></div>
                   <div className="tech-dot dot3"></div>
+                  <div className="tech-dot dot4"></div>
                 </div>
               </div>
             </div>
