@@ -29,7 +29,7 @@ const Experience = () => {
           observer.disconnect();
         }
       },
-      { threshold: 0.1 }
+      { threshold: 0.1 },
     );
 
     if (sectionRef.current) {
@@ -60,6 +60,43 @@ const Experience = () => {
 
   // Experience data with certificate info
   const experiences = [
+    {
+      id: 4,
+      role: "Software Development Engineer (SDE) Intern",
+      company: "Bluestock Fintech",
+      duration: "Dec 2025 – Jan 2026",
+      location: "Remote",
+      description:
+        "Worked as a Software Development Engineer Intern contributing to fintech platform development across backend and frontend systems, focusing on building reliable and scalable features.",
+      responsibilities: [
+        "Designed and implemented RESTful APIs for backend financial workflows",
+        "Integrated frontend components with backend services for seamless data flow",
+        "Debugged production-level issues and improved system stability",
+        "Wrote unit and integration tests to maintain code quality",
+        "Participated in code reviews and followed structured Git workflows",
+      ],
+      skills: [
+        "Node.js",
+        "Express.js",
+        "React.js",
+        "MongoDB",
+        "RESTful APIs",
+        "Git",
+        "Backend Development",
+        "System Debugging",
+      ],
+      link: "https://bluestock.in/",
+      certificate: {
+        name: "Software Development Engineer (SDE) Internship – Bluestock Fintech",
+        thumbnail:
+          "https://i.postimg.cc/d13RGyk6/Bluestock-Internship-certificate.jpg",
+        fullImage:
+          "https://i.postimg.cc/d13RGyk6/Bluestock-Internship-certificate.jpg",
+        verifyUrl: "https://bluestock.in/hr/emp",
+        credential: "BFSD184972",
+      },
+    },
+
     {
       id: 3,
       role: "MERN Stack Intern",
@@ -92,8 +129,10 @@ const Experience = () => {
       link: "https://www.softnexis.com/",
       certificate: {
         name: "MERN Stack Internship Certificate",
-        thumbnail: "https://i.postimg.cc/525LKyTw/Soft-Nexis-Internship-page-0001.jpg",
-        fullImage: "https://i.postimg.cc/525LKyTw/Soft-Nexis-Internship-page-0001.jpg",
+        thumbnail:
+          "https://i.postimg.cc/525LKyTw/Soft-Nexis-Internship-page-0001.jpg",
+        fullImage:
+          "https://i.postimg.cc/525LKyTw/Soft-Nexis-Internship-page-0001.jpg",
         verifyUrl: "https://www.softnexis.com/",
         credential: "SN1000356",
       },
@@ -127,8 +166,10 @@ const Experience = () => {
       link: "https://codealpha-shopping-web.onrender.com/",
       certificate: {
         name: "Full Stack Development Internship",
-        thumbnail: "https://i.postimg.cc/BQ9z2Mm7/Code-Alpha-Certificate-page-0001.jpg",
-        fullImage: "https://i.postimg.cc/BQ9z2Mm7/Code-Alpha-Certificate-page-0001.jpg",
+        thumbnail:
+          "https://i.postimg.cc/BQ9z2Mm7/Code-Alpha-Certificate-page-0001.jpg",
+        fullImage:
+          "https://i.postimg.cc/BQ9z2Mm7/Code-Alpha-Certificate-page-0001.jpg",
         verifyUrl: "http://www.codealpha.tech",
         credential: "CA-FS-2025",
       },
@@ -151,8 +192,10 @@ const Experience = () => {
       link: "https://moviesvibe-lt7u.onrender.com/",
       certificate: {
         name: "Full Stack Web Development with Python",
-        thumbnail: "https://i.postimg.cc/fWGsQ52w/INTERNSHIP-FULL-STACK-WITH-PYTHON-page-0001.jpg",
-        fullImage: "https://i.postimg.cc/fWGsQ52w/INTERNSHIP-FULL-STACK-WITH-PYTHON-page-0001.jpg",
+        thumbnail:
+          "https://i.postimg.cc/fWGsQ52w/INTERNSHIP-FULL-STACK-WITH-PYTHON-page-0001.jpg",
+        fullImage:
+          "https://i.postimg.cc/fWGsQ52w/INTERNSHIP-FULL-STACK-WITH-PYTHON-page-0001.jpg",
         verifyUrl: "https://shashiinfotech.com/",
         credential: "SI-FSP-2025",
       },
@@ -223,9 +266,15 @@ const Experience = () => {
 
                 {/* Certificate Preview */}
                 {exp.certificate && (
-                  <div className="cert-preview" onClick={() => openCertModal(exp.certificate)}>
+                  <div
+                    className="cert-preview"
+                    onClick={() => openCertModal(exp.certificate)}
+                  >
                     <div className="cert-preview-thumb">
-                      <img src={exp.certificate.thumbnail} alt={exp.certificate.name} />
+                      <img
+                        src={exp.certificate.thumbnail}
+                        alt={exp.certificate.name}
+                      />
                       <div className="cert-preview-overlay">
                         <FaCertificate />
                         <span>View Certificate</span>
@@ -305,14 +354,23 @@ const Experience = () => {
       {/* Certificate Modal */}
       {modalOpen && currentCert && (
         <div className="cert-modal-exp" onClick={closeCertModal}>
-          <div className="modal-content-exp" onClick={(e) => e.stopPropagation()}>
+          <div
+            className="modal-content-exp"
+            onClick={(e) => e.stopPropagation()}
+          >
             <button className="close-btn-exp" onClick={closeCertModal}>
               <FaTimes />
             </button>
-            <img src={currentCert.fullImage} alt={currentCert.name} className="full-cert-img-exp" />
+            <img
+              src={currentCert.fullImage}
+              alt={currentCert.name}
+              className="full-cert-img-exp"
+            />
             <div className="cert-modal-info-exp">
               <h3>{currentCert.name}</h3>
-              {currentCert.credential && <p>Credential: {currentCert.credential}</p>}
+              {currentCert.credential && (
+                <p>Credential: {currentCert.credential}</p>
+              )}
               <a
                 href={currentCert.verifyUrl}
                 target="_blank"
