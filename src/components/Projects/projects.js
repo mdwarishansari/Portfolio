@@ -82,8 +82,8 @@ const Projects = () => {
       title: "CartNest",
       subtitle: "Multi-Vendor E-Commerce Marketplace",
       description:
-        "Production-ready full-stack e-commerce platform with multi-role dashboards, Razorpay payments, and scalable architecture.",
-      longDescription:
+  "Built a scalable multi-vendor marketplace with role-based dashboards, Razorpay payment integration, and real-time order management.",
+  longDescription:
         "CartNest is a full-stack multi-vendor e-commerce marketplace built using MERN stack with advanced production-level features. It supports multiple user roles (Customer, Seller, Admin, Verifier), secure authentication via Firebase + JWT, Razorpay payment integration, Cloudinary image uploads, and Redis-based stock locking. The platform includes real-time order management, seller dashboards, product verification workflows, and admin-level control over the entire system. Designed with scalability, security, and real-world business logic in mind.",
       skills: [
         "MongoDB",
