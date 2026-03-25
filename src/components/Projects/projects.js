@@ -14,9 +14,7 @@ import "./projects.css";
 // imgs
 
 import moviesvibe from "./cover_img/moviesvibe.png";
-import nexusshop from "./cover_img/nexusshop.png";
-import shecanintern from "./cover_img/shecanintern.png";
-import travelease from "./cover_img/travelease.png";
+import cartnest from "./cover_img/cartnest.png";
 import blueblog from "./cover_img/blueblog.png";
 
 const Projects = () => {
@@ -50,7 +48,7 @@ const Projects = () => {
 
   const projects = [
     {
-      id: 5,
+      id: 3,
       title: "BlueBlog",
       subtitle: "Full-Scale SEO-Based Role-Based Blogging Platform",
       description:
@@ -80,60 +78,31 @@ const Projects = () => {
     },
 
     {
-      id: 4,
-      title: "TravelEase",
-      subtitle: "Travel Booking Platform",
+      id: 2,
+      title: "CartNest",
+      subtitle: "Multi-Vendor E-Commerce Marketplace",
       description:
-        "A Django-based travel booking platform where users can sign up, log in, and manage their travel bookings.",
+        "Production-ready full-stack e-commerce platform with multi-role dashboards, Razorpay payments, and scalable architecture.",
       longDescription:
-        "Developed as part of the TravelEase Internship Assignment. Features user authentication, booking & cancellation system, tracking of bookings, and responsive UI with Bootstrap. Integrated with PostgreSQL/MongoDB.",
-      skills: ["Django", "Python", "Bootstrap", "PostgreSQL", "MongoDB"],
-      image: travelease,
-      projectLink: "https://travelease-p0ov.onrender.com/",
-      date: "August 2025",
-      category: "minor",
-      emoji: "✈️",
-    },
-    {
-      id: 3,
-      title: "NexusShop",
-      subtitle: "E-commerce Platform",
-      description:
-        "A full-featured MERN-stack E-commerce web app with product management, cart, and orders.",
-      longDescription:
-        "Built with MERN stack featuring dynamic product listings, role-based access control (Admin | Seller | Customer), JWT authentication, real-time inventory updates, payment gateway integration, and Tailwind CSS styling.",
+        "CartNest is a full-stack multi-vendor e-commerce marketplace built using MERN stack with advanced production-level features. It supports multiple user roles (Customer, Seller, Admin, Verifier), secure authentication via Firebase + JWT, Razorpay payment integration, Cloudinary image uploads, and Redis-based stock locking. The platform includes real-time order management, seller dashboards, product verification workflows, and admin-level control over the entire system. Designed with scalability, security, and real-world business logic in mind.",
       skills: [
         "MongoDB",
         "Express.js",
         "React.js",
         "Node.js",
         "Tailwind CSS",
+        "Firebase Auth",
+        "Razorpay",
+        "Redis",
+        "Cloudinary",
         "JWT",
       ],
-      image: nexusshop,
-      projectLink: "https://nexusshop.onrender.com/",
-      githubLink:
-        "https://github.com/mdwarishansari/CodeAlpha_Shopping_Web.git",
-      date: "July 2025",
+      image: cartnest,
+      projectLink: "https://cartnest-shop.vercel.app/",
+      githubLink: "https://github.com/mdwarishansari/CartNest",
+      date: "March 2026",
       category: "major",
       emoji: "🛒",
-    },
-    {
-      id: 2,
-      title: "She Can Intern",
-      subtitle: "Fundraising Portal",
-      description:
-        "Full-stack MERN application for referral-based fundraising internship selection.",
-      longDescription:
-        "Features unique referral codes, earnings tracking, leaderboard rankings, admin panel with CRUD, JWT authentication. Built with MERN stack and Tailwind CSS with AOS animations.",
-      skills: ["MongoDB", "Express.js", "React.js", "Node.js", "Tailwind CSS"],
-      image: shecanintern,
-      projectLink: "https://she-can-intern-proj.onrender.com/",
-      githubLink:
-        "https://github.com/mdwarishansari/She_Can_Intern_SelectionProj.git",
-      date: "August 2025",
-      category: "minor",
-      emoji: "🎯",
     },
     {
       id: 1,
