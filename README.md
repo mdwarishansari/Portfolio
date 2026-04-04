@@ -1,3 +1,5 @@
+# Mohammad Warish Ansari — Portfolio
+
 🔗 **Live Demo:** [Live URL](https://portfolio-warish.vercel.app)
 
 ---
@@ -6,8 +8,8 @@
 
 - 🎨 **Modern UI/UX** – Custom design with smooth animations
 - 📱 **Responsive Design** – Fully mobile-friendly
-- ⚡ **Fast & Optimized** – Built with React.js and modular components
-- 🧩 **Reusable Components** – Navbar, Hero, About, Skills, Projects, Experience, Certifications, Footer
+- ⚡ **Fast & Optimized** – Built with React.js and Tailwind CSS (v4)
+- 🧩 **Modular Architecture** – Custom reusable components built with pure CSS and Tailwind.
 - 🗂️ **Projects Showcase** – With preview images & live/demo links
 - 📜 **Certifications Section** – Displaying achievements and credentials
 - 💼 **Experience Timeline** – Internship & work journey
@@ -18,7 +20,10 @@
 ## 🛠️ Tech Stack
 
 - **Framework:** React.js
-- **Styling:** CSS (custom component-based styles)
+- **Styling:** Tailwind CSS (v4) & Custom component-based CSS
+- **Icons:** Bootstrap Icons (`bi`)
+- **3D Assets:** @splinetool/react-spline
+- **Animations:** react-type-animation & Custom Keyframes
 - **Deployment:** Vercel
 - **Version Control:** Git & GitHub
 
@@ -44,13 +49,17 @@ Portfolio/
 │   │   ├── Certifications/ # Certifications achieved
 │   │   ├── Experience/     # Work/Internship timeline
 │   │   ├── Social/         # Social links section
-│   │   └── Footer/         # Footer section
+│   │   ├── Footer/         # Footer section
+│   │   └── common/         # Shared global components (e.g., reusable Buttons)
 │   │
 │   ├── App.js              # Main app
 │   ├── index.js            # Entry point
-|   └── index.css           # Global styles
+│   ├── index.css           # Global styles and Tailwind imports
+│   └── output.css          # Compiled Tailwind CSS
 │
 ├── package.json            # Dependencies
+├── tailwind.config.js      # Optional external configuration for Tailwind
+├── postcss.config.js       # PostCSS config for Tailwind integration
 ├── README.md               # Project info
 └── .gitignore
 
@@ -72,8 +81,11 @@ cd Portfolio
 # Install dependencies
 npm install
 
-# Start development server
+# Start development server (runs React + Tailwind CLI)
 npm start
+
+# Build for production
+npm run build
 ```
 
 ---
