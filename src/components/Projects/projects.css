@@ -81,7 +81,24 @@
 .section-subtitle {
     font-size: 1.15rem;
     color: #b3b3b3;
+    text-align: center;
 }
+
+/* Projects responsive grid */
+.projects-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    position: relative;
+    z-index: 1;
+}
+
+@media (min-width: 1024px) {
+    .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
 
 /* Project Tabs */
 .project-tabs {

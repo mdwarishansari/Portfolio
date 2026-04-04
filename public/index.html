@@ -34,14 +34,17 @@
     <link rel="apple-touch-icon" sizes="180x180" href="%PUBLIC_URL%/dp.png" />
     <link rel="manifest" href="%PUBLIC_URL%/site.webmanifest" />
 
-    <!-- Preconnect & fonts (load only what you use) -->
+    <!-- Preconnect & performance hints -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <!-- Replace with the exact font you use -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+    <link rel="dns-prefetch" href="https://prod.spline.design" />
+    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" />
 
-    <!-- Main stylesheet -->
-    <link rel="stylesheet" href="%PUBLIC_URL%/style.css" />
+    <!-- Inter font (all weights used across portfolio) -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+    <!-- Bootstrap Icons — used throughout all components (bi-* classes) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
 
     <!-- JSON-LD structured data (Person) -->
     <script type="application/ld+json">

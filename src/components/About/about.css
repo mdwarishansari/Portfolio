@@ -36,7 +36,6 @@
 .about-photo-col {
     display: flex;
     justify-content: center;
-    margin-bottom: 50px;
     position: relative;
     z-index: 1;
 }
@@ -194,7 +193,7 @@
 }
 
 .about-content {
-    padding: 0 30px;
+    padding: 0;
     position: relative;
     z-index: 1;
     opacity: 0;

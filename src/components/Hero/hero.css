@@ -17,6 +17,11 @@
     padding-top: 80px;
 }
 
+/* Ensure hero's direct container fills full width */
+#hero > div {
+    width: 100%;
+}
+
 #hero::before {
     content: "";
     position: absolute;
@@ -236,10 +241,43 @@
 }
 
 /* Spline Container - Fixed for Desktop */
+.hero-inner-row {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2.5rem;
+}
+
+@media (min-width: 1024px) {
+    .hero-inner-row {
+        flex-direction: row;
+        gap: 3rem;
+        align-items: center;
+    }
+}
+
+.hero-text {
+    flex: 1;
+    min-width: 0;
+    position: relative;
+    z-index: 2;
+    animation: fadeInUp 1s ease-out;
+}
+
 .spline-col {
+    flex: 1;
+    min-width: 0;
     position: relative;
     z-index: 1;
 }
+
+.hero-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
 
 .spline-container {
     position: relative;

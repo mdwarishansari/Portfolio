@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { Container, Row, Col, Button } from "react-bootstrap";
 import { TypeAnimation } from "react-type-animation";
+import GradientButton from "../common/GradientButton";
 import "./hero.css";
 import Spline from "@splinetool/react-spline";
 
@@ -25,13 +25,13 @@ const Hero = () => {
   }, [showRoleAnimation]);
 
   return (
-    <section id="hero" className="py-5">
-      <Container>
-        <Row className="align-items-center">
-          {/* Text Content Column */}
-          <Col lg={6} className="hero-text mb-5 mb-lg-0">
-            <h2 className="text-primary mb-0">Hello!</h2>
-            <h1 className="display-3 fw-bold text-white mt-0">
+    <section id="hero" className="py-20">
+      <div className="section-container">
+        <div className="hero-inner-row">
+          {/* Text Content */}
+          <div className="hero-text">
+            <h2 className="text-blue-400 text-2xl font-semibold mb-0">Hello!</h2>
+            <h1 className="text-4xl lg:text-6xl font-bold text-white mt-0 leading-tight">
               <TypeAnimation
                 sequence={[
                   "I",
@@ -80,38 +80,30 @@ const Hero = () => {
                 <span className="blinking-cursor" style={{ color: "#0d6efd" }}>|</span>
               )}
             </h1>
-            <p className="lead text-light mb-4">
-              Full Stack Developer <br></br>
-Cloud & DevOps Certified <br></br>
-Problem Solver <br></br>
-AI-Focused Engineer <br></br>
-Specialized in MERN Stack Development
 
+            <p className="text-gray-300 text-lg mb-8 leading-relaxed">
+              Full Stack Developer <br />
+              Cloud &amp; DevOps Certified <br />
+              Problem Solver <br />
+              AI-Focused Engineer <br />
+              Specialized in MERN Stack Development
             </p>
-            <div className="d-flex flex-wrap gap-3">
-              <Button
-                variant="primary"
-                size="lg"
-                className="px-4 py-2 hire-btn"
-                onClick={handleHireMe}
-              >
-                <i className="bi bi-envelope-arrow-up me-2"></i>
+
+            <div className="hero-buttons">
+              <GradientButton onClick={handleHireMe}>
+                <i className="bi bi-envelope-arrow-up mr-2"></i>
                 Hire Me
-              </Button>
-              <Button
-                variant="outline-primary"
-                size="lg"
-                className="px-4 py-2"
-                href="#projects"
-              >
-                <i className="bi bi-rocket-takeoff me-2"></i>
-                See What I’ve Built
-              </Button>
+              </GradientButton>
+
+              <GradientButton variant="outline" href="#projects">
+                <i className="bi bi-rocket-takeoff mr-2"></i>
+                See What I've Built
+              </GradientButton>
             </div>
-          </Col>
+          </div>
 
           {/* Spline Column */}
-          <Col lg={6} className="spline-col">
+          <div className="spline-col">
             <div className="spline-container">
               <Spline
                 scene="https://prod.spline.design/9jQjS9lHCqJMjgSL/scene.splinecode"
@@ -123,9 +115,9 @@ Specialized in MERN Stack Development
                 }}
               />
             </div>
-          </Col>
-        </Row>
-      </Container>
+          </div>
+        </div>
+      </div>
     </section>
   );
 };

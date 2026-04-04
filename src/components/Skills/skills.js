@@ -1,5 +1,4 @@
 import React, { useRef, useEffect, useState } from "react";
-import { Container, Row, Col } from "react-bootstrap";
 import { DiDjango } from "react-icons/di";
 import {
   FaHtml5,
@@ -28,7 +27,6 @@ import {
   SiPostgresql,
 } from "react-icons/si";
 import { FaChevronDown, FaChevronUp } from "react-icons/fa";
-
 import "./skills.css";
 
 const Skills = () => {
@@ -63,7 +61,7 @@ const Skills = () => {
     { name: "TypeScript", icon: <SiTypescript />, level: 85, color: "#3178c6", category: "languages" },
     { name: "Python", icon: <FaPython />, level: 75, color: "#3776ab", category: "languages" },
     { name: "Java", icon: <FaJava />, level: 70, color: "#007396", category: "languages" },
-    
+
     // Frameworks & Libraries
     { name: "React", icon: <FaReact />, level: 85, color: "#61dafb", category: "frameworks" },
     { name: "Next.js", icon: <SiNextdotjs />, level: 80, color: "#000000", category: "frameworks" },
@@ -100,21 +98,22 @@ const Skills = () => {
     { id: "ai", label: "AI & Cloud", icon: "bi-cloud" },
   ];
 
-  const filteredSkills = activeCategory === "all" 
-    ? skills 
-    : skills.filter(skill => skill.category === activeCategory);
-  
+  const filteredSkills =
+    activeCategory === "all"
+      ? skills
+      : skills.filter((skill) => skill.category === activeCategory);
+
   const displayedSkills = showAll ? filteredSkills : filteredSkills.slice(0, 8);
 
   return (
     <section
       id="skills"
-      className={`skills-section py-5 ${inView ? "in-view" : ""}`}
+      className={`skills-section py-20 ${inView ? "in-view" : ""}`}
       ref={sectionRef}
     >
-      <Container>
-        <div className="section-header mb-5">
-          <h2 className="section-title">Skills & Expertise</h2>
+      <div className="section-container">
+        <div className="section-header mb-12 text-center">
+          <h2 className="section-title">Skills &amp; Expertise</h2>
           <div className="section-divider"></div>
           <p className="section-subtitle text-center mt-4">
             Technologies I've mastered to bring ideas to life
@@ -122,7 +121,7 @@ const Skills = () => {
         </div>
 
         {/* Skills Category Tabs */}
-        <div className="skills-tabs mb-5">
+        <div className="skills-tabs mb-10">
           {categories.map((category) => (
             <button
               key={category.id}
@@ -132,62 +131,62 @@ const Skills = () => {
                 setShowAll(false);
               }}
             >
-              <i className={`bi ${category.icon} me-2`}></i>
+              <i className={`bi ${category.icon} mr-2`}></i>
               {category.label}
             </button>
           ))}
         </div>
 
-        <Row className="g-4 justify-content-center">
+        {/* Skills Grid */}
+        <div className="skills-grid">
           {displayedSkills.map((skill, index) => (
-            <Col key={skill.name} lg={3} md={4} sm={6} xs={6}>
-              <div
-                className="skill-card"
-                style={{
-                  animationDelay: `${index * 0.08}s`,
-                  "--skill-color": skill.color,
-                }}
-              >
-                <div className="skill-icon-wrapper">
-                  <div className="skill-icon">{skill.icon}</div>
-                  <div className="skill-glow"></div>
-                </div>
-                <h3 className="skill-name">{skill.name}</h3>
-                <div className="skill-bar-wrapper">
-                  <div className="skill-bar">
-                    <div
-                      className="skill-progress"
-                      style={{ width: inView ? `${skill.level}%` : "0%" }}
-                    ></div>
-                  </div>
-                  <span className="skill-percentage">{skill.level}%</span>
-                </div>
+            <div
+              key={skill.name}
+              className="skill-card w-full"
+              style={{
+                animationDelay: `${index * 0.08}s`,
+                "--skill-color": skill.color,
+              }}
+            >
+              <div className="skill-icon-wrapper">
+                <div className="skill-icon">{skill.icon}</div>
+                <div className="skill-glow"></div>
               </div>
-            </Col>
+              <h3 className="skill-name">{skill.name}</h3>
+              <div className="skill-bar-wrapper">
+                <div className="skill-bar">
+                  <div
+                    className="skill-progress"
+                    style={{ width: inView ? `${skill.level}%` : "0%" }}
+                  ></div>
+                </div>
+                <span className="skill-percentage">{skill.level}%</span>
+              </div>
+            </div>
           ))}
-        </Row>
+        </div>
 
         {filteredSkills.length > 8 && (
-          <div className="text-center mt-5">
+          <div className="text-center mt-12">
             <button
               onClick={() => setShowAll(!showAll)}
               className="btn-show-more"
             >
               {showAll ? (
                 <>
-                  <FaChevronUp className="me-2" />
+                  <FaChevronUp className="mr-2 inline" />
                   Show Less
                 </>
               ) : (
                 <>
-                  <FaChevronDown className="me-2" />
+                  <FaChevronDown className="mr-2 inline" />
                   Show More ({filteredSkills.length - 8} more)
                 </>
               )}
             </button>
           </div>
         )}
-      </Container>
+      </div>
     </section>
   );
 };

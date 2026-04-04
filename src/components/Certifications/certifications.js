@@ -1,6 +1,5 @@
 // src/components/Certifications.js
 import React, { useState, useRef, useEffect } from "react";
-import { Container, Row, Col } from "react-bootstrap";
 import {
   FaChevronDown,
   FaChevronUp,
@@ -42,11 +41,7 @@ const Certifications = () => {
   }, []);
 
   const toggleCert = (index) => {
-    if (expandedCert === index) {
-      setExpandedCert(null);
-    } else {
-      setExpandedCert(index);
-    }
+    setExpandedCert(expandedCert === index ? null : index);
   };
 
   const openModal = (cert) => {
@@ -60,11 +55,8 @@ const Certifications = () => {
     document.body.style.overflow = "auto";
   };
 
-  const toggleShowAll = () => {
-    setShowAll(!showAll);
-  };
+  const toggleShowAll = () => setShowAll(!showAll);
 
-  // Categories for certifications
   const categories = [
     { id: "highlighted", label: "Highlighted", icon: <FaStar /> },
     { id: "cloud", label: "Cloud & DevOps", icon: <FaCloud /> },
@@ -72,7 +64,6 @@ const Certifications = () => {
     { id: "foundations", label: "Foundations", icon: <FaDesktop /> },
   ];
 
-  // Certifications data with categories
   const certifications = [
     // HIGHLIGHTED
     {
@@ -174,7 +165,7 @@ const Certifications = () => {
       skills: ["Oracle Data Platform", "Oracle Cloud Infrastructure", "Database Services"],
     },
 
-    // DEVELOPMENT & PROGRAMMING
+    // DEVELOPMENT
     {
       id: 40,
       name: "Software Engineer Intern Role Certification",
@@ -296,7 +287,7 @@ const Certifications = () => {
       skills: ["Python Programming Basics", "Data Structures in Python", "Data Science Fundamentals"],
     },
 
-    // FOUNDATIONS / COMPUTER SKILLS
+    // FOUNDATIONS
     {
       id: 5,
       name: "Advanced Diploma in Computer Applications (ADCA)",
@@ -383,41 +374,39 @@ const Certifications = () => {
     },
   ];
 
-  // No longer sorting by ID, preserving the manual order requested
-  const filteredCerts = activeCategory === "highlighted"
-    ? certifications.filter(cert => cert.category === "highlighted")
-    : activeCategory === "all" // Keep "all" behavior just in case, or we can remove it. For now, let's just make it filter by category if not highlighted or just filter.
-    ? certifications
-    : certifications.filter(cert => cert.category === activeCategory);
-  
-  // Show all for category unless "highlighted" has a limit? User said "Highlighted (MAX 6)". 
-  // I will just use the pre-filtered list logic but cleaner.
-  
-  // The user said: "Keep ONLY these here... This section must scream: 'Serious technical capability.'"
-  // My list above respects that order.
+  const filteredCerts =
+    activeCategory === "highlighted"
+      ? certifications.filter((cert) => cert.category === "highlighted")
+      : activeCategory === "all"
+      ? certifications
+      : certifications.filter((cert) => cert.category === activeCategory);
 
   return (
     <section
       id="certifications"
-      className={`certifications-section py-5 ${inView ? "in-view" : ""}`}
+      className={`certifications-section py-20 ${inView ? "in-view" : ""}`}
       ref={sectionRef}
     >
-      <Container>
-        <div className="section-header mb-5">
+      <div className="max-w-7xl mx-auto px-4">
+        <div className="section-header mb-12 text-center">
           <h2 className="section-title">Certifications</h2>
           <div className="section-divider"></div>
-          <p className="section-subtitle text-center text-light mt-4">
+          <p className="section-subtitle text-center text-gray-300 mt-4">
             My professional credentials. Click to view details.
           </p>
         </div>
 
         {/* Category Tabs */}
-        <div className="cert-tabs mb-5">
+        <div className="cert-tabs mb-10">
           {categories.map((category) => (
             <button
               key={category.id}
               className={`cert-tab ${activeCategory === category.id ? "active" : ""}`}
-              onClick={() => { setActiveCategory(category.id); setShowAll(false); setExpandedCert(null); }}
+              onClick={() => {
+                setActiveCategory(category.id);
+                setShowAll(false);
+                setExpandedCert(null);
+              }}
             >
               <span className="tab-icon">{category.icon}</span>
               {category.label}
@@ -425,76 +414,82 @@ const Certifications = () => {
           ))}
         </div>
 
-        <Row className="g-4 justify-content-center">
+        {/* Certs Grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 justify-items-center">
           {filteredCerts.slice(0, showAll ? filteredCerts.length : 6).map((cert, index) => (
-            <Col key={cert.id} lg={6} className="cert-col">
-              <div
-                className={`cert-card ${expandedCert === index ? "expanded" : ""} ${cert.category === "highlighted" ? "highlighted-cert" : ""}`}
-                style={{
-                  animationDelay: `${index * 0.1}s`,
-                  opacity: inView ? 1 : 0,
-                  transform: inView ? "translateY(0)" : "translateY(30px)",
-                }}
-              >
-                {cert.category === "highlighted" && <div className="highlight-glow"></div>}
-                
-                <div className="cert-header">
-                  <div className="cert-thumbnail" onClick={() => openModal(cert)}>
-                    <img src={cert.thumbnail} alt={cert.name} className="thumbnail-img" />
-                    <div className="thumbnail-overlay">
-                      <span>🔍 View Full</span>
-                    </div>
-                    {cert.category === "highlighted" && (
-                      <div className="featured-badge"><FaStar /> Featured</div>
-                    )}
+            <div
+              key={cert.id}
+              className={`cert-card w-full ${expandedCert === index ? "expanded" : ""} ${cert.category === "highlighted" ? "highlighted-cert" : ""}`}
+              style={{
+                animationDelay: `${index * 0.1}s`,
+                opacity: inView ? 1 : 0,
+                transform: inView ? "translateY(0)" : "translateY(30px)",
+              }}
+            >
+              {cert.category === "highlighted" && <div className="highlight-glow"></div>}
+
+              <div className="cert-header">
+                <div className="cert-thumbnail" onClick={() => openModal(cert)}>
+                  <img src={cert.thumbnail} alt={cert.name} className="thumbnail-img" />
+                  <div className="thumbnail-overlay">
+                    <span>🔍 View Full</span>
                   </div>
-                  <div className="cert-info">
-                    <div className="cert-title-container">
-                      <h3 className="cert-title">{cert.name}</h3>
-                      <button className="expand-btn" onClick={() => toggleCert(index)}>
-                        {expandedCert === index ? <FaChevronUp /> : <FaChevronDown />}
-                      </button>
+                  {cert.category === "highlighted" && (
+                    <div className="featured-badge">
+                      <FaStar /> Featured
                     </div>
-                    <div className="cert-meta">
-                      <span className="cert-authority">{cert.authority}</span>
-                      <span className="cert-date">{cert.date}</span>
-                    </div>
-                    <p className="cert-description">{cert.description}</p>
-                  </div>
+                  )}
                 </div>
-
-                <div className={`cert-details ${expandedCert === index ? "show" : ""}`}>
-                  <div className="skills-acquired">
-                    <h4>Skills Acquired:</h4>
-                    <div className="skill-tags">
-                      {cert.skills.map((skill, i) => (
-                        <span key={i} className="skill-tag">{skill}</span>
-                      ))}
-                    </div>
+                <div className="cert-info">
+                  <div className="cert-title-container">
+                    <h3 className="cert-title">{cert.name}</h3>
+                    <button className="expand-btn" onClick={() => toggleCert(index)}>
+                      {expandedCert === index ? <FaChevronUp /> : <FaChevronDown />}
+                    </button>
                   </div>
-
-                  <a href={cert.verifyUrl} target="_blank" rel="noopener noreferrer" className="verify-btn">
-                    <FaExternalLinkAlt className="me-2" /> Verify Credential
-                  </a>
+                  <div className="cert-meta">
+                    <span className="cert-authority">{cert.authority}</span>
+                    <span className="cert-date">{cert.date}</span>
+                  </div>
+                  <p className="cert-description">{cert.description}</p>
                 </div>
               </div>
-            </Col>
-          ))}
-        </Row>
 
-        {/* Show More/Less Button - Only if more than 6 in the category */}
+              <div className={`cert-details ${expandedCert === index ? "show" : ""}`}>
+                <div className="skills-acquired">
+                  <h4>Skills Acquired:</h4>
+                  <div className="skill-tags">
+                    {cert.skills.map((skill, i) => (
+                      <span key={i} className="skill-tag">{skill}</span>
+                    ))}
+                  </div>
+                </div>
+
+                <a
+                  href={cert.verifyUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="verify-btn"
+                >
+                  <FaExternalLinkAlt className="mr-2 inline" /> Verify Credential
+                </a>
+              </div>
+            </div>
+          ))}
+        </div>
+
         {filteredCerts.length > 6 && (
-          <div className="text-center mt-5">
+          <div className="text-center mt-12">
             <button className="btn-show-more" onClick={toggleShowAll}>
               {showAll ? (
-                <><FaMinus className="me-2" /> Show Less</>
+                <><FaMinus className="mr-2 inline" /> Show Less</>
               ) : (
-                <><FaPlus className="me-2" /> Show More ({filteredCerts.length - 6} more)</>
+                <><FaPlus className="mr-2 inline" /> Show More ({filteredCerts.length - 6} more)</>
               )}
             </button>
           </div>
         )}
-      </Container>
+      </div>
 
       {/* Full Certificate Modal */}
       {modalOpen && currentCert && (
@@ -507,7 +502,7 @@ const Certifications = () => {
               <p>Issued by: {currentCert.authority}</p>
               <p>Date: {currentCert.date}</p>
               <a href={currentCert.verifyUrl} target="_blank" rel="noopener noreferrer" className="verify-btn">
-                <FaExternalLinkAlt className="me-2" /> Verify Credential
+                <FaExternalLinkAlt className="mr-2 inline" /> Verify Credential
               </a>
             </div>
           </div>

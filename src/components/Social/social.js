@@ -1,6 +1,5 @@
 // src/components/Social.js
 import React, { useRef, useEffect, useState } from "react";
-import { Container } from "react-bootstrap";
 import {
   SiGmail,
   SiLeetcode,
@@ -10,7 +9,6 @@ import {
   SiStackoverflow,
 } from "react-icons/si";
 import { FaXTwitter } from "react-icons/fa6";
-
 import {
   FaGithub,
   FaLinkedinIn,
@@ -140,11 +138,11 @@ const Social = () => {
   return (
     <section
       id="social"
-      className={`social-section py-5 ${inView ? "in-view" : ""}`}
+      className={`social-section py-20 ${inView ? "in-view" : ""}`}
       ref={sectionRef}
     >
-      <Container>
-        <div className="section-header mb-5">
+      <div className="max-w-7xl mx-auto px-4">
+        <div className="section-header mb-12 text-center">
           <h2 className="section-title">Connect With Me</h2>
           <div className="section-divider"></div>
           <p className="section-subtitle text-center mt-4">
@@ -165,7 +163,9 @@ const Social = () => {
                 "--icon-color": social.color,
                 animationDelay: `${index * 0.08}s`,
                 opacity: inView ? 1 : 0,
-                transform: inView ? "translateY(0) scale(1)" : "translateY(40px) scale(0.9)",
+                transform: inView
+                  ? "translateY(0) scale(1)"
+                  : "translateY(40px) scale(0.9)",
               }}
             >
               <div className="social-icon-wrapper">
@@ -179,7 +179,7 @@ const Social = () => {
             </a>
           ))}
         </div>
-      </Container>
+      </div>
     </section>
   );
 };

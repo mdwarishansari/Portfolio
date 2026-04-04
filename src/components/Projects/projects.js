@@ -1,6 +1,5 @@
 // src/components/Projects.js
 import React, { useState, useRef, useEffect } from "react";
-import { Container, Row, Col } from "react-bootstrap";
 import {
   FaGithub,
   FaExternalLinkAlt,
@@ -12,7 +11,6 @@ import {
 import "./projects.css";
 
 // imgs
-
 import moviesvibe from "./cover_img/moviesvibe.png";
 import cartnest from "./cover_img/cartnest.png";
 import blueblog from "./cover_img/blueblog.png";
@@ -76,14 +74,13 @@ const Projects = () => {
       category: "major",
       emoji: "🚀",
     },
-
     {
       id: 2,
       title: "CartNest",
       subtitle: "Multi-Vendor E-Commerce Marketplace",
       description:
-  "Built a scalable multi-vendor marketplace with role-based dashboards, Razorpay payment integration, and real-time order management.",
-  longDescription:
+        "Built a scalable multi-vendor marketplace with role-based dashboards, Razorpay payment integration, and real-time order management.",
+      longDescription:
         "CartNest is a full-stack multi-vendor e-commerce marketplace built using MERN stack with advanced production-level features. It supports multiple user roles (Customer, Seller, Admin, Verifier), secure authentication via Firebase + JWT, Razorpay payment integration, Cloudinary image uploads, and Redis-based stock locking. The platform includes real-time order management, seller dashboards, product verification workflows, and admin-level control over the entire system. Designed with scalability, security, and real-world business logic in mind.",
       skills: [
         "MongoDB",
@@ -129,24 +126,20 @@ const Projects = () => {
   ];
 
   const sortedProjects = [...projects].sort((a, b) => b.id - a.id);
-
   const filteredProjects =
     activeCategory === "all"
       ? sortedProjects
       : sortedProjects.filter((project) => project.category === activeCategory);
-
-  const displayedProjects = showAll
-    ? filteredProjects
-    : filteredProjects.slice(0, 4);
+  const displayedProjects = showAll ? filteredProjects : filteredProjects.slice(0, 4);
 
   return (
     <section
       id="projects"
-      className={`projects-section py-5 ${inView ? "in-view" : ""}`}
+      className={`projects-section py-20 ${inView ? "in-view" : ""}`}
       ref={sectionRef}
     >
-      <Container>
-        <div className="section-header mb-5">
+      <div className="section-container">
+        <div className="section-header mb-12 text-center">
           <h2 className="section-title">Projects</h2>
           <div className="section-divider"></div>
           <p className="section-subtitle text-center mt-4">
@@ -155,7 +148,7 @@ const Projects = () => {
         </div>
 
         {/* Category Tabs */}
-        <div className="project-tabs mb-5">
+        <div className="project-tabs mb-10">
           {categories.map((category) => (
             <button
               key={category.id}
@@ -166,147 +159,143 @@ const Projects = () => {
                 setExpandedProject(null);
               }}
             >
-              <i className={`bi ${category.icon} me-2`}></i>
+              <i className={`bi ${category.icon} mr-2`}></i>
               {category.label}
             </button>
           ))}
         </div>
 
-        <Row className="g-4 justify-content-center">
+        {/* Projects Grid */}
+        <div className="projects-grid">
           {displayedProjects.map((project, index) => (
-            <Col key={project.id} lg={6} className="project-col">
-              <div
-                className={`project-card ${expandedProject === project.id ? "expanded" : ""} ${project.category === "major" ? "major-project" : ""}`}
-                onClick={() => toggleProject(project.id)}
-                style={{
-                  animationDelay: `${index * 0.1}s`,
-                }}
-              >
-                {/* Glow Effect for Major */}
-                {project.category === "major" && (
-                  <div className="major-glow"></div>
-                )}
+            <div
+              key={project.id}
+              className={`project-card w-full ${expandedProject === project.id ? "expanded" : ""} ${project.category === "major" ? "major-project" : ""}`}
+              onClick={() => toggleProject(project.id)}
+              style={{ animationDelay: `${index * 0.1}s` }}
+            >
+              {/* Glow Effect for Major */}
+              {project.category === "major" && (
+                <div className="major-glow"></div>
+              )}
 
-                <div className="project-image-wrapper">
-                  <img
-                    src={project.image}
-                    alt={project.title}
-                    className="project-image"
-                  />
-                  <div className="project-overlay">
-                    <span className="project-emoji">{project.emoji}</span>
+              <div className="project-image-wrapper">
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className="project-image"
+                />
+                <div className="project-overlay">
+                  <span className="project-emoji">{project.emoji}</span>
+                </div>
+                <div className="project-date-badge">
+                  <FaRegCalendarAlt className="mr-1 inline" /> {project.date}
+                </div>
+                {project.category === "major" && (
+                  <div className="major-badge">
+                    <FaStar className="mr-1 inline" /> Featured
                   </div>
-                  <div className="project-date-badge">
-                    <FaRegCalendarAlt className="me-1" /> {project.date}
+                )}
+              </div>
+
+              <div className="project-info">
+                <div className="project-header">
+                  <div>
+                    <h3 className="project-title">
+                      {project.emoji} {project.title}
+                    </h3>
+                    <p className="project-subtitle">{project.subtitle}</p>
                   </div>
-                  {project.category === "major" && (
-                    <div className="major-badge">
-                      <FaStar className="me-1" /> Featured
-                    </div>
+                  <button className="expand-toggle">
+                    {expandedProject === project.id ? (
+                      <FaChevronUp />
+                    ) : (
+                      <FaChevronDown />
+                    )}
+                  </button>
+                </div>
+
+                <p className="project-description">{project.description}</p>
+
+                <div className="project-tech">
+                  {project.skills.slice(0, 4).map((skill, i) => (
+                    <span key={i} className="tech-tag">
+                      {skill}
+                    </span>
+                  ))}
+                  {project.skills.length > 4 && (
+                    <span className="tech-tag more">
+                      +{project.skills.length - 4}
+                    </span>
                   )}
                 </div>
 
-                <div className="project-info">
-                  <div className="project-header">
-                    <div>
-                      <h3 className="project-title">
-                        {project.emoji} {project.title}
-                      </h3>
-                      <p className="project-subtitle">{project.subtitle}</p>
+                <div
+                  className={`project-expanded ${expandedProject === project.id ? "show" : ""}`}
+                >
+                  <p className="project-long-desc">{project.longDescription}</p>
+
+                  <div className="all-tech">
+                    <h5>All Technologies</h5>
+                    <div className="tech-list">
+                      {project.skills.map((skill, i) => (
+                        <span key={i} className="tech-chip">
+                          {skill}
+                        </span>
+                      ))}
                     </div>
-                    <button className="expand-toggle">
-                      {expandedProject === project.id ? (
-                        <FaChevronUp />
-                      ) : (
-                        <FaChevronDown />
-                      )}
-                    </button>
                   </div>
 
-                  <p className="project-description">{project.description}</p>
-
-                  <div className="project-tech">
-                    {project.skills.slice(0, 4).map((skill, i) => (
-                      <span key={i} className="tech-tag">
-                        {skill}
-                      </span>
-                    ))}
-                    {project.skills.length > 4 && (
-                      <span className="tech-tag more">
-                        +{project.skills.length - 4}
-                      </span>
+                  <div className="project-actions">
+                    {project.githubLink && (
+                      <a
+                        href={project.githubLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="action-btn github-btn"
+                        onClick={(e) => e.stopPropagation()}
+                      >
+                        <FaGithub /> Code
+                      </a>
                     )}
-                  </div>
-
-                  <div
-                    className={`project-expanded ${expandedProject === project.id ? "show" : ""}`}
-                  >
-                    <p className="project-long-desc">
-                      {project.longDescription}
-                    </p>
-
-                    <div className="all-tech">
-                      <h5>All Technologies</h5>
-                      <div className="tech-list">
-                        {project.skills.map((skill, i) => (
-                          <span key={i} className="tech-chip">
-                            {skill}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
-
-                    <div className="project-actions">
-                      {project.githubLink && (
-                        <a
-                          href={project.githubLink}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="action-btn github-btn"
-                          onClick={(e) => e.stopPropagation()}
-                        >
-                          <FaGithub /> Code
-                        </a>
-                      )}
-                      {project.projectLink && (
-                        <a
-                          href={project.projectLink}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="action-btn live-btn"
-                          onClick={(e) => e.stopPropagation()}
-                        >
-                          <FaExternalLinkAlt /> Live Demo
-                        </a>
-                      )}
-                    </div>
+                    {project.projectLink && (
+                      <a
+                        href={project.projectLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="action-btn live-btn"
+                        onClick={(e) => e.stopPropagation()}
+                      >
+                        <FaExternalLinkAlt /> Live Demo
+                      </a>
+                    )}
                   </div>
                 </div>
               </div>
-            </Col>
+            </div>
           ))}
-        </Row>
+        </div>
 
         {filteredProjects.length > 4 && (
-          <div className="text-center mt-5">
+          <div className="text-center mt-12">
             <button
               onClick={() => setShowAll(!showAll)}
               className="btn-show-more"
             >
               {showAll ? (
                 <>
-                  <FaChevronUp className="me-2" /> Show Less
+                  <FaChevronUp className="mr-2 inline" /> Show Less
                 </>
               ) : (
                 <>
-                  <FaChevronDown className="me-2" /> Show More (
+                  <FaChevronDown className="mr-2 inline" /> Show More (
                   {filteredProjects.length - 4} more)
                 </>
               )}
             </button>
           </div>
         )}
-      </Container>
+      </div>
     </section>
   );
 };

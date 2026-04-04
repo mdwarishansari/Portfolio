@@ -1,5 +1,4 @@
 import React from "react";
-import { Container, Row, Col, Button } from "react-bootstrap";
 import {
   BiHeart,
   BiCopyright,
@@ -8,12 +7,12 @@ import {
   BiCodeAlt,
   BiCoffee,
 } from "react-icons/bi";
+import GradientButton from "../common/GradientButton";
 import "./footer.css";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
-  // Use the same function as the navbar
   const handleHireMe = () => {
     const subject = encodeURIComponent("Hire from Portfolio");
     const body = encodeURIComponent(
@@ -23,148 +22,114 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-black text-white py-5 position-relative overflow-hidden">
-      {/* Removed problematic circles - replaced with CSS-only solution */}
-
-      <Container className="position-relative">
-        <Row className="g-4">
+    <footer className="bg-black text-white py-20 relative overflow-hidden">
+      <div className="max-w-7xl mx-auto px-4 relative">
+        {/* 3-column grid */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
           {/* Contact Information */}
-          <Col md={4} className="pe-lg-5">
-            <h4 className="text-primary mb-4">Get In Touch</h4>
-            <div className="d-flex mb-3">
-              <BiEnvelope className="text-primary fs-5 me-3 mt-1" />
+          <div className="md:pr-8">
+            <h4 className="text-blue-400 text-xl font-bold mb-6">Get In Touch</h4>
+            <div className="flex mb-4">
+              <BiEnvelope className="text-blue-400 text-xl mr-3 mt-1 shrink-0" />
               <div>
-                <p className="mb-0">Email</p>
+                <p className="mb-0 text-gray-400 text-sm">Email</p>
                 <a
                   href="mailto:warishansari018@gmail.com"
-                  className="text-white text-decoration-none"
+                  className="text-white hover:text-blue-400 transition-colors no-underline text-sm"
                 >
                   warishansari018@gmail.com
                 </a>
               </div>
             </div>
-            <div className="d-flex">
-              <BiMap className="text-primary fs-5 me-3 mt-1" />
+            <div className="flex mb-6">
+              <BiMap className="text-blue-400 text-xl mr-3 mt-1 shrink-0" />
               <div>
-                <p className="mb-0">Location</p>
-                <p className="text-white mb-0">Ranchi Jharkhand, India</p>
+                <p className="mb-0 text-gray-400 text-sm">Location</p>
+                <p className="text-white mb-0 text-sm">Ranchi Jharkhand, India</p>
               </div>
             </div>
 
-            <Button
-              variant="outline-primary"
-              className="mt-4 d-flex align-items-center"
+            <GradientButton
+              variant="outline"
               onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
             >
-              Back to Top
-            </Button>
-          </Col>
+              ↑ Back to Top
+            </GradientButton>
+          </div>
 
           {/* Development Stats */}
-          <Col md={4}>
-            <h4 className="text-primary mb-4">Development Journey</h4>
-            <div className="mb-4">
-              <div className="d-flex justify-content-between mb-2">
-                <span>Coding Hours</span>
-                <span>5,000+</span>
-              </div>
-              <div className="progress bg-dark" style={{ height: "8px" }}>
-                <div
-                  className="progress-bar bg-primary"
-                  role="progressbar"
-                  style={{ width: "75%" }}
-                ></div>
-              </div>
-            </div>
+          <div>
+            <h4 className="text-blue-400 text-xl font-bold mb-6">Development Journey</h4>
 
-            <div className="mb-4">
-              <div className="d-flex justify-content-between mb-2">
-                <span>Projects Completed</span>
-                <span>5+</span>
+            {[
+              { label: "Coding Hours", value: "5,000+", width: "75%" },
+              { label: "Projects Completed", value: "5+", width: "55%" },
+              { label: "Technologies Mastered", value: "30+", width: "75%" },
+            ].map((stat) => (
+              <div key={stat.label} className="mb-5">
+                <div className="flex justify-between mb-2 text-sm">
+                  <span className="text-gray-300">{stat.label}</span>
+                  <span className="text-white font-semibold">{stat.value}</span>
+                </div>
+                <div className="footer-progress-track">
+                  <div
+                    className="footer-progress-bar"
+                    style={{ width: stat.width }}
+                  ></div>
+                </div>
               </div>
-              <div className="progress bg-dark" style={{ height: "8px" }}>
-                <div
-                  className="progress-bar bg-primary"
-                  role="progressbar"
-                  style={{ width: "55%" }}
-                ></div>
-              </div>
-            </div>
+            ))}
 
-            <div className="mb-4">
-              <div className="d-flex justify-content-between mb-2">
-                <span>Technologies Mastered</span>
-                <span>30+</span>
-              </div>
-              <div className="progress bg-dark" style={{ height: "8px" }}>
-                <div
-                  className="progress-bar bg-primary"
-                  role="progressbar"
-                  style={{ width: "75%" }}
-                ></div>
-              </div>
+            <div className="flex items-center text-gray-400 mt-5">
+              <BiCoffee className="text-blue-400 mr-2 text-2xl" />
+              <span className="text-sm">Fueled by countless cups of coffee</span>
             </div>
-
-            <div className="d-flex align-items-center text-light mt-4">
-              <BiCoffee className="text-primary me-2 fs-4" />
-              <span className="small">Fueled by countless cups of coffee</span>
-            </div>
-          </Col>
+          </div>
 
           {/* Coding Philosophy */}
-          <Col md={4}>
-            <div className="border-start border-primary ps-4 h-100">
-              <h4 className="text-primary mb-4">Development Philosophy</h4>
-              <blockquote className="fst-italic text-light mb-4">
-                "Clean code is not just efficient, it's an art form that
-                communicates ideas beyond functionality."
-              </blockquote>
+          <div className="border-l border-blue-800 pl-8">
+            <h4 className="text-blue-400 text-xl font-bold mb-6">Development Philosophy</h4>
+            <blockquote className="italic text-gray-300 mb-6 leading-relaxed">
+              "Clean code is not just efficient, it's an art form that
+              communicates ideas beyond functionality."
+            </blockquote>
 
-              <div className="d-flex align-items-center mb-4">
-                <BiCodeAlt className="text-primary fs-1 me-3" />
-                <p className="mb-0 text-light">
-                  Every line of code tells a story of problem-solving and
-                  innovation
-                </p>
-              </div>
-
-              {/* Use the same hire button as navbar */}
-              <Button
-                variant="primary"
-                className="w-100 d-flex align-items-center justify-content-center mt-4 hire-btn"
-                onClick={handleHireMe}
-              >
-                <BiEnvelope className="me-2" />
-                Hire Me
-              </Button>
+            <div className="flex items-center mb-6">
+              <BiCodeAlt className="text-blue-400 text-4xl mr-3 shrink-0" />
+              <p className="mb-0 text-gray-300 text-sm">
+                Every line of code tells a story of problem-solving and innovation
+              </p>
             </div>
-          </Col>
-        </Row>
 
-        {/* Copyright with Spline credit */}
-        <Row className="mt-5 pt-3 border-top border-secondary">
-          <Col className="text-center">
-            <p className="mb-0 d-flex align-items-center justify-content-center">
-              <BiCopyright className="me-2" />
-              {currentYear}&nbsp;
-              <span className="text-primary">Md Warish Ansari</span>.&nbsp;All
-              rights reserved
-            </p>
-            <p className="mb-0 mt-2">
-              Crafted with <BiHeart className="text-danger mx-1" /> using React,
-              Bootstrap & {" "}
-              <a
-                href="https://app.spline.design/community/file/8cfb6748-f3dd-44dd-89fb-f46c7ab4186e"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-light"
-              >
-                Spline
-              </a>
-            </p>
-          </Col>
-        </Row>
-      </Container>
+            <GradientButton onClick={handleHireMe} className="w-full justify-center">
+              <BiEnvelope className="mr-2" />
+              Hire Me
+            </GradientButton>
+          </div>
+        </div>
+
+        {/* Copyright row */}
+        <div className="mt-12 pt-6 border-t border-gray-800 text-center">
+          <p className="mb-1 flex items-center justify-center text-gray-400 text-sm">
+            <BiCopyright className="mr-2" />
+            {currentYear}&nbsp;
+            <span className="text-blue-400 font-semibold">Md Warish Ansari</span>.&nbsp;All
+            rights reserved
+          </p>
+          <p className="mb-0 text-gray-500 text-sm">
+            Crafted with <BiHeart className="text-red-500 mx-1 inline" /> using React,
+            Tailwind CSS &amp;{" "}
+            <a
+              href="https://app.spline.design/community/file/8cfb6748-f3dd-44dd-89fb-f46c7ab4186e"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-400 hover:text-white transition-colors"
+            >
+              Spline
+            </a>
+          </p>
+        </div>
+      </div>
     </footer>
   );
 };

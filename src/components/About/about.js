@@ -1,12 +1,10 @@
 import React, { useEffect } from "react";
-import { Container, Row, Col, Button } from "react-bootstrap";
+import GradientButton from "../common/GradientButton";
 import "./about.css";
-// import profileImage from "./img/dp.jpeg"; // Import your profile image
 import profileGif from "./img/DP.gif";
 
 const About = () => {
   useEffect(() => {
-    // Initialize animation effects
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -29,22 +27,18 @@ const About = () => {
 
   return (
     <section id="about" className="about-section">
-      <Container>
-        <Row className="align-items-center">
-          <Col lg={6} className="about-photo-col">
+      <div className="section-container">
+        <div className="section-row">
+          {/* Photo Column */}
+          <div className="about-photo-col section-col">
             <div className="about-photo-container">
               <div className="photo-frame">
                 <div className="photo-img">
-                  {/* <div
-                    className="profile-image"
-                    style={{ backgroundImage: `url(${profileImage})` }}
-                  ></div> */}
                   <img
-  src={profileGif}
-  alt="Warish animated"
-  className="profile-image"
-/>
-
+                    src={profileGif}
+                    alt="Warish animated"
+                    className="profile-image"
+                  />
                   <div className="decoration-circle blue"></div>
                   <div className="decoration-circle purple"></div>
                   <div className="decoration-ring"></div>
@@ -55,9 +49,10 @@ const About = () => {
                 </div>
               </div>
             </div>
-          </Col>
+          </div>
 
-          <Col lg={6} className="about-content">
+          {/* Content Column */}
+          <div className="about-content section-col">
             <div className="content-wrapper">
               <div className="greeting-text">Hello!</div>
               <h1 className="name-title">
@@ -65,23 +60,30 @@ const About = () => {
               </h1>
 
               <p className="about-text">
-                I’m a B.Tech Computer Science student specializing in Full Stack Development with the MERN stack. I focus on building scalable, responsive, and performance-driven web applications using modern technologies. Alongside web development, I’m actively strengthening my foundations in machine learning with the goal of integrating intelligent systems into real-world applications. My approach is practical — build meaningful projects, solve real problems, and continuously improve through hands-on experience.
+                I'm a B.Tech Computer Science student specializing in Full Stack
+                Development with the MERN stack. I focus on building scalable,
+                responsive, and performance-driven web applications using modern
+                technologies. Alongside web development, I'm actively
+                strengthening my foundations in machine learning with the goal
+                of integrating intelligent systems into real-world applications.
+                My approach is practical — build meaningful projects, solve real
+                problems, and continuously improve through hands-on experience.
               </p>
 
               <div className="cta-container">
-                <Button
+                <GradientButton
                   href="https://drive.google.com/drive/folders/1oAuFxm0ZOHpSErySDUs6sjHubDo0Wxi-?usp=sharing"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="view-resume-btn"
                 >
-                  <i className="bi bi-file-earmark-pdf me-2"></i>
+                  <i className="bi bi-file-earmark-pdf mr-2"></i>
                   View Resume
-                </Button>
-                <Button variant="outline-primary" href="#projects">
-                  <i className="bi bi-code-slash me-2"></i>
+                </GradientButton>
+                <GradientButton variant="outline" href="#projects">
+                  <i className="bi bi-code-slash mr-2"></i>
                   See What I've Built
-                </Button>
+                </GradientButton>
               </div>
 
               <div className="experience-container">
@@ -116,9 +118,9 @@ const About = () => {
                 </div>
               </div>
             </div>
-          </Col>
-        </Row>
-      </Container>
+          </div>
+        </div>
+      </div>
     </section>
   );
 };
