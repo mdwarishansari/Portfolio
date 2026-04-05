@@ -63,7 +63,7 @@ const Footer = () => {
 
             {[
               { label: "Coding Hours", value: "5,000+", width: "75%" },
-              { label: "Projects Completed", value: "5+", width: "55%" },
+              { label: "Projects Completed", value: "3+", width: "55%" },
               { label: "Technologies Mastered", value: "30+", width: "75%" },
             ].map((stat) => (
               <div key={stat.label} className="mb-5">

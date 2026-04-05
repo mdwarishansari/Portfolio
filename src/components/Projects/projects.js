@@ -223,7 +223,7 @@ const Projects = () => {
                       {skill}
                     </span>
                   ))}
-                  {project.skills.length > 4 && (
+                  {project.skills.length > 5 && (
                     <span className="tech-tag more">
                       +{project.skills.length - 4}
                     </span>
