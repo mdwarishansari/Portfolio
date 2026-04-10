@@ -89,7 +89,7 @@ const Footer = () => {
           {/* Coding Philosophy */}
           <div className="border-l border-blue-800 pl-8">
             <h4 className="text-blue-400 text-xl font-bold mb-6">Development Philosophy</h4>
-            <blockquote className="italic text-gray-300 mb-6 leading-relaxed">
+            <blockquote className="italic text-gray-300 mb-6 leading-relaxed text-sm md:text-base">
               "Clean code is not just efficient, it's an art form that
               communicates ideas beyond functionality."
             </blockquote>
