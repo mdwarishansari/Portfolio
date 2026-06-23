@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import GradientButton from "../common/GradientButton";
 import "./navbar.css";
+import { personal } from "../../data/personal";
+import { socials } from "../../data/socials";
 
 const CustomNavbar = () => {
   const [activeSection, setActiveSection] = useState("hero");
@@ -12,7 +14,7 @@ const CustomNavbar = () => {
     const body = encodeURIComponent(
       "Hii Warish,\n\nI want to hire you and discuss potential opportunities.",
     );
-    window.location.href = `https://mail.google.com/mail/?view=cm&to=warishansari018@gmail.com&su=${subject}&body=${body}`;
+    window.location.href = `https://mail.google.com/mail/?view=cm&to=${socials.email}&su=${subject}&body=${body}`;
   };
 
   useEffect(() => {
@@ -40,16 +42,6 @@ const CustomNavbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const navItems = [
-    { id: "hero",           icon: "bi-house-door",     label: "Home" },
-    { id: "about",          icon: "bi-person",          label: "About" },
-    { id: "skills",         icon: "bi-tools",           label: "Skills" },
-    { id: "projects",       icon: "bi-rocket-takeoff",  label: "Projects" },
-    { id: "certifications", icon: "bi-award",           label: "Certs" },
-    { id: "experience",     icon: "bi-briefcase",       label: "Experience" },
-    { id: "social",         icon: "bi-person-plus",     label: "Social" },
-  ];
-
   return (
     <nav className={`custom-navbar ${scrolled ? "scrolled" : ""}`}>
       <div className="navbar-inner">
@@ -61,7 +53,7 @@ const CustomNavbar = () => {
 
         {/* Desktop Nav Links */}
         <div className="nav-desktop">
-          {navItems.map((item) => (
+          {personal.navItems.map((item) => (
             <a
               key={item.id}
               href={`#${item.id}`}
@@ -97,7 +89,7 @@ const CustomNavbar = () => {
 
       {/* Mobile Menu */}
       <div className={`mobile-menu ${menuOpen ? "open" : ""}`}>
-        {navItems.map((item) => (
+        {personal.navItems.map((item) => (
           <a
             key={item.id}
             href={`#${item.id}`}

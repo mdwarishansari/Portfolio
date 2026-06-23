@@ -9,6 +9,8 @@ import {
 } from "react-icons/bi";
 import GradientButton from "../common/GradientButton";
 import "./footer.css";
+import { personal } from "../../data/personal";
+import { socials } from "../../data/socials";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -18,7 +20,7 @@ const Footer = () => {
     const body = encodeURIComponent(
       "Hii Warish,\n\nI want to hire you and discuss potential opportunities."
     );
-    window.location.href = `https://mail.google.com/mail/?view=cm&to=warishansari018@gmail.com&su=${subject}&body=${body}`;
+    window.location.href = `https://mail.google.com/mail/?view=cm&to=${socials.email}&su=${subject}&body=${body}`;
   };
 
   return (
@@ -34,10 +36,10 @@ const Footer = () => {
               <div>
                 <p className="mb-0 text-gray-400 text-sm">Email</p>
                 <a
-                  href="mailto:warishansari018@gmail.com"
+                  href={`mailto:${socials.email}`}
                   className="text-white hover:text-blue-400 transition-colors no-underline text-sm"
                 >
-                  warishansari018@gmail.com
+                  {socials.email}
                 </a>
               </div>
             </div>
@@ -45,7 +47,7 @@ const Footer = () => {
               <BiMap className="text-blue-400 text-xl mr-3 mt-1 shrink-0" />
               <div>
                 <p className="mb-0 text-gray-400 text-sm">Location</p>
-                <p className="text-white mb-0 text-sm">Ranchi Jharkhand, India</p>
+                <p className="text-white mb-0 text-sm">{personal.location}</p>
               </div>
             </div>
 
@@ -61,11 +63,7 @@ const Footer = () => {
           <div>
             <h4 className="text-blue-400 text-xl font-bold mb-6">Development Journey</h4>
 
-            {[
-              { label: "Coding Hours", value: "5,000+", width: "75%" },
-              { label: "Projects Completed", value: "3+", width: "55%" },
-              { label: "Technologies Mastered", value: "30+", width: "75%" },
-            ].map((stat) => (
+            {personal.footer.stats.map((stat) => (
               <div key={stat.label} className="mb-5">
                 <div className="flex justify-between mb-2 text-sm">
                   <span className="text-gray-300">{stat.label}</span>
@@ -90,14 +88,13 @@ const Footer = () => {
           <div className="border-l border-blue-800 pl-8">
             <h4 className="text-blue-400 text-xl font-bold mb-6">Development Philosophy</h4>
             <blockquote className="italic text-gray-300 mb-6 leading-relaxed text-sm md:text-base">
-              "Clean code is not just efficient, it's an art form that
-              communicates ideas beyond functionality."
+              "{personal.footer.philosophy}"
             </blockquote>
 
             <div className="flex items-center mb-6">
               <BiCodeAlt className="text-blue-400 text-4xl mr-3 shrink-0" />
               <p className="mb-0 text-gray-300 text-sm">
-                Every line of code tells a story of problem-solving and innovation
+                {personal.footer.philosophySub}
               </p>
             </div>
 
@@ -113,14 +110,14 @@ const Footer = () => {
           <p className="mb-1 flex items-center justify-center text-gray-400 text-sm">
             <BiCopyright className="mr-2" />
             {currentYear}&nbsp;
-            <span className="text-blue-400 font-semibold">Md Warish Ansari</span>.&nbsp;All
+            <span className="text-blue-400 font-semibold">{personal.copyrightName}</span>.&nbsp;All
             rights reserved
           </p>
           <p className="mb-0 text-gray-500 text-sm">
             Crafted with <BiHeart className="text-red-500 mx-1 inline" /> using React,
             Tailwind CSS &amp;{" "}
             <a
-              href="https://app.spline.design/community/file/8cfb6748-f3dd-44dd-89fb-f46c7ab4186e"
+              href={personal.footer.splineLink}
               target="_blank"
               rel="noopener noreferrer"
               className="text-gray-400 hover:text-white transition-colors"

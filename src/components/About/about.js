@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import GradientButton from "../common/GradientButton";
 import "./about.css";
-import profileGif from "./img/DP.gif";
+import { personal } from "../../data/personal";
 
 const About = () => {
   useEffect(() => {
@@ -35,7 +35,7 @@ const About = () => {
               <div className="photo-frame">
                 <div className="photo-img">
                   <img
-                    src={profileGif}
+                    src={personal.about.profileImage}
                     alt="Warish animated"
                     className="profile-image"
                   />
@@ -54,25 +54,18 @@ const About = () => {
           {/* Content Column */}
           <div className="about-content section-col">
             <div className="content-wrapper">
-              <div className="greeting-text">Hello!</div>
+              <div className="greeting-text">{personal.about.greeting}</div>
               <h1 className="name-title">
-                I am <span className="highlight">Mohammad Warish Ansari</span>
+                I am <span className="highlight">{personal.name}</span>
               </h1>
 
               <p className="about-text">
-                I'm a B.Tech Computer Science student specializing in Full Stack
-                Development with the MERN stack. I focus on building scalable,
-                responsive, and performance-driven web applications using modern
-                technologies. Alongside web development, I'm actively
-                strengthening my foundations in machine learning with the goal
-                of integrating intelligent systems into real-world applications.
-                My approach is practical — build meaningful projects, solve real
-                problems, and continuously improve through hands-on experience.
+                {personal.about.description}
               </p>
 
               <div className="cta-container">
                 <GradientButton
-                  href="https://drive.google.com/drive/folders/1oAuFxm0ZOHpSErySDUs6sjHubDo0Wxi-?usp=sharing"
+                  href={personal.resumeLink}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="view-resume-btn"
@@ -87,35 +80,17 @@ const About = () => {
               </div>
 
               <div className="experience-container">
-                <div className="experience-item">
-                  <div className="exp-icon">
-                    <i className="bi bi-code-square"></i>
+                {personal.about.stats.map((stat) => (
+                  <div key={stat.id} className="experience-item">
+                    <div className="exp-icon">
+                      <i className={`bi ${stat.icon}`}></i>
+                    </div>
+                    <div className="exp-details">
+                      <div className="exp-count">{stat.count}</div>
+                      <div className="exp-title">{stat.title}</div>
+                    </div>
                   </div>
-                  <div className="exp-details">
-                    <div className="exp-count">5+</div>
-                    <div className="exp-title">Projects</div>
-                  </div>
-                </div>
-
-                <div className="experience-item">
-                  <div className="exp-icon">
-                    <i className="bi bi-lightning-charge"></i>
-                  </div>
-                  <div className="exp-details">
-                    <div className="exp-count">4+</div>
-                    <div className="exp-title">Internships</div>
-                  </div>
-                </div>
-
-                <div className="experience-item">
-                  <div className="exp-icon">
-                    <i className="bi bi-award"></i>
-                  </div>
-                  <div className="exp-details">
-                    <div className="exp-count">20+</div>
-                    <div className="exp-title">Certifications</div>
-                  </div>
-                </div>
+                ))}
               </div>
             </div>
           </div>

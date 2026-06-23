@@ -3,6 +3,8 @@ import { TypeAnimation } from "react-type-animation";
 import GradientButton from "../common/GradientButton";
 import "./hero.css";
 import Spline from "@splinetool/react-spline";
+import { personal } from "../../data/personal";
+import { socials } from "../../data/socials";
 
 const Hero = () => {
   const [showRoleAnimation, setShowRoleAnimation] = useState(false);
@@ -13,7 +15,7 @@ const Hero = () => {
     const body = encodeURIComponent(
       "Hii Warish,\n\nI want to hire you and discuss potential opportunities."
     );
-    window.location.href = `https://mail.google.com/mail/?view=cm&to=warishansari018@gmail.com&su=${subject}&body=${body}`;
+    window.location.href = `https://mail.google.com/mail/?view=cm&to=${socials.email}&su=${subject}&body=${body}`;
   };
 
   useEffect(() => {
@@ -24,22 +26,21 @@ const Hero = () => {
     }
   }, [showRoleAnimation]);
 
+  const introSequence = [
+    ...personal.hero.typeSequencePrefix,
+    () => setShowRoleAnimation(true),
+  ];
+
   return (
     <section id="hero" className="py-20">
       <div className="section-container">
         <div className="hero-inner-row">
           {/* Text Content */}
           <div className="hero-text">
-            <h2 className="text-blue-400 text-2xl font-semibold mb-0">Hello!</h2>
+            <h2 className="text-blue-400 text-2xl font-semibold mb-0">{personal.hero.greeting}</h2>
             <h1 className="text-4xl lg:text-6xl font-bold text-white mt-0 leading-tight">
               <TypeAnimation
-                sequence={[
-                  "I",
-                  500,
-                  "I am",
-                  1000,
-                  () => setShowRoleAnimation(true),
-                ]}
+                sequence={introSequence}
                 wrapper="span"
                 speed={30}
                 style={{ display: "inline-block", color: "#ffffff" }}
@@ -50,19 +51,7 @@ const Hero = () => {
                 <>
                   <br />
                   <TypeAnimation
-                    sequence={[
-                      "MERN Stack Developer",
-                      1500,
-                      "Web Developer",
-                      1500,
-                      "CSE Student",
-                      1500,
-                      "Full Stack Learner",
-                      1500,
-                      "AI Enthusiast",
-                      1500,
-                      "Mohammad Warish Ansari",
-                    ]}
+                    sequence={personal.hero.roles}
                     wrapper="span"
                     speed={30}
                     deletionSpeed={70}
@@ -82,11 +71,12 @@ const Hero = () => {
             </h1>
 
             <p className="text-gray-300 text-lg mb-8 leading-relaxed">
-              Full Stack Developer <br />
-              Cloud &amp; DevOps Certified <br />
-              Problem Solver <br />
-              AI-Focused Engineer <br />
-              Specialized in MERN Stack Development
+              {personal.hero.highlights.map((highlight, index) => (
+                <React.Fragment key={index}>
+                  {highlight}
+                  {index < personal.hero.highlights.length - 1 && <br />}
+                </React.Fragment>
+              ))}
             </p>
 
             <div className="hero-buttons">
@@ -106,7 +96,7 @@ const Hero = () => {
           <div className="spline-col">
             <div className="spline-container">
               <Spline
-                scene="https://prod.spline.design/9jQjS9lHCqJMjgSL/scene.splinecode"
+                scene={personal.hero.splineScene}
                 className="spline-scene"
                 style={{
                   position: "absolute",
