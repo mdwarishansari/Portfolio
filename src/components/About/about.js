@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import GradientButton from "../common/GradientButton";
 import "./about.css";
 import { personal } from "../../data/personal";
+import { siteContent } from "../../data/siteContent";
 
 const About = () => {
   useEffect(() => {
@@ -35,8 +36,8 @@ const About = () => {
               <div className="photo-frame">
                 <div className="photo-img">
                   <img
-                    src={personal.about.profileImage}
-                    alt="Warish animated"
+                    src={siteContent.about.profileImage}
+                    alt={siteContent.about.imageAlt}
                     className="profile-image"
                   />
                   <div className="decoration-circle blue"></div>
@@ -54,13 +55,13 @@ const About = () => {
           {/* Content Column */}
           <div className="about-content section-col">
             <div className="content-wrapper">
-              <div className="greeting-text">{personal.about.greeting}</div>
+              <div className="greeting-text">{siteContent.about.greeting}</div>
               <h1 className="name-title">
-                I am <span className="highlight">{personal.name}</span>
+                {siteContent.about.titlePrefix} <span className="highlight">{personal.name}</span>
               </h1>
 
               <p className="about-text">
-                {personal.about.description}
+                {siteContent.about.description}
               </p>
 
               <div className="cta-container">
@@ -71,16 +72,16 @@ const About = () => {
                   className="view-resume-btn"
                 >
                   <i className="bi bi-file-earmark-pdf mr-2"></i>
-                  View Resume
+                  {siteContent.about.resumeCta}
                 </GradientButton>
                 <GradientButton variant="outline" href="#projects">
                   <i className="bi bi-code-slash mr-2"></i>
-                  See What I've Built
+                  {siteContent.about.projectsCta}
                 </GradientButton>
               </div>
 
               <div className="experience-container">
-                {personal.about.stats.map((stat) => (
+                {siteContent.about.stats.map((stat) => (
                   <div key={stat.id} className="experience-item">
                     <div className="exp-icon">
                       <i className={`bi ${stat.icon}`}></i>

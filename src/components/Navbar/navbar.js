@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import GradientButton from "../common/GradientButton";
 import "./navbar.css";
-import { personal } from "../../data/personal";
+import { siteContent } from "../../data/siteContent";
 import { socials } from "../../data/socials";
 
 const CustomNavbar = () => {
@@ -10,10 +10,8 @@ const CustomNavbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   const handleHireMe = () => {
-    const subject = encodeURIComponent("Hire from Portfolio");
-    const body = encodeURIComponent(
-      "Hii Warish,\n\nI want to hire you and discuss potential opportunities.",
-    );
+    const subject = encodeURIComponent(siteContent.contact.hireSubject);
+    const body = encodeURIComponent(siteContent.contact.hireBody);
     window.location.href = `https://mail.google.com/mail/?view=cm&to=${socials.email}&su=${subject}&body=${body}`;
   };
 
@@ -48,12 +46,12 @@ const CustomNavbar = () => {
         {/* Brand */}
         <a href="/" className="brand-logo">
           <i className="bi bi-laptop"></i>
-          Portfolio
+          {siteContent.siteName}
         </a>
 
         {/* Desktop Nav Links */}
         <div className="nav-desktop">
-          {personal.navItems.map((item) => (
+          {siteContent.navItems.map((item) => (
             <a
               key={item.id}
               href={`#${item.id}`}
@@ -70,7 +68,7 @@ const CustomNavbar = () => {
           <div className="nav-cta-desktop">
             <GradientButton onClick={handleHireMe}>
               <i className="bi bi-envelope-arrow-up" style={{ marginRight: "8px" }}></i>
-              Hire Me
+              {siteContent.footer.hireCta}
             </GradientButton>
           </div>
 
@@ -89,7 +87,7 @@ const CustomNavbar = () => {
 
       {/* Mobile Menu */}
       <div className={`mobile-menu ${menuOpen ? "open" : ""}`}>
-        {personal.navItems.map((item) => (
+        {siteContent.navItems.map((item) => (
           <a
             key={item.id}
             href={`#${item.id}`}
@@ -103,7 +101,7 @@ const CustomNavbar = () => {
         <div className="mobile-cta">
           <GradientButton onClick={handleHireMe}>
             <i className="bi bi-envelope-arrow-up" style={{ marginRight: "8px" }}></i>
-            Hire Me
+            {siteContent.footer.hireCta}
           </GradientButton>
         </div>
       </div>
