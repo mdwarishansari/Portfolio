@@ -1,10 +1,10 @@
 import type { PersonalData } from "@/types";
-import profileImage from "@/assets/dp.png";
+import profileImage from "@/assets/DP.gif";
 
 export const personal: PersonalData = {
   name: "Mohammad Warish Ansari",
   copyrightName: "Md Warish Ansari",
-  title: "MERN Stack Developer",
+  title: "Full Stack Developer",
   location: "Ranchi, Jharkhand, India",
   email: "warishdeveloper@gmail.com",
   resumeLink:
@@ -25,15 +25,15 @@ export const personal: PersonalData = {
     greeting: "Hello!",
     availability: "Open to internships & SDE roles",
     roles: [
-      "MERN Stack Developer",
-      "Web Developer",
-      "CSE Student",
-      "Full Stack Learner",
-      "AI Enthusiast",
-      "Mohammad Warish Ansari",
+      "Full Stack Developer",
+    "MERN Stack Developer",
+    "Next.js Developer",
+    "TypeScript Engineer",
+    "CSE Student",
+    "Mohammad Warish Ansari",
     ],
     intro:
-      "B.Tech Computer Science student building scalable, performance-driven web applications with the MERN stack — and bringing intelligent systems into real products.",
+    "B.Tech Computer Science student building production-grade web applications with Next.js, TypeScript, PostgreSQL, and the MERN stack — from real-time systems to multi-tenant SaaS platforms.",
     highlights: [
       "Full Stack Developer",
       "Cloud & DevOps Certified",
@@ -41,13 +41,13 @@ export const personal: PersonalData = {
       "AI-Focused Engineer",
       "Specialized in MERN Stack Development",
     ],
-    currentFocus: "Production MERN apps + ML foundations",
+    currentFocus: "Production Next.js SaaS + DSA",
     codeSnippet: [
       "const developer = {",
       "  name: 'MD WARISH ANSARI',",
       "  role: 'MERN Stack Developer',",
       "  skills: [",
-      "    'React', 'Node.js',",
+      "    'React', 'Node.js','Next.js'",
       "    'TypeScript', 'PostgreSQL'",
       "  ],",
       "  passion: 'Building scalable apps',",
@@ -63,7 +63,7 @@ export const personal: PersonalData = {
     titlePart1: "Building software",
     titlePart2: "solves real problems",
     description:
-      "I'm a B.Tech Computer Science student specializing in Full Stack Development with the MERN stack. I focus on building scalable, responsive, and performance-driven web applications using modern technologies. Alongside web development, I'm actively strengthening my foundations in machine learning with the goal of integrating intelligent systems into real-world applications. My approach is practical — build meaningful projects, solve real problems, and continuously improve through hands-on experience.",
+    "I'm a B.Tech Computer Science student specializing in Full Stack Development with Next.js, TypeScript, React, Node.js, PostgreSQL, and MongoDB. I build scalable, performance-driven web applications — from multi-tenant SaaS platforms to real-time quiz systems. My approach is practical: ship production-ready projects, solve real engineering problems, and continuously improve through hands-on work.",
     stats: [
       { id: "projects", count: "5+", title: "Projects" },
       { id: "internships", count: "4+", title: "Internships" },
@@ -81,7 +81,7 @@ export const personal: PersonalData = {
     backToTopText: "Back to top",
     stats: [
       { label: "Coding Hours", value: "5,000+", width: "75%" },
-      { label: "Projects Completed", value: "3+", width: "55%" },
+      { label: "Projects Completed", value:"4+", width: "60%" },
       { label: "Technologies Mastered", value: "30+", width: "75%" },
     ],
   },

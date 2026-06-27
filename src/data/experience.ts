@@ -10,8 +10,9 @@ export const experiences: Experience[] = [
     period: "Dec 2025 – Jan 2026",
     location: "Remote",
     description:
-      "Developed BlueBlog, a production-ready blogging platform and CMS using Next.js, TypeScript, PostgreSQL, and Prisma while contributing to scalable backend systems and SEO-focused web architecture.",
-    certificate: {
+  "Built BlueBlog, a production-ready Next.js CMS and blogging platform with PostgreSQL, Prisma, JWT auth, and a multi-stage editorial workflow (Draft → Verification → Published), deployed on Vercel.",
+
+certificate: {
       name: "Software Development Engineer (SDE) Internship – Bluestock Fintech",
       thumbnail: "https://i.postimg.cc/d13RGyk6/Bluestock-Internship-certificate.jpg",
       fullImage: "https://i.postimg.cc/d13RGyk6/Bluestock-Internship-certificate.jpg",
@@ -44,9 +45,10 @@ export const experiences: Experience[] = [
     company: "Soft Nexis Technology",
     period: "Oct 2025 – Nov 2025",
     location: "Remote / Online",
-    description:
-      "Worked on MERN stack applications focusing on frontend development, backend APIs, database management, and real-world software engineering workflows.",
-    certificate: {
+   description:
+  "Built and maintained MERN stack features including React UI components, MongoDB schema design, and Express.js REST APIs; contributed to debugging, optimization, and agile delivery workflows.",
+
+   certificate: {
       name: "MERN Stack Internship Certificate",
       thumbnail: "https://i.postimg.cc/525LKyTw/Soft-Nexis-Internship-page-0001.jpg",
       fullImage: "https://i.postimg.cc/525LKyTw/Soft-Nexis-Internship-page-0001.jpg",
@@ -60,6 +62,8 @@ export const experiences: Experience[] = [
       "Managed MongoDB schemas, queries, and data validation",
       "Improved application performance through debugging and optimization",
       "Worked with Git version control and agile development processes",
+      "Developed React.js components and Express.js REST APIs integrated with MongoDB schemas for MERN stack features.",
+      "Resolved API integration bugs, improved component performance, and supported production deployment workflows in an agile team.",
     ],
     skills: [
       "MongoDB",

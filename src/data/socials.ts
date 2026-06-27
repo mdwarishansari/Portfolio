@@ -3,8 +3,8 @@ import type { SocialLink } from "@/types";
 /** Quick lookup for URL-only access (e.g. Hero CTA GitHub link) */
 export const socials = {
   github: "https://github.com/mdwarishansari",
-  linkedin: "https://www.linkedin.com/in/md-warish-ansari/",
-  email: "warishansari018@gmail.com",
+  linkedin: "https://www.linkedin.com/in/md-warish-ansari",
+  email: "warishdeveloper@gmail.com",
   leetcode: "https://leetcode.com/u/mdwarishansari/",
   twitter: "https://x.com/mdwarishansari0",
   stackoverflow: "https://stackoverflow.com/users/31790291/codewarish",
@@ -12,7 +12,6 @@ export const socials = {
   hackerrank: "https://www.hackerrank.com/profile/warishansari018",
   instagram: "https://www.instagram.com/mohammadwarish_ansari",
   facebook: "https://www.facebook.com/profile.php?id=100074841669595",
-  youtube: "https://youtube.com/channel",
   discord: "https://discord.com/mohammadwarishansari_47491",
   linktree: "https://linktr.ee/mdwarishansari",
 };
@@ -45,14 +44,14 @@ export const socialLinks: SocialLink[] = [
     icon: "SiGmail",
     url: `mailto:${socials.email}`,
     color: "#ea4335",
-    handle: "warishansari018",
+    handle: "warishdeveloper",
   },
   {
-    name: "Stack Overflow",
-    icon: "SiStackoverflow",
-    url: socials.stackoverflow,
-    color: "#f48024",
-    handle: "codewarish",
+    name: "Linktree",
+    icon: "SiLinktree",
+    url: socials.linktree,
+    color: "#43e660",
+    handle: "mdwarishansari",
   },
   {
     name: "LeetCode",
@@ -61,6 +60,14 @@ export const socialLinks: SocialLink[] = [
     color: "#ffa116",
     handle: "mdwarishansari",
   },
+  {
+    name: "Stack Overflow",
+    icon: "SiStackoverflow",
+    url: socials.stackoverflow,
+    color: "#f48024",
+    handle: "codewarish",
+  },
+  
   {
     name: "GeeksforGeeks",
     icon: "SiGeeksforgeeks",
@@ -90,24 +97,11 @@ export const socialLinks: SocialLink[] = [
     handle: "Mohammad Warish",
   },
   {
-    name: "YouTube",
-    icon: "FaYoutube",
-    url: socials.youtube,
-    color: "#ff0000",
-    handle: "@channel",
-  },
-  {
     name: "Discord",
     icon: "FaDiscord",
     url: socials.discord,
     color: "#5865f2",
     handle: "mohammadwarishansari",
   },
-  {
-    name: "Linktree",
-    icon: "SiLinktree",
-    url: socials.linktree,
-    color: "#43e660",
-    handle: "mdwarishansari",
-  },
+  
 ];

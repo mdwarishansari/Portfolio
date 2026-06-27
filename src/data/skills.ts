@@ -25,6 +25,8 @@ export const skills: Skill[] = [
   { name: "Next.js", icon: "SiNextdotjs", level: 85, color: "#ffffff", category: "frameworks" },
   { name: "Prisma ORM", icon: "SiPrisma", level: 80, color: "#2D3748", category: "frameworks" },
   { name: "MERN Stack", icon: "FaReact", level: 80, color: "#61dafb", category: "frameworks" },
+  { name: "Framer Motion", icon: "SiFramer", level: 65, color: "#FF0055", category: "frameworks" },
+
   {
     name: "Tailwind CSS",
     icon: "SiTailwindcss",
@@ -37,7 +39,6 @@ export const skills: Skill[] = [
   { name: "Node.js", icon: "FaNodeJs", level: 80, color: "#68a063", category: "backend" },
   { name: "Express.js", icon: "SiExpress", level: 80, color: "#ffffff", category: "backend" },
   { name: "Socket.IO", icon: "SiSocketdotio", level: 75, color: "#010101", category: "backend" },
-  { name: "Redis", icon: "SiRedis", level: 70, color: "#DC382D", category: "backend" },
   { name: "MongoDB", icon: "SiMongodb", level: 80, color: "#47a248", category: "backend" },
   { name: "MySQL", icon: "SiMysql", level: 70, color: "#00758f", category: "backend" },
   { name: "PostgreSQL", icon: "SiPostgresql", level: 80, color: "#336791", category: "backend" },
@@ -47,16 +48,16 @@ export const skills: Skill[] = [
   { name: "GitHub", icon: "FaGithub", level: 90, color: "#ffffff", category: "tools" },
   { name: "Postman", icon: "SiPostman", level: 85, color: "#ff6c37", category: "tools" },
   { name: "Axios", icon: "SiAxios", level: 85, color: "#5a29e4", category: "tools" },
+  { name: "Clerk", icon: "SiClerk", level: 70, color: "#6C47FF", category: "tools" },
+  { name: "Nodemailer", icon: "SiNodedotjs", level: 65, color: "#6DA55F", category: "tools" },
+
   {
     name: "GitHub Actions",
-    icon: "SiGithubactions",
+    icon: "SiGithubactions",          
     level: 60,
     color: "#2088FF",
     category: "tools",
   },
   { name: "Cloudinary", icon: "SiCloudinary", level: 75, color: "#3448C5", category: "tools" },
 
-  // AI & Cloud
-  { name: "OpenAI API", icon: "SiOpenai", level: 65, color: "#ffffff", category: "ai" },
-  { name: "Firebase Auth", icon: "SiFirebase", level: 60, color: "#FFA611", category: "ai" },
 ];

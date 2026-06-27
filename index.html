@@ -5,15 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!-- Primary Meta Tags -->
+    <!-- Primary Meta Tags -->
     <title>MD WARISH ANSARI</title>
     <meta name="title" content="MD WARISH ANSARI" />
     <meta
       name="description"
-      content="MD WARISH ANSARI — MERN Stack Developer building scalable, performance-driven web applications and AI-focused systems. B.Tech CSE student with 4+ internships and 20+ certifications."
+      content="MD WARISH ANSARI — Professional MERN Stack & Full Stack Developer Portfolio. B.Tech Computer Science student specializing in building scalable web applications, React, Node.js, TypeScript, and database systems. View projects, certifications, and experience at portfolio-warishlabs.in and portfolio-warish.vercel.app."
     />
     <meta
       name="keywords"
-      content="MD WARISH ANSARI, MERN Stack Developer, Full Stack Developer, React Developer, Next.js Developer, Node.js Developer, Portfolio, Web Developer, CSE Student, Ranchi"
+      content="MD WARISH ANSARI, mdwarishansari, Warish Ansari, MERN Stack Developer, Full Stack Developer, portfolio-warishlabs.in, portfolio-warish.vercel.app, React Developer, Next.js Developer, Node.js Developer, Web Developer, Ranchi, CSE Student"
     />
     <meta name="author" content="MD WARISH ANSARI" />
     <meta name="robots" content="index, follow" />
@@ -23,7 +24,20 @@
     <meta name="google-site-verification" content="efB5f4AvFWdC9T2RmyxD9gvUZg50E0vZhNM6zru73VU" />
 
     <!-- Canonical URL -->
-    <link rel="canonical" href="https://portfolio-warish.vercel.app/" />
+    <link id="canonical-url" rel="canonical" href="https://portfolio-warishlabs.in/" />
+    <script>
+      (function() {
+        const canonical = document.getElementById('canonical-url');
+        if (canonical) {
+          const host = window.location.hostname;
+          if (host.includes('vercel.app')) {
+            canonical.setAttribute('href', 'https://portfolio-warish.vercel.app/');
+          } else {
+            canonical.setAttribute('href', 'https://portfolio-warishlabs.in/');
+          }
+        }
+      })();
+    </script>
 
     <!-- Favicon -->
     <link rel="icon" type="image/gif" href="/logo.gif" />
@@ -32,26 +46,26 @@
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://portfolio-warish.vercel.app/" />
+    <meta property="og:url" content="https://portfolio-warishlabs.in/" />
     <meta property="og:title" content="MD WARISH ANSARI" />
     <meta
       property="og:description"
-      content="MD WARISH ANSARI — MERN Stack Developer building scalable, performance-driven web applications and AI-focused systems."
+      content="MD WARISH ANSARI — MERN Stack & Full Stack Developer building scalable, performance-driven web applications and AI-integrated systems."
     />
-    <meta property="og:image" content="https://portfolio-warish.vercel.app/logo.gif" />
+    <meta property="og:image" content="https://portfolio-warishlabs.in/logo.gif" />
     <meta property="og:image:alt" content="MD WARISH ANSARI - MERN Stack Developer" />
     <meta property="og:site_name" content="MD WARISH ANSARI Portfolio" />
     <meta property="og:locale" content="en_US" />
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:url" content="https://portfolio-warish.vercel.app/" />
+    <meta name="twitter:url" content="https://portfolio-warishlabs.in/" />
     <meta name="twitter:title" content="MD WARISH ANSARI" />
     <meta
       name="twitter:description"
-      content="MD WARISH ANSARI — MERN Stack Developer building scalable, performance-driven web applications and AI-focused systems."
+      content="MD WARISH ANSARI — MERN Stack & Full Stack Developer building scalable, performance-driven web applications and AI-integrated systems."
     />
-    <meta name="twitter:image" content="https://portfolio-warish.vercel.app/logo.gif" />
+    <meta name="twitter:image" content="https://portfolio-warishlabs.in/logo.gif" />
     <meta name="twitter:creator" content="@mdwarishansari0" />
 
     <!-- Inter Font — Preconnect for performance -->
