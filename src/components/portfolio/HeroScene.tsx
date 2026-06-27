@@ -1,6 +1,6 @@
 import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import { Float, Line, RoundedBox, Edges, Text } from "@react-three/drei";
-import { useMemo, useRef, useState, useEffect } from "react";
+import { useMemo, useRef, useState, useEffect, Suspense } from "react";
 import * as THREE from "three";
 import { personal } from "@/data/personal";
 
@@ -276,7 +276,9 @@ export function HeroScene() {
       <Rig>
         <ParticleCloud />
         <Float speed={1.4} rotationIntensity={0.15} floatIntensity={0.4}>
-          <CodeWindow />
+          <Suspense fallback={null}>
+            <CodeWindow />
+          </Suspense>
         </Float>
         <Connections nodes={nodes.map((n) => n.pos)} />
         {nodes.map((n, i) => (
