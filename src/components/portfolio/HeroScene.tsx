@@ -77,34 +77,35 @@ function CodeWindow() {
       ))}
 
       {/* code typing animation */}
-      {typedLines.map((line, i) => {
-        const isCurrentLine = i === currentLineIndex;
-        const displayText = line + (isCurrentLine && blink ? "█" : "");
-        // Highlight different elements with colors matching theme
-        let textColor = BONE;
-        if (line.includes("const ") || line.includes("developer")) {
-          textColor = PLUM;
-        } else if (line.includes("name:") || line.includes("role:") || line.includes("skills:") || line.includes("passion:") || line.includes("focus:") || line.includes("available:")) {
-          textColor = LICHEN;
-        } else if (line.includes("true") || line.includes("'")) {
-          textColor = AMBER;
-        }
+      <Suspense fallback={null}>
+        {typedLines.map((line, i) => {
+          const isCurrentLine = i === currentLineIndex;
+          const displayText = line + (isCurrentLine && blink ? "█" : "");
+          // Highlight different elements with colors matching theme
+          let textColor = BONE;
+          if (line.includes("const ") || line.includes("developer")) {
+            textColor = PLUM;
+          } else if (line.includes("name:") || line.includes("role:") || line.includes("skills:") || line.includes("passion:") || line.includes("focus:") || line.includes("available:")) {
+            textColor = LICHEN;
+          } else if (line.includes("true") || line.includes("'")) {
+            textColor = AMBER;
+          }
 
-        return (
-          <Text
-            key={i}
-            position={[-1.25, 0.95 - i * 0.22, 0.07]}
-            color={textColor}
-            fontSize={0.095}
-            font="https://fonts.gstatic.com/s/firacode/v21/u8REZsCC5cPxNY15yQ6187w3_yOc.woff"
-            anchorX="left"
-            anchorY="middle"
-            maxWidth={2.4}
-          >
-            {displayText}
-          </Text>
-        );
-      })}
+          return (
+            <Text
+              key={i}
+              position={[-1.25, 0.95 - i * 0.22, 0.07]}
+              color={textColor}
+              fontSize={0.095}
+              anchorX="left"
+              anchorY="middle"
+              maxWidth={2.4}
+            >
+              {displayText}
+            </Text>
+          );
+        })}
+      </Suspense>
     </group>
   );
 }
@@ -276,9 +277,7 @@ export function HeroScene() {
       <Rig>
         <ParticleCloud />
         <Float speed={1.4} rotationIntensity={0.15} floatIntensity={0.4}>
-          <Suspense fallback={null}>
-            <CodeWindow />
-          </Suspense>
+          <CodeWindow />
         </Float>
         <Connections nodes={nodes.map((n) => n.pos)} />
         {nodes.map((n, i) => (
