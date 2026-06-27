@@ -1,12 +1,9 @@
-import { useEffect, useState, Suspense, lazy } from "react";
+import { useEffect, useState, Suspense } from "react";
 import { motion } from "framer-motion";
 import { FileText, Github, Mail, ArrowDown } from "lucide-react";
 import { personal } from "@/data/personal";
 import { socials } from "@/data/socials";
-
-const HeroScene = lazy(() =>
-  import("./HeroScene").then((m) => ({ default: m.HeroScene })),
-);
+import { HeroScene } from "./HeroScene";
 
 function useTypedRole() {
   const roles = personal.hero.roles;
