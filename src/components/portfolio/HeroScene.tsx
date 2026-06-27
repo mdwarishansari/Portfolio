@@ -1,7 +1,8 @@
 import { Canvas, useFrame, useThree } from "@react-three/fiber";
-import { Float, Line, RoundedBox, Edges } from "@react-three/drei";
-import { useMemo, useRef, useState } from "react";
+import { Float, Line, RoundedBox, Edges, Text } from "@react-three/drei";
+import { useMemo, useRef, useState, useEffect } from "react";
 import * as THREE from "three";
+import { personal } from "@/data/personal";
 
 const PLUM = "#8052ff";
 const AMBER = "#ffb829";
@@ -10,16 +11,49 @@ const BONE = "#ffffff";
 
 /** A holographic code/editor window floating at the centre. */
 function CodeWindow() {
-  const rows = useMemo(
-    () =>
-      Array.from({ length: 9 }, (_, i) => ({
-        y: 0.95 - i * 0.24,
-        w: 0.6 + Math.random() * 1.7,
-        x: -1.05 + (0.6 + Math.random() * 1.7) / 2,
-        c: [PLUM, AMBER, LICHEN, BONE][Math.floor(Math.random() * 4)],
-      })),
-    [],
-  );
+  const snippet = personal.hero.codeSnippet;
+  const [typedLines, setTypedLines] = useState<string[]>([]);
+  const [currentLineIndex, setCurrentLineIndex] = useState(0);
+  const [currentCharIndex, setCurrentCharIndex] = useState(0);
+  const [blink, setBlink] = useState(true);
+
+  // Blink cursor
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setBlink((b) => !b);
+    }, 530);
+    return () => clearInterval(interval);
+  }, []);
+
+  // Typing effect
+  useEffect(() => {
+    if (currentLineIndex >= snippet.length) {
+      // Loop: Wait 6 seconds and restart typing
+      const resetTimeout = setTimeout(() => {
+        setTypedLines([]);
+        setCurrentLineIndex(0);
+        setCurrentCharIndex(0);
+      }, 6000);
+      return () => clearTimeout(resetTimeout);
+    }
+
+    const currentLine = snippet[currentLineIndex];
+    if (currentCharIndex < currentLine.length) {
+      const typeTimeout = setTimeout(() => {
+        setCurrentCharIndex((prev) => prev + 1);
+        const linesCopy = [...snippet.slice(0, currentLineIndex)];
+        linesCopy.push(currentLine.slice(0, currentCharIndex + 1));
+        setTypedLines(linesCopy);
+      }, 35);
+      return () => clearTimeout(typeTimeout);
+    } else {
+      const lineTimeout = setTimeout(() => {
+        setCurrentLineIndex((prev) => prev + 1);
+        setCurrentCharIndex(0);
+      }, 250);
+      return () => clearTimeout(lineTimeout);
+    }
+  }, [currentLineIndex, currentCharIndex, snippet]);
 
   return (
     <group>
@@ -42,34 +76,36 @@ function CodeWindow() {
         </mesh>
       ))}
 
-      {/* code lines */}
-      {rows.map((r, i) => (
-        <mesh key={i} position={[r.x, r.y, 0.07]}>
-          <planeGeometry args={[r.w, 0.07]} />
-          <meshBasicMaterial color={r.c} transparent opacity={0.85} />
-        </mesh>
-      ))}
+      {/* code typing animation */}
+      {typedLines.map((line, i) => {
+        const isCurrentLine = i === currentLineIndex;
+        const displayText = line + (isCurrentLine && blink ? "█" : "");
+        // Highlight different elements with colors matching theme
+        let textColor = BONE;
+        if (line.includes("const ") || line.includes("developer")) {
+          textColor = PLUM;
+        } else if (line.includes("name:") || line.includes("role:") || line.includes("skills:") || line.includes("passion:") || line.includes("focus:") || line.includes("available:")) {
+          textColor = LICHEN;
+        } else if (line.includes("true") || line.includes("'")) {
+          textColor = AMBER;
+        }
 
-      {/* blinking cursor */}
-      <Cursor />
+        return (
+          <Text
+            key={i}
+            position={[-1.25, 0.95 - i * 0.22, 0.07]}
+            color={textColor}
+            fontSize={0.095}
+            font="https://fonts.gstatic.com/s/firacode/v21/u8REZsCC5cPxNY15yQ6187w3_yOc.woff"
+            anchorX="left"
+            anchorY="middle"
+            maxWidth={2.4}
+          >
+            {displayText}
+          </Text>
+        );
+      })}
     </group>
-  );
-}
-
-function Cursor() {
-  const ref = useRef<THREE.Mesh>(null);
-  useFrame((state) => {
-    if (ref.current) {
-      const t = state.clock.elapsedTime;
-      (ref.current.material as THREE.MeshBasicMaterial).opacity =
-        Math.sin(t * 4) > 0 ? 0.9 : 0.1;
-    }
-  });
-  return (
-    <mesh ref={ref} position={[0.55, -1.21, 0.07]}>
-      <planeGeometry args={[0.06, 0.16]} />
-      <meshBasicMaterial color={BONE} transparent />
-    </mesh>
   );
 }
 

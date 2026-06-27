@@ -30,7 +30,7 @@ export function Footer() {
         {/* Development journey / statistics */}
         <div className="grid gap-8 border-b border-white/10 p-8 sm:p-12 md:grid-cols-2">
           <div>
-            <h3 className="eyebrow text-plum">Development Journey</h3>
+            <h3 className="eyebrow text-plum">{personal.footer.journeyTitle}</h3>
             <div className="mt-6 space-y-5">
               {personal.footer.stats.map((s, i) => (
                 <div key={s.label}>
@@ -55,7 +55,7 @@ export function Footer() {
           </div>
 
           <div className="md:text-right">
-            <h3 className="eyebrow text-plum md:justify-end">Contact</h3>
+            <h3 className="eyebrow text-plum md:justify-end">{personal.footer.contactTitle}</h3>
             <div className="mt-6 space-y-3">
               <a
                 href={`mailto:${personal.email}`}
@@ -83,26 +83,30 @@ export function Footer() {
               ))}
             </div>
 
-            <a
-              href="#social"
-              className="mt-6 inline-flex items-center gap-2 rounded-full bg-plum px-5 py-3 text-[12px] font-semibold uppercase tracking-[0.12em] text-bone transition-opacity hover:opacity-90"
+            <button
+              onClick={() =>
+                window.open(
+                  `mailto:${personal.email}?subject=Job%20Opportunity%20%7C%20Software%20Developer&body=Hi%20Warish%2C%0A%0AI%20came%20across%20your%20portfolio%20and%20I%27m%20interested%20in%20discussing%20a%20potential%20opportunity.%0A%0ARegards`,
+                )
+              }
+              className="mt-6 inline-flex items-center gap-2 rounded-full bg-plum px-5 py-3 text-[12px] font-semibold uppercase tracking-[0.12em] text-bone transition-opacity hover:opacity-90 cursor-pointer"
             >
               Hire Me
-            </a>
+            </button>
           </div>
         </div>
 
         {/* Bottom bar */}
         <div className="flex flex-col items-center justify-between gap-4 p-6 sm:flex-row">
           <p className="flex items-center gap-1.5 text-[12px] text-smoke">
-            © {year} {personal.copyrightName}. Built with{" "}
+            © {year} {personal.copyrightName}. {personal.footer.builtWithText}{" "}
             <Heart size={12} className="text-plum" /> & code.
           </p>
           <button
             onClick={scrollTop}
             className="inline-flex items-center gap-2 rounded-full border border-white/15 px-4 py-2 text-[12px] tracking-[0.02em] text-ash transition-colors hover:border-bone hover:text-bone"
           >
-            <ArrowUp size={14} /> Back to top
+            <ArrowUp size={14} /> {personal.footer.backToTopText}
           </button>
         </div>
       </div>

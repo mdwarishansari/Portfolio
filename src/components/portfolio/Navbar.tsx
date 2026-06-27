@@ -15,25 +15,30 @@ export function Navbar() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  // Scroll spy — track which section is in view
+  // Scroll spy — track which section is in view, handles lazy-loaded elements perfectly
   useEffect(() => {
-    const ids = personal.navItems.map((n) => n.id);
-    const observers: IntersectionObserver[] = [];
+    const handleScrollSpy = () => {
+      const ids = personal.navItems.map((n) => n.id);
+      let currentSection = "hero";
 
-    ids.forEach((id) => {
-      const el = document.getElementById(id);
-      if (!el) return;
-      const obs = new IntersectionObserver(
-        ([entry]) => {
-          if (entry.isIntersecting) setActiveSection(id);
-        },
-        { threshold: 0.35 },
-      );
-      obs.observe(el);
-      observers.push(obs);
-    });
+      for (const id of ids) {
+        const el = document.getElementById(id);
+        if (el) {
+          const rect = el.getBoundingClientRect();
+          // Heuristic: if the top is near/above the viewport top and bottom is below it
+          if (rect.top <= 160 && rect.bottom > 160) {
+            currentSection = id;
+            break;
+          }
+        }
+      }
+      setActiveSection(currentSection);
+    };
 
-    return () => observers.forEach((obs) => obs.disconnect());
+    window.addEventListener("scroll", handleScrollSpy, { passive: true });
+    // Run once on load
+    handleScrollSpy();
+    return () => window.removeEventListener("scroll", handleScrollSpy);
   }, []);
 
   const scrollTo = (id: string) => {
@@ -67,10 +72,14 @@ export function Navbar() {
           {/* Brand */}
           <button
             onClick={() => scrollTo("hero")}
-            className="eyebrow text-bone transition-opacity hover:opacity-70"
+            className="text-[18px] font-extrabold uppercase tracking-[0.08em] text-bone transition-all duration-300 hover:opacity-85 hover:scale-102 flex items-center gap-1"
+            style={{
+              textShadow: "1px 1px 0px #8052ff, 2px 2px 0px rgba(128, 82, 255, 0.45)",
+            }}
             aria-label="Go to top"
           >
             <span className="text-plum">W</span>arish
+            <span className="h-1.5 w-1.5 rounded-full bg-plum animate-pulse" style={{ boxShadow: "0 0 8px #8052ff" }} />
           </button>
 
           {/* Desktop nav */}

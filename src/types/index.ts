@@ -14,6 +14,7 @@ export interface HeroData {
   intro: string;
   highlights: string[];
   currentFocus: string;
+  codeSnippet: string[];
 }
 
 export interface AboutStat {
@@ -22,8 +23,17 @@ export interface AboutStat {
   title: string;
 }
 
+export interface SectionCopy {
+  eyebrow: string;
+  title: string;
+  description?: string;
+}
+
 export interface AboutData {
+  eyebrow: string;
   greeting: string;
+  titlePart1: string;
+  titlePart2: string;
   description: string;
   stats: AboutStat[];
 }
@@ -37,6 +47,10 @@ export interface FooterStat {
 export interface FooterData {
   philosophy: string;
   philosophySub: string;
+  journeyTitle: string;
+  contactTitle: string;
+  builtWithText: string;
+  backToTopText: string;
   stats: FooterStat[];
 }
 
@@ -52,6 +66,10 @@ export interface PersonalData {
   hero: HeroData;
   about: AboutData;
   footer: FooterData;
+  projectsCopy: SectionCopy;
+  certificationsCopy: SectionCopy;
+  experienceCopy: SectionCopy;
+  socialCopy: SectionCopy;
 }
 
 // ─── Skills ───────────────────────────────────────────────────────────────────
@@ -78,6 +96,8 @@ export type ProjectCategory = "major" | "minor";
 
 export interface Project {
   id: number;
+  slug: string;
+  liveUrl: string;
   title: string;
   subtitle: string;
   description: string;

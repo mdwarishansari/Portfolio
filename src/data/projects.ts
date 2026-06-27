@@ -14,6 +14,8 @@ export const projectCategories: ProjectCategoryItem[] = [
 export const projects: Project[] = [
   {
     id: 4,
+    slug: "festoryx",
+    liveUrl: "https://festoryx.vercel.app/",
     title: "Festoryx",
     subtitle: "Multi-Tenant Event Operating System & Real-Time Quiz Platform",
     description:
@@ -44,6 +46,8 @@ export const projects: Project[] = [
   },
   {
     id: 3,
+    slug: "blueblog",
+    liveUrl: "https://blueblog-warish.vercel.app/",
     title: "BlueBlog",
     subtitle: "Full-Scale SEO-Based Role-Based Blogging Platform",
     description:
@@ -74,6 +78,8 @@ export const projects: Project[] = [
   },
   {
     id: 2,
+    slug: "cartnest",
+    liveUrl: "https://cartnest-warish.vercel.app/",
     title: "CartNest",
     subtitle: "Multi-Vendor E-Commerce Marketplace",
     description:
@@ -104,6 +110,8 @@ export const projects: Project[] = [
   },
   {
     id: 1,
+    slug: "moviesvibe",
+    liveUrl: "https://moviesvibe-lt7u.onrender.com/",
     title: "MoviesVibe",
     subtitle: "Movie Recommendation & Review Platform",
     description:

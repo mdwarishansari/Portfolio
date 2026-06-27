@@ -1,15 +1,16 @@
 import { motion } from "framer-motion";
 import { socialLinks } from "@/data/socials";
 import { getIcon } from "@/utils/icon-map";
+import { personal } from "@/data/personal";
 import { Section, SectionHeading } from "./primitives";
 
 export function Social() {
   return (
     <Section id="social">
       <SectionHeading
-        eyebrow="Connect"
-        title="Let's build together"
-        description="Find me across the web — from code platforms to communities. Always open to a good conversation."
+        eyebrow={personal.socialCopy.eyebrow}
+        title={personal.socialCopy.title}
+        description={personal.socialCopy.description}
         align="center"
       />
 

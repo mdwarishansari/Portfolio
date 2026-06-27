@@ -1,18 +1,21 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ExternalLink, Award, ChevronDown, MapPin } from "lucide-react";
+import { ExternalLink, Award, ChevronDown, MapPin, X, ShieldCheck } from "lucide-react";
 import { experiences } from "@/data/experience";
+import { personal } from "@/data/personal";
 import { Section, SectionHeading, Chip } from "./primitives";
+import type { ExperienceCertificate } from "@/types";
 
 export function Experience() {
   const [open, setOpen] = useState<number | null>(experiences[0]?.id ?? null);
+  const [activeCert, setActiveCert] = useState<ExperienceCertificate | null>(null);
 
   return (
     <Section id="experience">
       <SectionHeading
-        eyebrow="Experience"
-        title="Career journey"
-        description="Internships and roles where I've turned learning into shipped, production-grade work."
+        eyebrow={personal.experienceCopy.eyebrow}
+        title={personal.experienceCopy.title}
+        description={personal.experienceCopy.description}
       />
 
       <div className="relative mt-10 pl-6 sm:pl-8">
@@ -64,7 +67,7 @@ export function Experience() {
                     </div>
                     <ChevronDown
                       size={18}
-                      className={`mt-1 shrink-0 text-ash transition-transform ${isOpen ? "rotate-180" : ""}`}
+                      className={`indigo mt-1 shrink-0 text-ash transition-transform ${isOpen ? "rotate-180" : ""}`}
                     />
                   </button>
 
@@ -108,21 +111,19 @@ export function Experience() {
 
                           {exp.certificateAvailable && (
                             <div className="mt-5 flex flex-wrap items-center gap-3">
+                              <button
+                                onClick={() => setActiveCert(exp.certificate)}
+                                className="inline-flex items-center gap-2 rounded-full border border-white/15 px-4 py-2 text-[12px] tracking-[0.02em] text-ash transition-colors hover:border-bone hover:text-bone cursor-pointer"
+                              >
+                                <Award size={14} className="text-plum" /> View Certificate
+                              </button>
                               <a
                                 href={exp.certificate.verifyUrl}
                                 target="_blank"
                                 rel="noreferrer"
                                 className="inline-flex items-center gap-2 rounded-full border border-amber/50 px-4 py-2 text-[12px] tracking-[0.02em] text-amber transition-colors hover:bg-amber/10"
                               >
-                                <Award size={14} /> Verify Certificate
-                              </a>
-                              <a
-                                href={exp.certificate.fullImage}
-                                target="_blank"
-                                rel="noreferrer"
-                                className="inline-flex items-center gap-2 rounded-full border border-white/15 px-4 py-2 text-[12px] tracking-[0.02em] text-ash transition-colors hover:border-bone hover:text-bone"
-                              >
-                                View Certificate
+                                Verify Certificate
                               </a>
                               {exp.certificate.credential && (
                                 <span className="text-[11px] text-smoke">
@@ -141,6 +142,62 @@ export function Experience() {
           })}
         </div>
       </div>
+
+      {/* Lightbox Modal for Experience Certificates */}
+      <AnimatePresence>
+        {activeCert && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={() => setActiveCert(null)}
+            className="fixed inset-0 z-[60] flex items-center justify-center bg-black/85 p-4 backdrop-blur-sm"
+          >
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95, y: 20 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.95, y: 20 }}
+              transition={{ type: "spring", stiffness: 300, damping: 28 }}
+              onClick={(e) => e.stopPropagation()}
+              className="relative max-h-[90vh] w-full max-w-3xl overflow-y-auto rounded-[24px] border border-white/10 bg-black"
+            >
+              <button
+                onClick={() => setActiveCert(null)}
+                aria-label="Close"
+                className="absolute right-4 top-4 z-10 flex h-9 w-9 items-center justify-center rounded-full border border-white/15 bg-black/60 text-bone backdrop-blur transition-colors hover:border-bone"
+              >
+                <X size={18} />
+              </button>
+              <img
+                src={activeCert.fullImage}
+                alt={activeCert.name}
+                className="w-full object-contain"
+              />
+              <div className="p-6">
+                <h3 className="text-[20px] font-semibold tracking-tight text-bone">
+                  {activeCert.name}
+                </h3>
+                <div className="mt-4 flex flex-wrap items-center gap-3">
+                  <a
+                    href={activeCert.verifyUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex items-center gap-2 rounded-full bg-plum px-5 py-3 text-[12px] font-semibold uppercase tracking-[0.12em] text-bone transition-opacity hover:opacity-90"
+                  >
+                    <ShieldCheck size={15} /> Verify Credential
+                    <ExternalLink size={13} />
+                  </a>
+                  {activeCert.credential && (
+                    <span className="text-[12px] text-smoke">
+                      Credential ID: {activeCert.credential}
+                    </span>
+                  )}
+                </div>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </Section>
   );
 }

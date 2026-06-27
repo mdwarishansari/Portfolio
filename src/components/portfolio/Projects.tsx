@@ -2,12 +2,15 @@ import { useState, useRef, memo } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Github, ExternalLink, ChevronDown, Calendar } from "lucide-react";
 import { projects, projectCategories, type Project } from "@/data/projects";
+import { personal } from "@/data/personal";
 import { Section, SectionHeading, Chip } from "./primitives";
 
 const ProjectCard = memo(function ProjectCard({ project }: { project: Project }) {
   const [expanded, setExpanded] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
   const [tilt, setTilt] = useState({ x: 0, y: 0 });
+  const [imgSrc, setImgSrc] = useState(`/project-previews/${project.slug}.webp`);
+  const [imgLoaded, setImgLoaded] = useState(false);
 
   const onMove = (e: React.MouseEvent) => {
     const el = ref.current;
@@ -33,12 +36,16 @@ const ProjectCard = memo(function ProjectCard({ project }: { project: Project })
       {/* spotlight border accent */}
       <div className="pointer-events-none absolute inset-0 rounded-[24px] opacity-0 transition-opacity duration-300 group-hover:opacity-100" style={{ boxShadow: "inset 0 0 60px -20px rgba(128,82,255,0.5)" }} />
 
-      <div className="relative overflow-hidden">
+      <div className="relative overflow-hidden bg-void">
         <img
-          src={project.image}
+          src={imgSrc}
           alt={project.title}
           loading="lazy"
-          className="aspect-video w-full object-cover transition-transform duration-700 group-hover:scale-105"
+          onLoad={() => setImgLoaded(true)}
+          onError={() => setImgSrc("/project-previews/placeholder.webp")}
+          className={`aspect-video w-full object-cover transition-all duration-700 group-hover:scale-105 ${
+            imgLoaded ? "opacity-100" : "opacity-0"
+          }`}
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent" />
         {project.featured && (
@@ -138,9 +145,9 @@ export function Projects() {
   return (
     <Section id="projects">
       <SectionHeading
-        eyebrow="Projects"
-        title="Things I've shipped"
-        description="My latest creations. Click any project to explore the full story, architecture, and tech stack."
+        eyebrow={personal.projectsCopy.eyebrow}
+        title={personal.projectsCopy.title}
+        description={personal.projectsCopy.description}
       />
 
       <div className="mt-8 flex flex-wrap gap-2">

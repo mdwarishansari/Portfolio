@@ -6,7 +6,7 @@ export const personal: PersonalData = {
   copyrightName: "Md Warish Ansari",
   title: "MERN Stack Developer",
   location: "Ranchi, Jharkhand, India",
-  email: "warishansari018@gmail.com",
+  email: "warishdeveloper@gmail.com",
   resumeLink:
     "https://drive.google.com/drive/folders/1oAuFxm0ZOHpSErySDUs6sjHubDo0Wxi-?usp=sharing",
   profileImage,
@@ -42,10 +42,26 @@ export const personal: PersonalData = {
       "Specialized in MERN Stack Development",
     ],
     currentFocus: "Production MERN apps + ML foundations",
+    codeSnippet: [
+      "const developer = {",
+      "  name: 'MD WARISH ANSARI',",
+      "  role: 'MERN Stack Developer',",
+      "  skills: [",
+      "    'React', 'Node.js',",
+      "    'TypeScript', 'PostgreSQL'",
+      "  ],",
+      "  passion: 'Building scalable apps',",
+      "  focus: 'AI & Performance',",
+      "  available: true",
+      "};"
+    ]
   },
 
   about: {
+    eyebrow: "About me",
     greeting: "Hello!",
+    titlePart1: "Building software",
+    titlePart2: "solves real problems",
     description:
       "I'm a B.Tech Computer Science student specializing in Full Stack Development with the MERN stack. I focus on building scalable, responsive, and performance-driven web applications using modern technologies. Alongside web development, I'm actively strengthening my foundations in machine learning with the goal of integrating intelligent systems into real-world applications. My approach is practical — build meaningful projects, solve real problems, and continuously improve through hands-on experience.",
     stats: [
@@ -59,10 +75,38 @@ export const personal: PersonalData = {
     philosophy:
       "Clean code is not just efficient, it's an art form that communicates ideas beyond functionality.",
     philosophySub: "Every line of code tells a story of problem-solving and innovation",
+    journeyTitle: "Development Journey",
+    contactTitle: "Contact",
+    builtWithText: "Built with",
+    backToTopText: "Back to top",
     stats: [
       { label: "Coding Hours", value: "5,000+", width: "75%" },
       { label: "Projects Completed", value: "3+", width: "55%" },
       { label: "Technologies Mastered", value: "30+", width: "75%" },
     ],
   },
+
+  projectsCopy: {
+    eyebrow: "Projects",
+    title: "Things I've shipped",
+    description: "My latest creations. Click any project to explore the full story, architecture, and tech stack."
+  },
+
+  certificationsCopy: {
+    eyebrow: "Certifications",
+    title: "Credential vault",
+    description: "Verified credentials across cloud, DevOps, AI, and software engineering — click any to inspect and verify."
+  },
+
+  experienceCopy: {
+    eyebrow: "Experience",
+    title: "Career journey",
+    description: "Internships and roles where I've turned learning into shipped, production-grade work."
+  },
+
+  socialCopy: {
+    eyebrow: "Connect",
+    title: "Let's build together",
+    description: "Find me across the web — from code platforms to communities. Always open to a good conversation."
+  }
 };

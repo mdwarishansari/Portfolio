@@ -1,33 +1,36 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, ShieldCheck, ExternalLink } from "lucide-react";
-import {
-  certifications,
-  certCategories,
-  type Certification,
-  type CertCategory,
-} from "@/data/certifications";
+import { certifications, type Certification, type CertCategory } from "@/data/certifications";
+import { personal } from "@/data/personal";
 import { Section, SectionHeading, Chip } from "./primitives";
 
 const filters: { key: "all" | CertCategory; label: string }[] = [
+  { key: "highlighted", label: "Highlighted" },
   { key: "all", label: "All" },
-  ...certCategories,
+  { key: "cloud", label: "Cloud & DevOps" },
+  { key: "development", label: "Development" },
+  { key: "foundations", label: "Foundations" },
 ];
 
 export function Certifications() {
-  const [filter, setFilter] = useState<"all" | CertCategory>("all");
+  const [filter, setFilter] = useState<"all" | CertCategory>("highlighted");
   const [active, setActive] = useState<Certification | null>(null);
   const list =
     filter === "all"
-      ? certifications
+      ? [...certifications].sort((a, b) => {
+          if (a.category === "highlighted" && b.category !== "highlighted") return -1;
+          if (a.category !== "highlighted" && b.category === "highlighted") return 1;
+          return 0;
+        })
       : certifications.filter((c) => c.category === filter);
 
   return (
     <Section id="certifications">
       <SectionHeading
-        eyebrow="Certifications"
-        title="Credential vault"
-        description="Verified credentials across cloud, DevOps, AI, and software engineering — click any to inspect and verify."
+        eyebrow={personal.certificationsCopy.eyebrow}
+        title={personal.certificationsCopy.title}
+        description={personal.certificationsCopy.description}
       />
 
       <div className="mt-8 flex flex-wrap gap-2">

@@ -7,6 +7,7 @@ export default defineConfig({
   plugins: [react(), tailwindcss(), tsconfigPaths()],
   build: {
     target: "esnext",
+    chunkSizeWarningLimit: 1600,
     rollupOptions: {
       output: {
         manualChunks: {

@@ -58,7 +58,7 @@ export function About() {
 
         {/* Copy */}
         <div>
-          <Eyebrow>{personal.about.greeting} About me</Eyebrow>
+          <Eyebrow>{personal.about.greeting} {personal.about.eyebrow}</Eyebrow>
           <motion.h2
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -66,9 +66,9 @@ export function About() {
             transition={{ duration: 0.6 }}
             className="display-thin mt-4 text-[34px] leading-[1.0] text-bone sm:text-[46px]"
           >
-            Building software
+            {personal.about.titlePart1}
             <br />
-            that <span className="font-normal text-plum">solves real problems</span>
+            that <span className="font-normal text-plum">{personal.about.titlePart2}</span>
           </motion.h2>
           <Reveal delay={0.15}>
             <p className="mt-6 max-w-[60ch] text-[15px] leading-relaxed tracking-[0.01em] text-ash">
