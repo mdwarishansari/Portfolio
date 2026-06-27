@@ -101,13 +101,15 @@ export const projects: Project[] = [
       "Mongoose",
     ],
     image: cover("Cartnest.png"),
-    projectLink: "https://cartnest-warish.vercel.app/",
+    projectLink: "https://cartnest-wari.vercel.app/",
     githubLink: "https://github.com/mdwarishansari/CartNest",
     date: "August 2025",
     category: "major",
     emoji: "🛒",
     featured: true,
   },
+  // MoviesVibe - Movie Recommendation & Review Platform
+  // A full-stack application built with Django showcasing backend fundamentals
   // {
   //   id: 1,
   //   slug: "moviesvibe",
