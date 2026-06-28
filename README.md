@@ -10,7 +10,7 @@
 </p>
 
 <p align="center">
-  <a href="https://portfolio-warish.vercel.app/" target="_blank">🌐 Live Portfolio</a> ·
+  <a href="https://portfolio.warishlabs.in/" target="_blank">🌐 Live Portfolio</a> ·
   <a href="https://github.com/mdwarishansari" target="_blank">GitHub</a> ·
   <a href="https://www.linkedin.com/in/md-warish-ansari/" target="_blank">LinkedIn</a>
 </p>
