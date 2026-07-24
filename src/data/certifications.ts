@@ -100,6 +100,81 @@ export const certifications: Certification[] = [
     category: "highlighted",
     skills: ["MongoDB", "Express.js", "React.js", "Node.js", "GenAI Integrations"],
   },
+  {
+    id: 42,
+    name: "Career Essentials in Software Development by Microsoft and LinkedIn",
+    authority: "Microsoft & LinkedIn Learning",
+    date: "July 2026",
+    description:
+      "Professional certificate covering software development fundamentals, programming concepts, Git, GitHub, SDLC, and modern software engineering practices.",
+    thumbnail:
+      "https://i.postimg.cc/prkw6bQC/Certificate-Of-Completion-Career-Essentials-in-Software-Development-by-Microsoft-and-Linked-In-1.png",
+    fullImage:
+      "https://i.postimg.cc/prkw6bQC/Certificate-Of-Completion-Career-Essentials-in-Software-Development-by-Microsoft-and-Linked-In-1.png",
+    verifyUrl: "https://www.linkedin.com/learning/",
+    category: "highlighted",
+    skills: ["Software Development", "Programming Fundamentals", "Git", "GitHub", "SDLC"],
+  },
+  {
+    id: 43,
+    name: "Career Essentials in GitHub Professional Certificate",
+    authority: "GitHub & LinkedIn Learning",
+    date: "July 2026",
+    description:
+      "Professional certificate covering GitHub, GitHub Actions, Copilot, collaboration, and modern developer workflows.",
+    thumbnail:
+      "https://i.postimg.cc/RhGkD51R/Certificate-Of-Completion-Career-Essentials-in-Git-Hub-Professional-Certificate-1.png",
+    fullImage:
+      "https://i.postimg.cc/RhGkD51R/Certificate-Of-Completion-Career-Essentials-in-Git-Hub-Professional-Certificate-1.png",
+    verifyUrl: "https://www.linkedin.com/learning/",
+    category: "highlighted",
+    skills: ["Git", "GitHub", "GitHub Actions", "GitHub Copilot", "Developer Collaboration"],
+  },
+  {
+    id: 44,
+    name: "Career Essentials in Generative AI by Microsoft and LinkedIn",
+    authority: "Microsoft & LinkedIn Learning",
+    date: "July 2026",
+    description:
+      "Professional certificate covering Generative AI concepts, prompt engineering, responsible AI, and AI-powered productivity.",
+    thumbnail:
+      "https://i.postimg.cc/x8gw4DGt/Certificate-Of-Completion-Career-Essentials-in-Generative-AI-by-Microsoft-and-Linked-In-1.png",
+    fullImage:
+      "https://i.postimg.cc/x8gw4DGt/Certificate-Of-Completion-Career-Essentials-in-Generative-AI-by-Microsoft-and-Linked-In-1.png",
+    verifyUrl: "https://www.linkedin.com/learning/",
+    category: "highlighted",
+    skills: ["Generative AI", "Prompt Engineering", "Responsible AI", "AI Productivity"],
+  },
+  {
+    id: 45,
+    name: "Docker Foundations Professional Certificate",
+    authority: "LinkedIn Learning",
+    date: "July 2026",
+    description:
+      "Professional certificate covering Docker, Docker Compose, containers, images, networking, and containerized application deployment.",
+    thumbnail:
+      "https://i.postimg.cc/fy5Grn7F/Certificate-Of-Completion-Docker-Foundations-Professional-Certificate-1.png",
+    fullImage:
+      "https://i.postimg.cc/fy5Grn7F/Certificate-Of-Completion-Docker-Foundations-Professional-Certificate-1.png",
+    verifyUrl: "https://www.linkedin.com/learning/",
+    category: "highlighted",
+    skills: ["Docker", "Docker Compose", "Containers", "Container Networking", "DevOps"],
+  },
+  {
+    id: 46,
+    name: "Master React 19: Build Ecommerce Solutions and Prepare for Interviews with TypeScript, Next.js and Remix",
+    authority: "LinkedIn Learning",
+    date: "July 2026",
+    description:
+      "Advanced React 19 course covering TypeScript, Next.js, Remix, and production-ready ecommerce application development.",
+    thumbnail:
+      "https://i.postimg.cc/Vv4xVQ9x/Certificate-Of-Completion-Master-React-19-Build-Ecommerce-Solutions-and-Prepare-for-Interviews-with.png",
+    fullImage:
+      "https://i.postimg.cc/Vv4xVQ9x/Certificate-Of-Completion-Master-React-19-Build-Ecommerce-Solutions-and-Prepare-for-Interviews-with.png",
+    verifyUrl: "https://www.linkedin.com/learning/",
+    category: "highlighted",
+    skills: ["React 19", "Next.js", "TypeScript", "Remix", "Ecommerce Development"],
+  },
 
   // ─── Cloud & DevOps ──────────────────────────────────────────────────────────
   {
@@ -158,6 +233,21 @@ export const certifications: Certification[] = [
       "https://catalog-education.oracle.com/pls/certview/sharebadge?id=0CB6CA864152BF6108440503359F41C21C8CC578C9935A7AEB8B642F9DF3B61C",
     category: "cloud",
     skills: ["Oracle Data Platform", "Oracle Cloud Infrastructure", "Database Services"],
+  },
+  {
+    id: 47,
+    name: "AWS Certified Developer \u2013 Associate (DVAC02) Cert Prep",
+    authority: "AWS Skill Builder",
+    date: "July 2026",
+    description:
+      "Preparation course for the AWS Certified Developer \u2013 Associate certification covering AWS development services, deployment, monitoring, and security.",
+    thumbnail:
+      "https://i.postimg.cc/nrTyPbKT/Certificate-Of-Completion-AWS-Certified-Developer-Associate-DVAC02-Cert-Prep-1.png",
+    fullImage:
+      "https://i.postimg.cc/nrTyPbKT/Certificate-Of-Completion-AWS-Certified-Developer-Associate-DVAC02-Cert-Prep-1.png",
+    verifyUrl: "https://explore.skillbuilder.aws/",
+    category: "cloud",
+    skills: ["AWS", "Cloud Development", "Lambda", "IAM", "Serverless"],
   },
 
   // ─── Development ────────────────────────────────────────────────────────────
@@ -267,6 +357,21 @@ export const certifications: Certification[] = [
     verifyUrl: "https://courses.cognitiveclass.ai/certificates/ee529c26a0cd43ebbf39c812f7fd6352",
     category: "development",
     skills: ["Python Programming Basics", "Data Structures in Python", "Data Science Fundamentals"],
+  },
+  {
+    id: 48,
+    name: "TypeScript for JavaScript Developers",
+    authority: "LinkedIn Learning",
+    date: "July 2026",
+    description:
+      "Course covering TypeScript fundamentals, static typing, interfaces, generics, modules, and migration from JavaScript.",
+    thumbnail:
+      "https://i.postimg.cc/6qzkmJVP/Certificate-Of-Completion-Type-Script-for-Java-Script-Developers-1.png",
+    fullImage:
+      "https://i.postimg.cc/6qzkmJVP/Certificate-Of-Completion-Type-Script-for-Java-Script-Developers-1.png",
+    verifyUrl: "https://www.linkedin.com/learning/",
+    category: "development",
+    skills: ["TypeScript", "JavaScript", "Interfaces", "Generics", "Static Typing"],
   },
 
   // ─── Foundations ────────────────────────────────────────────────────────────
