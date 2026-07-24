@@ -1,4 +1,10 @@
 import type { Experience } from "@/types";
+import {
+  BluestockInternshipCertificate,
+  SoftNexisInternshipCertificate,
+  CodeAlphaInternshipCertificate,
+  FullStackPythonInternshipCertificate,
+} from "@/data/experienceAssets";
 
 export type { Experience } from "@/types";
 
@@ -10,12 +16,11 @@ export const experiences: Experience[] = [
     period: "Dec 2025 – Jan 2026",
     location: "Remote",
     description:
-  "Built BlueBlog, a production-ready Next.js CMS and blogging platform with PostgreSQL, Prisma, JWT auth, and a multi-stage editorial workflow (Draft → Verification → Published), deployed on Vercel.",
-
-certificate: {
+      "Built BlueBlog, a production-ready Next.js CMS and blogging platform with PostgreSQL, Prisma, JWT auth, and a multi-stage editorial workflow (Draft → Verification → Published), deployed on Vercel.",
+    certificate: {
       name: "Software Development Engineer (SDE) Internship – Bluestock Fintech",
-      thumbnail: "https://i.postimg.cc/d13RGyk6/Bluestock-Internship-certificate.jpg",
-      fullImage: "https://i.postimg.cc/d13RGyk6/Bluestock-Internship-certificate.jpg",
+      thumbnail: BluestockInternshipCertificate,
+      fullImage: BluestockInternshipCertificate,
       verifyUrl: "https://bluestock.in/hr/emp",
       credential: "BFSD184972",
     },
@@ -45,13 +50,12 @@ certificate: {
     company: "Soft Nexis Technology",
     period: "Oct 2025 – Nov 2025",
     location: "Remote / Online",
-   description:
-  "Built and maintained MERN stack features including React UI components, MongoDB schema design, and Express.js REST APIs; contributed to debugging, optimization, and agile delivery workflows.",
-
-   certificate: {
+    description:
+      "Built and maintained MERN stack features including React UI components, MongoDB schema design, and Express.js REST APIs; contributed to debugging, optimization, and agile delivery workflows.",
+    certificate: {
       name: "MERN Stack Internship Certificate",
-      thumbnail: "https://i.postimg.cc/525LKyTw/Soft-Nexis-Internship-page-0001.jpg",
-      fullImage: "https://i.postimg.cc/525LKyTw/Soft-Nexis-Internship-page-0001.jpg",
+      thumbnail: SoftNexisInternshipCertificate,
+      fullImage: SoftNexisInternshipCertificate,
       verifyUrl: "https://www.softnexis.com/",
       credential: "SN1000356",
     },
@@ -87,8 +91,8 @@ certificate: {
       'Built "NexusShop," a full-stack e-commerce web application using the MERN stack, implementing authentication, product management, and dynamic cart functionality with clean backend architecture.',
     certificate: {
       name: "Full Stack Development Internship",
-      thumbnail: "https://i.postimg.cc/BQ9z2Mm7/Code-Alpha-Certificate-page-0001.jpg",
-      fullImage: "https://i.postimg.cc/BQ9z2Mm7/Code-Alpha-Certificate-page-0001.jpg",
+      thumbnail: CodeAlphaInternshipCertificate,
+      fullImage: CodeAlphaInternshipCertificate,
       verifyUrl: "http://www.codealpha.tech",
       credential: "CA-FS-2025",
     },
@@ -113,8 +117,8 @@ certificate: {
       "Developed MoviesVibe, a movie recommendation and review platform while gaining hands-on experience in backend development, authentication systems, and database optimization.",
     certificate: {
       name: "Full Stack Web Development with Python",
-      thumbnail: "https://i.postimg.cc/fWGsQ52w/INTERNSHIP-FULL-STACK-WITH-PYTHON-page-0001.jpg",
-      fullImage: "https://i.postimg.cc/fWGsQ52w/INTERNSHIP-FULL-STACK-WITH-PYTHON-page-0001.jpg",
+      thumbnail: FullStackPythonInternshipCertificate,
+      fullImage: FullStackPythonInternshipCertificate,
       verifyUrl: "https://shashiinfotech.com/",
       credential: "SI-FSP-2025",
     },

@@ -1,5 +1,12 @@
 import type { Certification, CertCategoryItem } from "@/types";
 import {
+  // Microsoft & LinkedIn Learning
+  MicrosoftSoftwareDevelopment,
+  MicrosoftGenerativeAI,
+  GitHubProfessional,
+  DockerFoundations,
+  LinkedInMasterReact19,
+  LinkedInTypeScript,
   // Oracle: OCI Architect Associate
   OracleOCIArchitectBadge,
   OracleOCIArchitectCertificate,
@@ -18,10 +25,13 @@ import {
   // Oracle: Data Platform 2025 Foundations
   OracleDataPlatform2025Badge,
   OracleDataPlatform2025Certificate,
+  // AWS
+  AWSCertifiedDeveloper,
   // HackerRank
   HackerRankSoftwareEngineer,
   HackerRankSoftwareEngineerIntern,
   HackerRankJavaScriptIntermediate,
+  HackerRankJavaScriptBasic,
   // Forage
   ForageSoftwareEngineering,
   // Udemy
@@ -112,10 +122,8 @@ export const certifications: Certification[] = [
     date: "July 2026",
     description:
       "Professional certificate covering software development fundamentals, programming concepts, Git, GitHub, SDLC, and modern software engineering practices.",
-    thumbnail:
-      "https://i.postimg.cc/prkw6bQC/Certificate-Of-Completion-Career-Essentials-in-Software-Development-by-Microsoft-and-Linked-In-1.png",
-    fullImage:
-      "https://i.postimg.cc/prkw6bQC/Certificate-Of-Completion-Career-Essentials-in-Software-Development-by-Microsoft-and-Linked-In-1.png",
+    thumbnail: MicrosoftSoftwareDevelopment,
+    fullImage: MicrosoftSoftwareDevelopment,
     verifyUrl: "https://www.linkedin.com/learning/",
     category: "highlighted",
     skills: ["Software Development", "Programming Fundamentals", "Git", "GitHub", "SDLC"],
@@ -127,10 +135,8 @@ export const certifications: Certification[] = [
     date: "July 2026",
     description:
       "Professional certificate covering Generative AI concepts, prompt engineering, responsible AI, and AI-powered productivity.",
-    thumbnail:
-      "https://i.postimg.cc/x8gw4DGt/Certificate-Of-Completion-Career-Essentials-in-Generative-AI-by-Microsoft-and-Linked-In-1.png",
-    fullImage:
-      "https://i.postimg.cc/x8gw4DGt/Certificate-Of-Completion-Career-Essentials-in-Generative-AI-by-Microsoft-and-Linked-In-1.png",
+    thumbnail: MicrosoftGenerativeAI,
+    fullImage: MicrosoftGenerativeAI,
     verifyUrl: "https://www.linkedin.com/learning/",
     category: "highlighted",
     skills: ["Generative AI", "Prompt Engineering", "Responsible AI", "AI Productivity"],
@@ -142,10 +148,8 @@ export const certifications: Certification[] = [
     date: "July 2026",
     description:
       "Advanced React 19 course covering TypeScript, Next.js, Remix, and production-ready ecommerce application development.",
-    thumbnail:
-      "https://i.postimg.cc/Vv4xVQ9x/Certificate-Of-Completion-Master-React-19-Build-Ecommerce-Solutions-and-Prepare-for-Interviews-with.png",
-    fullImage:
-      "https://i.postimg.cc/Vv4xVQ9x/Certificate-Of-Completion-Master-React-19-Build-Ecommerce-Solutions-and-Prepare-for-Interviews-with.png",
+    thumbnail: LinkedInMasterReact19,
+    fullImage: LinkedInMasterReact19,
     verifyUrl: "https://www.linkedin.com/learning/",
     category: "highlighted",
     skills: ["React 19", "Next.js", "TypeScript", "Remix", "Ecommerce Development"],
@@ -157,10 +161,8 @@ export const certifications: Certification[] = [
     date: "July 2026",
     description:
       "Professional certificate covering Docker, Docker Compose, containers, images, networking, and containerized application deployment.",
-    thumbnail:
-      "https://i.postimg.cc/fy5Grn7F/Certificate-Of-Completion-Docker-Foundations-Professional-Certificate-1.png",
-    fullImage:
-      "https://i.postimg.cc/fy5Grn7F/Certificate-Of-Completion-Docker-Foundations-Professional-Certificate-1.png",
+    thumbnail: DockerFoundations,
+    fullImage: DockerFoundations,
     verifyUrl: "https://www.linkedin.com/learning/",
     category: "highlighted",
     skills: ["Docker", "Docker Compose", "Containers", "Container Networking", "DevOps"],
@@ -172,10 +174,8 @@ export const certifications: Certification[] = [
     date: "July 2026",
     description:
       "Professional certificate covering GitHub, GitHub Actions, Copilot, collaboration, and modern developer workflows.",
-    thumbnail:
-      "https://i.postimg.cc/RhGkD51R/Certificate-Of-Completion-Career-Essentials-in-Git-Hub-Professional-Certificate-1.png",
-    fullImage:
-      "https://i.postimg.cc/RhGkD51R/Certificate-Of-Completion-Career-Essentials-in-Git-Hub-Professional-Certificate-1.png",
+    thumbnail: GitHubProfessional,
+    fullImage: GitHubProfessional,
     verifyUrl: "https://www.linkedin.com/learning/",
     category: "highlighted",
     skills: ["Git", "GitHub", "GitHub Actions", "GitHub Copilot", "Developer Collaboration"],
@@ -300,10 +300,8 @@ export const certifications: Certification[] = [
     date: "July 2026",
     description:
       "Preparation course for the AWS Certified Developer \u2013 Associate certification covering AWS development services, deployment, monitoring, and security.",
-    thumbnail:
-      "https://i.postimg.cc/nrTyPbKT/Certificate-Of-Completion-AWS-Certified-Developer-Associate-DVAC02-Cert-Prep-1.png",
-    fullImage:
-      "https://i.postimg.cc/nrTyPbKT/Certificate-Of-Completion-AWS-Certified-Developer-Associate-DVAC02-Cert-Prep-1.png",
+    thumbnail: AWSCertifiedDeveloper,
+    fullImage: AWSCertifiedDeveloper,
     verifyUrl: "https://explore.skillbuilder.aws/",
     category: "cloud",
     skills: ["AWS", "Cloud Development", "Lambda", "IAM", "Serverless"],
@@ -317,10 +315,8 @@ export const certifications: Certification[] = [
     date: "July 2026",
     description:
       "Course covering TypeScript fundamentals, static typing, interfaces, generics, modules, and migration from JavaScript.",
-    thumbnail:
-      "https://i.postimg.cc/6qzkmJVP/Certificate-Of-Completion-Type-Script-for-Java-Script-Developers-1.png",
-    fullImage:
-      "https://i.postimg.cc/6qzkmJVP/Certificate-Of-Completion-Type-Script-for-Java-Script-Developers-1.png",
+    thumbnail: LinkedInTypeScript,
+    fullImage: LinkedInTypeScript,
     verifyUrl: "https://www.linkedin.com/learning/",
     category: "development",
     skills: ["TypeScript", "JavaScript", "Interfaces", "Generics", "Static Typing"],
@@ -343,8 +339,8 @@ export const certifications: Certification[] = [
     authority: "HackerRank",
     date: "September 2025",
     description: "Foundational knowledge in OOP principles and Java syntax.",
-    thumbnail: "https://i.postimg.cc/J4Xbfqhm/java-basic-certificate-page-0001.jpg",
-    fullImage: "https://i.postimg.cc/J4Xbfqhm/java-basic-certificate-page-0001.jpg",
+    thumbnail: HackerRankJavaScriptBasic,
+    fullImage: HackerRankJavaScriptBasic,
     verifyUrl: "https://www.hackerrank.com/certificates/90d2c55da3a1",
     category: "development",
     skills: ["Java", "Object-Oriented Programming (OOP)", "Programming Fundamentals"],
