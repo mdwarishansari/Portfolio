@@ -10,6 +10,9 @@ import {
   // Oracle: OCI Architect Associate
   OracleOCIArchitectBadge,
   OracleOCIArchitectCertificate,
+  // Oracle: Agentic AI Certified Foundations Associate
+  OracleAgenticAIBadge,
+  OracleAgenticAICertificate,
   // Oracle: Generative AI Professional
   OracleGenAIBadge,
   OracleGenAICertificate,
@@ -67,7 +70,7 @@ export const certCategories: CertCategoryItem[] = [
 
 // ─── ID Schema (descending by real-world industry value, no gaps) ─────────────
 //
-//  32–29  Oracle Professional (Architect, Gen AI, DevOps, Data Science)
+//  33–29  Oracle Professional & Highlighted (Agentic AI, Architect, Gen AI, DevOps, Data Science)
 //  28–25  Microsoft & LinkedIn Learning Professional
 //  24     Docker Foundations Professional
 //  23     GitHub Career Essentials Professional
@@ -84,6 +87,18 @@ export const certCategories: CertCategoryItem[] = [
 
 export const certifications: Certification[] = [
   // ─── Highlighted ────────────────────────────────────────────────────────────
+  {
+    id: 33,
+    name: "Oracle Certified Foundations Associate – Agentic AI Certified Foundations Associate",
+    authority: "Oracle",
+    date: "August 2026",
+    description: "Credential ID: 102468134AAI26OFA. Validates foundational understanding of AI agents, LangChain, Model Context Protocol (MCP), and building agentic workflows on Oracle Cloud Infrastructure.",
+    thumbnail: OracleAgenticAIBadge,
+    fullImage: OracleAgenticAICertificate,
+    verifyUrl: "https://education.oracle.com/",
+    category: "highlighted",
+    skills: ["Oracle Cloud Infrastructure", "Agentic AI", "LangChain", "Model Context Protocol (MCP)", "AI Agents"],
+  },
   {
     id: 32,
     name: "Oracle Cloud Infrastructure 2025 Certified Architect Associate",

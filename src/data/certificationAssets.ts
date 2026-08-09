@@ -18,6 +18,10 @@ import LinkedInTypeScript from "@/assets/Certifications/highlighted/linkedin-lea
 import OracleOCIArchitectBadge from "@/assets/Certifications/oracle/architect/Oracle OCI Architect Associate Badge.png";
 import OracleOCIArchitectCertificate from "@/assets/Certifications/oracle/architect/Oracle OCI Architect Associate Certificate.png";
 
+// ─── Oracle: Agentic AI Certified Foundations Associate ──────────────────────
+import OracleAgenticAIBadge from "@/assets/Certifications/oracle/agentic-ai/Oracle Agentic AI Badge.png";
+import OracleAgenticAICertificate from "@/assets/Certifications/oracle/agentic-ai/Oracle Agentic AI Certificate.png";
+
 // ─── Oracle: Generative AI Professional ──────────────────────────────────────
 import OracleGenAIBadge from "@/assets/Certifications/oracle/generative-ai/Oracle Generative AI Professional Badge.png";
 import OracleGenAICertificate from "@/assets/Certifications/oracle/generative-ai/Oracle Generative AI Professional Certificate.png";
@@ -89,6 +93,9 @@ export {
   // Oracle: OCI Architect Associate
   OracleOCIArchitectBadge,
   OracleOCIArchitectCertificate,
+  // Oracle: Agentic AI Certified Foundations Associate
+  OracleAgenticAIBadge,
+  OracleAgenticAICertificate,
   // Oracle: Generative AI Professional
   OracleGenAIBadge,
   OracleGenAICertificate,
