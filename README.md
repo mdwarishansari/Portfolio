@@ -5,7 +5,7 @@
 <h1 align="center">Mohammad Warish Ansari — Portfolio</h1>
 
 <p align="center">
-  <strong>MERN Stack Developer · Full Stack Developer · CSE Student</strong><br/>
+  <strong>Full Stack Developer · Applied AI Engineer · CSE Student</strong><br/>
   Ranchi, Jharkhand, India
 </p>
 
@@ -17,9 +17,19 @@
 
 ---
 
-## ✨ About
+## Overview
 
-A production-ready personal portfolio built with **React 19 + TypeScript + Vite**, featuring:
+Personal developer portfolio for **MD Warish Ansari** — a B.Tech Computer Science student building production-grade web applications and applied AI systems.
+
+**Technical direction:**
+- Full-stack web engineering (Next.js · TypeScript · PostgreSQL · Node.js)
+- Applied AI / LLM / Agentic AI (LangGraph.js · LangChain · Groq · Gemini)
+- Python / FastAPI backend systems
+- Real-time systems · Multi-tenant SaaS · Authentication & authorization
+
+---
+
+## ✨ Portfolio Features
 
 - 🎪 **Interactive 3D hero scene** built with React Three Fiber + Drei
 - 🎬 **Framer Motion animations** on every section, card, and transition
@@ -41,7 +51,58 @@ A production-ready personal portfolio built with **React 19 + TypeScript + Vite*
 | 3D Scene | Three.js + React Three Fiber + Drei |
 | Smooth Scroll | Lenis |
 | Icons | React Icons (FA + SI) + Lucide React |
-| Deployment | Vercel / Render |
+| Deployment | Vercel |
+
+---
+
+## 🚀 Project Showcase
+
+### 🤖 ForgeFlow AI *(Flagship — Applied AI)*
+**Autonomous Agentic AI Platform for Software Architecture & Implementation Blueprints**
+
+- Transforms software concepts into persistent, structured engineering blueprints
+- LangGraph.js multi-agent orchestration with human-in-the-loop proposal workflows
+- Groq (Llama 3.3 70B) primary reasoning · Google Gemini fallback · Tavily research
+- PostgreSQL + Prisma 6 + Supabase · Clerk auth · Next.js 15 Server Actions
+- Accept/Reject workflow with audit-event logging and project-state mutation control
+
+🔗 Live: https://forgeflow.warishlabs.in  
+🔗 GitHub: https://github.com/mdwarishansari/ForgeFlow-AI
+
+---
+
+### 🎪 Festoryx *(Production SaaS)*
+**Multi-Tenant Event Operating System & Real-Time Quiz Platform**
+
+- Multi-tenant architecture with real-time Quiz Arena (Socket.IO)
+- Live leaderboards, buzzer rounds, and auditorium screens
+- 55+ routes, 22+ server actions, Clerk auth, Cloudinary
+
+🔗 Live: https://festoryx.vercel.app  
+🔗 GitHub: https://github.com/mdwarishansari/Festoryx
+
+---
+
+### 📝 BlueBlog *(Production)*
+**SEO-First Role-Based Blogging Platform**
+
+- Admin CMS with ADMIN | EDITOR | WRITER role system
+- JWT auth with refresh tokens · Neon PostgreSQL + Prisma
+- Lighthouse scores ~100 across all public pages
+
+🔗 Live: https://blueblog-warish.vercel.app  
+🔗 GitHub: https://github.com/mdwarishansari/Blueblog
+
+---
+
+### 🛒 CartNest *(Production)*
+**Multi-Vendor E-Commerce Marketplace**
+
+- Customer, Seller, Verifier, Admin dashboards
+- Firebase auth · Razorpay payments · Cloudinary media
+
+🔗 Live: https://cartnest-warish.vercel.app  
+🔗 GitHub: https://github.com/mdwarishansari/CartNest
 
 ---
 
@@ -50,28 +111,29 @@ A production-ready personal portfolio built with **React 19 + TypeScript + Vite*
 ```
 Portfolio/
 ├── public/
-│   ├── logo.gif          # Site favicon & OG image
-│   ├── dp.png            # Profile photo
+│   ├── logo.gif                 # Site favicon & OG image
+│   ├── project-previews/        # WebP preview images (generated via npm run previews)
 │   ├── robots.txt
 │   ├── sitemap.xml
-│   └── manifest.json     # PWA manifest
+│   └── manifest.json            # PWA manifest
 ├── src/
-│   ├── assets/           # Profile images
+│   ├── assets/                  # Profile images, certificate assets
 │   ├── components/portfolio/
 │   │   ├── About.tsx
-│   │   ├── Background.tsx    # Canvas particle animation
+│   │   ├── Background.tsx       # Canvas particle animation
 │   │   ├── Certifications.tsx
 │   │   ├── Experience.tsx
 │   │   ├── Footer.tsx
 │   │   ├── Hero.tsx
-│   │   ├── HeroScene.tsx     # Three.js 3D scene (R3F)
-│   │   ├── Navbar.tsx        # Fixed nav with scroll-spy
-│   │   ├── Projects.tsx
-│   │   ├── Skills.tsx
-│   │   ├── SmoothScroll.tsx  # Lenis wrapper
+│   │   ├── HeroScene.tsx        # Three.js 3D scene (R3F)
+│   │   ├── Navbar.tsx           # Fixed nav with scroll-spy
+│   │   ├── Projects.tsx         # Project cards with Show More
+│   │   ├── Skills.tsx           # Filterable skill grid
+│   │   ├── SmoothScroll.tsx     # Lenis wrapper
 │   │   ├── Social.tsx
-│   │   └── primitives.tsx    # Section, Eyebrow, Chip, Reveal
-│   ├── data/             # Pure TypeScript data (no JSX)
+│   │   └── primitives.tsx       # Section, Eyebrow, Chip, Reveal
+│   ├── data/                    # Pure TypeScript data (no JSX)
+│   │   ├── certificationAssets.ts
 │   │   ├── certifications.ts
 │   │   ├── experience.ts
 │   │   ├── personal.ts
@@ -81,15 +143,17 @@ Portfolio/
 │   ├── hooks/
 │   │   └── use-mobile.tsx
 │   ├── lib/
-│   │   └── utils.ts          # cn() helper
+│   │   └── utils.ts             # cn() helper
 │   ├── types/
-│   │   └── index.ts          # All TypeScript interfaces
+│   │   └── index.ts             # All TypeScript interfaces
 │   ├── utils/
-│   │   └── icon-map.tsx      # String → ReactNode icon resolver
+│   │   └── icon-map.tsx         # String → ReactNode icon resolver
 │   ├── App.tsx
 │   ├── main.tsx
-│   └── styles.css            # Dala design system (Tailwind v4)
-├── index.html            # Full SEO meta tags + JSON-LD
+│   └── styles.css               # Dala design system (Tailwind v4)
+├── scripts/
+│   └── generate-project-previews.ts  # Playwright-based preview screenshotter
+├── index.html                   # Full SEO meta tags + JSON-LD
 ├── package.json
 ├── vite.config.ts
 └── tsconfig.json
@@ -120,6 +184,9 @@ npm run preview
 
 # Lint
 npm run lint
+
+# Generate project preview screenshots (requires Playwright)
+npm run previews
 ```
 
 ---
@@ -132,22 +199,17 @@ npm run lint
 3. Build Command: `npm run build`
 4. Output Directory: `dist`
 
-### Render
-1. Create a new Static Site
-2. Build Command: `npm install && npm run build`
-3. Publish Directory: `dist`
-
 ---
 
 ## 🎨 Customization
 
-### Update your personal data
+### Update personal data
 Edit the files in `src/data/`:
 
 | File | Contains |
 |------|----------|
 | `personal.ts` | Name, email, bio, hero text, about stats, footer |
-| `projects.ts` | Project cards (title, description, links, image) |
+| `projects.ts` | Project cards (title, description, links, preview slug, order) |
 | `skills.ts` | Skills with levels, colors, categories |
 | `certifications.ts` | All certification cards |
 | `experience.ts` | Work experience timeline |
@@ -162,23 +224,19 @@ Edit `src/styles.css` under `@theme inline`:
 --color-amber: #ffb829;  /* Accent */
 ```
 
-### Update 3D scene
-Edit `src/components/portfolio/HeroScene.tsx` to change:
-- Geometry shapes and positions of tech nodes
-- Particle cloud density
-- Color palette
+### Add a project
+1. Add an entry to `src/data/projects.ts` with a unique `slug` and `order`
+2. Place a preview image at `public/project-previews/<slug>.webp`
+   — Or run `npm run previews` to auto-capture from the live URL
 
 ---
 
 ## 🔍 SEO
 
-This portfolio implements:
 - **JSON-LD** `Person` schema structured data
 - **Open Graph** meta tags for social sharing
 - **Twitter Card** meta tags
-- **Canonical URL**
-- **Google Search Console** verification token
-- **sitemap.xml** and **robots.txt**
+- **Canonical URL** and sitemap.xml
 - **Semantic HTML5** with single `<h1>` per page
 - **Inter font** preloaded for fastest text rendering
 
@@ -186,13 +244,10 @@ This portfolio implements:
 
 ## 🔒 Three.js Scene Architecture
 
-The hero scene uses **React Three Fiber** and consists of:
-
 | Component | Description |
 |-----------|-------------|
 | `HeroScene` | Canvas setup, camera, lights |
-| `CodeWindow` | Holographic editor window with code lines |
-| `Cursor` | Blinking cursor animation |
+| `CodeWindow` | Holographic editor window with typed code |
 | `TechNode` | Orbiting tech geometry nodes (hover to scale) |
 | `Connections` | Dashed lines connecting nodes to centre |
 | `ParticleCloud` | 400 particles in a sphere shell |

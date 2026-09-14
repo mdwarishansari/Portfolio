@@ -18,7 +18,7 @@ export function Skills() {
             The stack I build with
           </>
         }
-        description="Technologies I've mastered to bring ideas to life — with proficiency levels across every category."
+        description="Technologies I build with across full-stack web development, applied AI engineering, and cloud infrastructure — with proficiency levels across every category."
       />
 
       {/* Filters */}

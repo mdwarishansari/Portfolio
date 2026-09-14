@@ -26,32 +26,32 @@ export const personal: PersonalData = {
     availability: "Open to internships & SDE roles",
     roles: [
       "Full Stack Developer",
-    "MERN Stack Developer",
-    "Next.js Developer",
-    "TypeScript Engineer",
-    "CSE Student",
-    "Mohammad Warish Ansari",
+      "Next.js / TypeScript Engineer",
+      "Applied AI Engineer",
+      "Python / FastAPI Developer",
+      "CSE Student",
+      "Mohammad Warish Ansari",
     ],
     intro:
-    "B.Tech Computer Science student building production-grade web applications with Next.js, TypeScript, PostgreSQL, and the MERN stack — from real-time systems to multi-tenant SaaS platforms.",
+      "Full Stack Developer building production-grade web applications and agentic AI systems — Next.js, TypeScript, Python, PostgreSQL, and modern LLM tooling from real-time SaaS to autonomous AI workflows.",
     highlights: [
       "Full Stack Developer",
+      "Applied AI / Agentic AI",
+      "LangGraph.js · LangChain",
+      "Next.js · TypeScript · Python",
       "Cloud & DevOps Certified",
-      "Problem Solver",
-      "AI-Focused Engineer",
-      "Specialized in MERN Stack Development",
     ],
-    currentFocus: "Production Next.js SaaS + DSA",
+    currentFocus: "Agentic AI systems · Production Next.js SaaS · DSA",
     codeSnippet: [
       "const developer = {",
       "  name: 'MD WARISH ANSARI',",
-      "  role: 'MERN Stack Developer',",
-      "  skills: [",
-      "    'React', 'Node.js','Next.js'",
-      "    'TypeScript', 'PostgreSQL'",
+      "  role: 'Full Stack + AI Engineer',",
+      "  stack: [",
+      "    'Next.js', 'TypeScript', 'Python',",
+      "    'LangGraph.js', 'PostgreSQL'",
       "  ],",
-      "  passion: 'Building scalable apps',",
-      "  focus: 'AI & Performance',",
+      "  building: 'Agentic AI systems',",
+      "  focus: 'Applied AI engineering',",
       "  available: true",
       "};"
     ]
@@ -60,10 +60,10 @@ export const personal: PersonalData = {
   about: {
     eyebrow: "About me",
     greeting: "Hello!",
-    titlePart1: "Building software",
+    titlePart1: "Building software that",
     titlePart2: "solves real problems",
     description:
-    "I'm a B.Tech Computer Science student specializing in Full Stack Development with Next.js, TypeScript, React, Node.js, PostgreSQL, and MongoDB. I build scalable, performance-driven web applications — from multi-tenant SaaS platforms to real-time quiz systems. My approach is practical: ship production-ready projects, solve real engineering problems, and continuously improve through hands-on work.",
+    "I'm a B.Tech Computer Science student evolving from full-stack development toward applied AI and agentic software engineering. I build production-grade web applications with Next.js, TypeScript, and PostgreSQL, and increasingly with Python, FastAPI, LangGraph.js, and modern LLM tooling. My approach: ship real systems, solve real engineering problems, and build towards the intersection of scalable web architecture and autonomous AI workflows.",
     stats: [
       { id: "projects", count: "5+", title: "Projects" },
       { id: "internships", count: "4+", title: "Internships" },
@@ -81,8 +81,8 @@ export const personal: PersonalData = {
     backToTopText: "Back to top",
     stats: [
       { label: "Coding Hours", value: "5,000+", width: "75%" },
-      { label: "Projects Completed", value:"4+", width: "60%" },
-      { label: "Technologies Mastered", value: "30+", width: "75%" },
+      { label: "Projects Completed", value: "5+", width: "65%" },
+      { label: "Technologies Mastered", value: "35+", width: "80%" },
     ],
   },
 

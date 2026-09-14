@@ -89,7 +89,7 @@ export const certifications: Certification[] = [
   // ─── Highlighted ────────────────────────────────────────────────────────────
   {
     id: 33,
-    name: "Oracle Certified Foundations Associate – Agentic AI Certified Foundations Associate",
+    name: "Oracle Certified Foundations Associate – Agentic AI",
     authority: "Oracle",
     date: "August 2026",
     description: "Credential ID: 102468134AAI26OFA. Validates foundational understanding of AI agents, LangChain, Model Context Protocol (MCP), and building agentic workflows on Oracle Cloud Infrastructure.",

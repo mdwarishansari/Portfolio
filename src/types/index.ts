@@ -74,7 +74,7 @@ export interface PersonalData {
 
 // ─── Skills ───────────────────────────────────────────────────────────────────
 
-export type SkillCategory = "languages" | "frameworks" | "backend" | "tools" | "ai";
+export type SkillCategory = "languages" | "frontend" | "backend" | "tools" | "ai-llm";
 
 export interface Skill {
   name: string;
@@ -92,8 +92,6 @@ export interface SkillCategoryItem {
 
 // ─── Projects ─────────────────────────────────────────────────────────────────
 
-export type ProjectCategory = "major" | "minor";
-
 export interface Project {
   id: number;
   slug: string;
@@ -107,14 +105,10 @@ export interface Project {
   projectLink: string;
   githubLink: string;
   date: string;
-  category: ProjectCategory;
   emoji: string;
   featured: boolean;
-}
-
-export interface ProjectCategoryItem {
-  key: "all" | ProjectCategory;
-  label: string;
+  /** Display order — lower number appears first */
+  order: number;
 }
 
 // ─── Certifications ───────────────────────────────────────────────────────────

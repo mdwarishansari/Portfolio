@@ -9,6 +9,7 @@ import {
   FaNodeJs,
   FaPython,
   FaJava,
+  FaAws,
   FaLinkedinIn,
   FaInstagram,
   FaFacebookF,
@@ -39,6 +40,11 @@ import {
   SiHackerrank,
   SiLinktree,
   SiStackoverflow,
+  SiFramer,
+  SiFastapi,
+  SiDocker,
+  SiVercel,
+  SiClerk,
 } from "react-icons/si";
 
 const iconMap: Record<string, ReactNode> = {
@@ -82,6 +88,16 @@ const iconMap: Record<string, ReactNode> = {
   SiHackerrank: <SiHackerrank />,
   SiLinktree: <SiLinktree />,
   SiStackoverflow: <SiStackoverflow />,
+  SiFramer: <SiFramer />,
+  SiFastapi: <SiFastapi />,
+  FaAws: <FaAws />,
+  SiVercel: <SiVercel />,
+  SiDocker: <SiDocker />,
+  SiClerk: <SiClerk />,
+
+  // Aliases retained for backward compatibility
+  SiNodedotjs: <FaNodeJs />,
+  SiLangchain: <SiOpenai />,
 };
 
 /**

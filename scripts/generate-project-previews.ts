@@ -10,6 +10,10 @@ const __dirname = path.dirname(__filename);
 
 const OUTPUT_DIR = path.resolve(__dirname, "../public/project-previews");
 
+// This script iterates over all projects in src/data/projects.ts and captures
+// live screenshots. New projects (e.g. ForgeFlow AI) are automatically included
+// via the imported projects array — no manual additions required.
+
 async function generatePreviews() {
   if (!fs.existsSync(OUTPUT_DIR)) {
     fs.mkdirSync(OUTPUT_DIR, { recursive: true });

@@ -1,17 +1,48 @@
-import type { Project, ProjectCategoryItem } from "@/types";
+import type { Project } from "@/types";
 
-export type { ProjectCategory, Project } from "@/types";
+export type { Project } from "@/types";
 
 const cover = (file: string) =>
   `https://raw.githubusercontent.com/mdwarishansari/Portfolio/main/src/components/Projects/cover_img/${file}`;
 
-export const projectCategories: ProjectCategoryItem[] = [
-  { key: "all", label: "All Projects" },
-  { key: "major", label: "Major Projects" },
-  { key: "minor", label: "Minor Projects" },
-];
-
 export const projects: Project[] = [
+  // ─── ForgeFlow AI ──────────────────────────────────────────────────────────
+  {
+    id: 5,
+    slug: "forgeflow-ai",
+    liveUrl: "https://forgeflow.warishlabs.in",
+    title: "ForgeFlow AI",
+    subtitle: "Autonomous Agentic AI Platform for Software Architecture & Implementation Blueprints",
+    description:
+      "Agentic AI platform that transforms software concepts into persistent, structured engineering blueprints — powered by LangGraph.js orchestration, LLM reasoning, and human-in-the-loop proposal workflows.",
+    longDescription:
+      "ForgeFlow AI is an autonomous agentic platform that turns high-level software concepts into persistent, structured engineering blueprints. It combines LangGraph.js multi-agent orchestration, Groq (Llama 3.3 70B) as the primary reasoning model with Google Gemini as fallback, and Tavily for external web research. Each project maintains relational state across requirements, technology stacks, data models, Architecture Decision Records (ADRs), and sequential delivery roadmaps. The Agent Copilot generates structured Proposal Cards that must be explicitly accepted or rejected by the user before any project-state mutation occurs — enforcing a human-in-the-loop architecture throughout. Every state change is captured through audit-event logging for full traceability. Built with Next.js 15 Server Actions, Clerk authentication, PostgreSQL + Prisma 6 on Supabase, Upstash Redis for rate-limiting, Admin Broadcast Studio with Resend email delivery, and a watchlist/telemetry system for operational visibility.",
+    skills: [
+      "Next.js 15",
+      "React 19",
+      "TypeScript 5",
+      "LangGraph.js",
+      "Groq / Llama 3.3 70B",
+      "Google Gemini",
+      "Tavily Research",
+      "PostgreSQL",
+      "Supabase",
+      "Prisma 6",
+      "Clerk",
+      "Upstash Redis",
+      "Resend",
+      "Tailwind CSS",
+    ],
+    image: cover("ForgeFlowAI.png"),
+    projectLink: "https://forgeflow.warishlabs.in",
+    githubLink: "https://github.com/mdwarishansari/ForgeFlow-AI",
+    date: "September 2026",
+    emoji: "🤖",
+    featured: true,
+    order: 1,
+  },
+
+  // ─── Festoryx ──────────────────────────────────────────────────────────────
   {
     id: 4,
     slug: "festoryx",
@@ -40,10 +71,12 @@ export const projects: Project[] = [
     projectLink: "https://festoryx.vercel.app/",
     githubLink: "https://github.com/mdwarishansari/Festoryx",
     date: "June 2026",
-    category: "major",
     emoji: "🎪",
     featured: true,
+    order: 2,
   },
+
+  // ─── BlueBlog ──────────────────────────────────────────────────────────────
   {
     id: 3,
     slug: "blueblog",
@@ -72,13 +105,16 @@ export const projects: Project[] = [
     projectLink: "https://blueblog-warish.vercel.app/",
     githubLink: "https://github.com/mdwarishansari/Blueblog",
     date: "January 2026",
-    category: "major",
     emoji: "📝",
     featured: true,
+    order: 3,
   },
+
+  // ─── CartNest ──────────────────────────────────────────────────────────────
   {
     id: 2,
     slug: "cartnest",
+    // Fixed: was "cartnest-wari.vercel.app" (incomplete domain)
     liveUrl: "https://cartnest-warish.vercel.app/",
     title: "CartNest",
     subtitle: "Multi-Vendor E-Commerce Marketplace",
@@ -101,32 +137,11 @@ export const projects: Project[] = [
       "Mongoose",
     ],
     image: cover("Cartnest.png"),
-    projectLink: "https://cartnest-wari.vercel.app/",
+    projectLink: "https://cartnest-warish.vercel.app/",
     githubLink: "https://github.com/mdwarishansari/CartNest",
     date: "August 2025",
-    category: "major",
     emoji: "🛒",
     featured: true,
+    order: 4,
   },
-  // MoviesVibe - Movie Recommendation & Review Platform
-  // A full-stack application built with Django showcasing backend fundamentals
-  // {
-  //   id: 1,
-  //   slug: "moviesvibe",
-  //   liveUrl: "https://moviesvibe-lt7u.onrender.com/",
-  //   title: "MoviesVibe",
-  //   subtitle: "Movie Recommendation & Review Platform",
-  //   description:
-  //     "Full-stack movie recommendation platform with user authentication, reviews, personalized discovery, and responsive design.",
-  //   longDescription:
-  //     "MoviesVibe is a full-stack movie recommendation and review platform developed using Django, Python, SQL databases, HTML, CSS, and Bootstrap. The application enables users to browse movies, manage accounts, post reviews, and discover personalized content recommendations. It helped strengthen my understanding of backend development, database optimization, authentication systems, CRUD operations, and full-stack application architecture.",
-  //   skills: ["Django", "Python", "SQL", "HTML", "CSS", "Bootstrap", "Authentication", "CRUD Operations"],
-  //   image: cover("Moviesvibe.png"),
-  //   projectLink: "https://moviesvibe-lt7u.onrender.com/",
-  //   githubLink: "https://github.com/mdwarishansari/MoviesVibe",
-  //   date: "March 2025",
-  //   category: "minor",
-  //   emoji: "🎬",
-  //   featured: false,
-  // },
 ];

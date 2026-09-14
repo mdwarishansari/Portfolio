@@ -1,9 +1,12 @@
 import { useState, useRef, memo } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Github, ExternalLink, ChevronDown, Calendar } from "lucide-react";
-import { projects, projectCategories, type Project } from "@/data/projects";
+import { Github, ExternalLink, ChevronDown, Calendar, ChevronUp } from "lucide-react";
+import { projects, type Project } from "@/data/projects";
 import { personal } from "@/data/personal";
 import { Section, SectionHeading, Chip } from "./primitives";
+
+/** Number of projects visible before "Show More" */
+const INITIAL_VISIBLE = 6;
 
 const ProjectCard = memo(function ProjectCard({ project }: { project: Project }) {
   const [expanded, setExpanded] = useState(false);
@@ -39,7 +42,7 @@ const ProjectCard = memo(function ProjectCard({ project }: { project: Project })
       <div className="relative overflow-hidden bg-void">
         <img
           src={imgSrc}
-          alt={project.title}
+          alt={`${project.title} project preview`}
           loading="lazy"
           onLoad={() => setImgLoaded(true)}
           onError={() => setImgSrc("/project-previews/placeholder.webp")}
@@ -67,7 +70,7 @@ const ProjectCard = memo(function ProjectCard({ project }: { project: Project })
           {project.description}
         </p>
 
-        {/* tech chips */}
+        {/* tech chips — shows first 4, rest revealed on expand */}
         <div className="mt-4 flex flex-wrap gap-1.5">
           {visibleSkills.map((s: string) => (
             <Chip key={s}>{s}</Chip>
@@ -109,6 +112,7 @@ const ProjectCard = memo(function ProjectCard({ project }: { project: Project })
             href={project.githubLink}
             target="_blank"
             rel="noreferrer"
+            aria-label={`View ${project.title} source code on GitHub`}
             className="inline-flex items-center gap-1.5 rounded-full border border-white/15 px-4 py-2 text-[12px] tracking-[0.02em] text-bone transition-colors hover:border-bone"
           >
             <Github size={14} /> Code
@@ -117,13 +121,14 @@ const ProjectCard = memo(function ProjectCard({ project }: { project: Project })
             href={project.projectLink}
             target="_blank"
             rel="noreferrer"
+            aria-label={`Open ${project.title} live demo`}
             className="inline-flex items-center gap-1.5 rounded-full bg-plum px-4 py-2 text-[12px] font-semibold tracking-[0.02em] text-bone transition-opacity hover:opacity-90"
           >
             <ExternalLink size={14} /> Live Demo
           </a>
           <button
             onClick={() => setExpanded((v) => !v)}
-            aria-label={expanded ? "Collapse details" : "Expand details"}
+            aria-label={expanded ? "Collapse project details" : "Expand project details"}
             className="ml-auto flex h-8 w-8 items-center justify-center rounded-full border border-white/15 text-ash transition-colors hover:border-plum hover:text-plum"
           >
             <ChevronDown
@@ -137,10 +142,14 @@ const ProjectCard = memo(function ProjectCard({ project }: { project: Project })
   );
 });
 
+/** Sorted project list — newest/highest-order first (ascending order number) */
+const sortedProjects = [...projects].sort((a, b) => a.order - b.order);
+
 export function Projects() {
-  const [filter, setFilter] = useState<"all" | "major" | "minor">("all");
-  const list =
-    filter === "all" ? projects : projects.filter((p) => p.category === filter);
+  const [showAll, setShowAll] = useState(false);
+
+  const visibleProjects = showAll ? sortedProjects : sortedProjects.slice(0, INITIAL_VISIBLE);
+  const hasMore = sortedProjects.length > INITIAL_VISIBLE;
 
   return (
     <Section id="projects">
@@ -150,29 +159,33 @@ export function Projects() {
         description={personal.projectsCopy.description}
       />
 
-      <div className="mt-8 flex flex-wrap gap-2">
-        {projectCategories.map((cat) => (
-          <button
-            key={cat.key}
-            onClick={() => setFilter(cat.key)}
-            className={`rounded-full border px-4 py-2 text-[12px] tracking-[0.02em] transition-all ${
-              filter === cat.key
-                ? "border-plum bg-plum/15 text-bone"
-                : "border-white/10 text-smoke hover:border-white/30 hover:text-bone"
-            }`}
-          >
-            {cat.label}
-          </button>
-        ))}
-      </div>
-
       <motion.div layout className="mt-8 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
         <AnimatePresence mode="popLayout">
-          {list.map((p) => (
+          {visibleProjects.map((p) => (
             <ProjectCard key={p.id} project={p} />
           ))}
         </AnimatePresence>
       </motion.div>
+
+      {/* Show More / Show Less — only rendered when project count exceeds INITIAL_VISIBLE */}
+      {hasMore && (
+        <div className="mt-10 flex justify-center">
+          <button
+            onClick={() => setShowAll((v) => !v)}
+            className="inline-flex items-center gap-2 rounded-full border border-white/15 px-6 py-3 text-[13px] tracking-[0.04em] text-bone transition-colors hover:border-plum hover:text-plum"
+          >
+            {showAll ? (
+              <>
+                <ChevronUp size={15} /> Show Less
+              </>
+            ) : (
+              <>
+                <ChevronDown size={15} /> Show More ({sortedProjects.length - INITIAL_VISIBLE} more)
+              </>
+            )}
+          </button>
+        </div>
+      )}
     </Section>
   );
 }
