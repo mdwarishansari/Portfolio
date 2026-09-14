@@ -86,6 +86,11 @@ const iconMap: Record<string, ReactNode> = {
   SiLeetcode: <SiLeetcode />,
   SiGeeksforgeeks: <SiGeeksforgeeks />,
   SiHackerrank: <SiHackerrank />,
+  SiCodechef: (
+    <svg viewBox="0 0 24 24" fill="currentColor" width="1em" height="1em">
+      <path d="M12 0a12 12 0 1 0 12 12A12 12 0 0 0 12 0zm0 4.5a3.84 3.84 0 0 1 3.84 3.84c0 1.25-.6 2.36-1.52 3.06v1.36h-4.64v-1.36a3.84 3.84 0 0 1-1.52-3.06C8.16 6.22 9.88 4.5 12 4.5zm-3.68 10.92h7.36v1.28H8.32v-1.28zm1.28 2.56h4.8v1.28h-4.8v-1.28z" />
+    </svg>
+  ),
   SiLinktree: <SiLinktree />,
   SiStackoverflow: <SiStackoverflow />,
   SiFramer: <SiFramer />,

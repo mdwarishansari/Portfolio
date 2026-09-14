@@ -8,8 +8,9 @@ export const socials = {
   leetcode: "https://leetcode.com/u/mdwarishansari/",
   twitter: "https://x.com/mdwarishansari0",
   stackoverflow: "https://stackoverflow.com/users/31790291/codewarish",
-  geeksforgeeks: "https://www.geeksforgeeks.org/user/warishann144/",
+  geeksforgeeks: "https://www.geeksforgeeks.org/profile/mdwarishansari",
   hackerrank: "https://www.hackerrank.com/profile/warishansari018",
+  codechef: "https://www.codechef.com/users/mohammadwarish",
   instagram: "https://www.instagram.com/mohammadwarish_ansari",
   facebook: "https://www.facebook.com/profile.php?id=100074841669595",
   discord: "https://discord.com/mohammadwarishansari_47491",
@@ -73,7 +74,7 @@ export const socialLinks: SocialLink[] = [
     icon: "SiGeeksforgeeks",
     url: socials.geeksforgeeks,
     color: "#2f8d46",
-    handle: "warishann144",
+    handle: "mdwarishansari",
   },
   {
     name: "HackerRank",
@@ -81,6 +82,13 @@ export const socialLinks: SocialLink[] = [
     url: socials.hackerrank,
     color: "#2ec866",
     handle: "warishansari018",
+  },
+  {
+    name: "CodeChef",
+    icon: "SiCodechef",
+    url: socials.codechef,
+    color: "#5b4638",
+    handle: "mohammadwarish",
   },
   {
     name: "Instagram",
