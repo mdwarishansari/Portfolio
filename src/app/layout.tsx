@@ -1,13 +1,6 @@
 import type { Metadata, Viewport } from "next";
-import { Inter } from "next/font/google";
 import "./globals.css";
 import { ChatbotWidget } from "@/components/chatbot/ChatbotWidget";
-
-const inter = Inter({
-  subsets: ["latin"],
-  variable: "--font-inter",
-  display: "swap",
-});
 
 export const viewport: Viewport = {
   themeColor: "#000000",
@@ -56,7 +49,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${inter.variable} dark scroll-smooth`}>
+    <html lang="en" className="dark scroll-smooth">
       <body className="bg-black text-white font-sans antialiased min-h-screen selection:bg-purple-600 selection:text-white">
         {children}
         <ChatbotWidget />
