@@ -54,12 +54,26 @@ export async function POST(req: NextRequest) {
 
     const reply = await generateChatResponse(formattedMessages);
 
-    return NextResponse.json({ reply });
+    return NextResponse.json(
+      { reply },
+      {
+        headers: {
+          "Cache-Control": "no-store, no-cache, must-revalidate, proxy-revalidate",
+          "Pragma": "no-cache",
+          "Expires": "0",
+        },
+      }
+    );
   } catch (error: any) {
     console.error("Chatbot Route Error:", error);
     return NextResponse.json(
       { error: "Internal server error." },
-      { status: 500 }
+      {
+        status: 500,
+        headers: {
+          "Cache-Control": "no-store, no-cache, must-revalidate, proxy-revalidate",
+        },
+      }
     );
   }
 }
