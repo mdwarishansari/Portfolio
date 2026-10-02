@@ -1,3 +1,5 @@
+"use client";
+
 import { motion } from "framer-motion";
 import { MapPin, Briefcase } from "lucide-react";
 import { personal } from "@/data/personal";

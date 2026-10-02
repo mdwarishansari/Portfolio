@@ -1,5 +1,4 @@
 import type { PersonalData } from "@/types";
-import profileImage from "@/assets/DP.gif";
 
 export const personal: PersonalData = {
   name: "Mohammad Warish Ansari",
@@ -9,7 +8,7 @@ export const personal: PersonalData = {
   email: "warishdeveloper@gmail.com",
   resumeLink:
     "https://drive.google.com/drive/folders/1oAuFxm0ZOHpSErySDUs6sjHubDo0Wxi-?usp=sharing",
-  profileImage,
+  profileImage: "/assets/DP.gif",
 
   navItems: [
     { id: "hero", label: "Home" },

@@ -1,6 +1,9 @@
+"use client";
+
 import { useState, useRef, memo } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Github, ExternalLink, ChevronDown, Calendar, ChevronUp } from "lucide-react";
+import { ExternalLink, ChevronDown, Calendar, ChevronUp } from "lucide-react";
+import { FaGithub as Github } from "react-icons/fa";
 import { projects, type Project } from "@/data/projects";
 import { personal } from "@/data/personal";
 import { Section, SectionHeading, Chip } from "./primitives";

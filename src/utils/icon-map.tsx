@@ -1,3 +1,5 @@
+"use client";
+
 import type { ReactNode } from "react";
 import {
   FaHtml5,
@@ -13,6 +15,7 @@ import {
   FaLinkedinIn,
   FaInstagram,
   FaFacebookF,
+  FaRobot,
   FaYoutube,
   FaDiscord,
 } from "react-icons/fa";
@@ -26,7 +29,6 @@ import {
   SiPostman,
   SiAxios,
   SiFirebase,
-  SiOpenai,
   SiGithubactions,
   SiExpress,
   SiPostgresql,
@@ -74,7 +76,7 @@ const iconMap: Record<string, ReactNode> = {
   SiPostman: <SiPostman />,
   SiAxios: <SiAxios />,
   SiFirebase: <SiFirebase />,
-  SiOpenai: <SiOpenai />,
+  SiOpenai: <FaRobot />,
   SiGithubactions: <SiGithubactions />,
   SiExpress: <SiExpress />,
   SiPostgresql: <SiPostgresql />,
@@ -102,7 +104,7 @@ const iconMap: Record<string, ReactNode> = {
 
   // Aliases retained for backward compatibility
   SiNodedotjs: <FaNodeJs />,
-  SiLangchain: <SiOpenai />,
+  SiLangchain: <FaRobot />,
 };
 
 /**

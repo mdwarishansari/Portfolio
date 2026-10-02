@@ -1,6 +1,4 @@
-@import "tailwindcss" source(none);
-@source "../src";
-@import "tw-animate-css";
+@import "tailwindcss";
 
 /*
  * Dala-inspired design system — "Particle cosmos on a void".

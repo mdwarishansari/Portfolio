@@ -1,3 +1,5 @@
+"use client";
+
 import { motion } from "framer-motion";
 import { ArrowUp, Mail, MapPin, Heart } from "lucide-react";
 import { personal } from "@/data/personal";

@@ -1,3 +1,5 @@
+"use client";
+
 import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import { Float, Line, RoundedBox, Edges, Text } from "@react-three/drei";
 import { useMemo, useRef, useState, useEffect, Suspense } from "react";

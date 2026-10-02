@@ -1,6 +1,9 @@
+"use client";
+
 import { useEffect, useState, Suspense } from "react";
 import { motion } from "framer-motion";
-import { FileText, Github, Mail, ArrowDown } from "lucide-react";
+import { FileText, Mail, ArrowDown } from "lucide-react";
+import { FaGithub as Github } from "react-icons/fa";
 import { personal } from "@/data/personal";
 import { socials } from "@/data/socials";
 import { HeroScene } from "./HeroScene";
