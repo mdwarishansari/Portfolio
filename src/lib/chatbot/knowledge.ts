@@ -102,8 +102,7 @@ ${externalDetails.careerGoal}
 
 DREAM COMPANIES: ${externalDetails.dreamCompanies.join(", ")}
 
-FUN FACTS ABOUT WARISH:
-${externalDetails.funFacts.map((f) => `- ${f}`).join("\n")}
+${(externalDetails.funFacts?.length ?? 0) > 0 ? `FUN FACTS ABOUT WARISH:\n${externalDetails.funFacts!.map((f) => `- ${f}`).join("\n")}` : ""}
 
 ABOUT ME:
 ${personal.about.description}

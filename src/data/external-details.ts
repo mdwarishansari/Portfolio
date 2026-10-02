@@ -50,70 +50,70 @@ export interface ExternalDetails {
   dreamCompanies: string[];
 
   // Fun Facts
-  funFacts: string[];
+  funFacts?: string[];
 }
 
 export const externalDetails: ExternalDetails = {
   fullName: "Mohammad Warish Ansari",
   nickname: "Warish",
-  dateOfBirth: "15th August 2003",
-  age: "23 (as of 2026)",
+  dateOfBirth: "20th August 2005",
+  age: "21 (as of 2026)",
   gender: "Male",
   nationality: "Indian",
   religion: "Islam",
   languages: ["Hindi (Native)", "English (Fluent)", "Urdu (Conversational)"],
-  hometown: "Giridih, Jharkhand",
+  hometown: "Ranchi, Jharkhand",
   currentCity: "Ranchi, Jharkhand",
   state: "Jharkhand",
   country: "India",
-  pinCode: "834001",
+  pinCode: "834004",
   phone: "+91-XXXXXXXXXX",
-  personalEmail: "warishansari.official@gmail.com",
+  personalEmail: "warishdeveloper@gmail.com",
   professionalEmail: "warishdeveloper@gmail.com",
 
   education: [
     {
       level: "B.Tech in Computer Science & Engineering",
-      institution: "Birla Institute of Technology, Mesra (BIT Mesra)",
-      university: "BIT Mesra (Deemed University)",
+      institution: "Ram Krishna Dharmarth Foundation University (RKDF University) Ranchi",
+      university: "RKDF University, Ranchi",
       stream: "Computer Science & Engineering (CSE)",
-      session: "2022–2026",
-      cgpa: "7.5+ CGPA (Expected)",
-      status: "Final Year (8th Semester)",
-      location: "Ranchi, Jharkhand",
+      session: "2023–2027",
+      cgpa: "8.8+ CGPA (Expected)",
+      status: "Final Year (7th Semester)",
+      location: "Pundag Ranchi, Jharkhand",
     },
     {
       level: "Class 12th (Intermediate / +2)",
-      institution: "DAV Public School, Giridih",
-      board: "CBSE",
+      institution: "High School Saunda D",
+      board: "JAC Board, Jharkhand",
       stream: "Science (PCM — Physics, Chemistry, Mathematics)",
-      session: "2020–2022",
-      percentage: "82%",
+      session: "2021–2023",
+      percentage: "69%",
       status: "Completed",
-      location: "Giridih, Jharkhand",
+      location: "Ramgarh, Jharkhand",
     },
     {
       level: "Class 10th (Matriculation)",
-      institution: "DAV Public School, Giridih",
-      board: "CBSE",
+      institution: "Middle School Saunda D",
+      board: "JAC Board, Jharkhand",
       stream: "General (All Subjects)",
-      session: "2018–2020",
-      percentage: "88%",
+      session: "2021",
+      percentage: "73%",
       status: "Completed",
-      location: "Giridih, Jharkhand",
+      location: "Ramgarh, Jharkhand",
     },
   ],
 
-  fatherName: "Md. Naushad Ansari",
+  fatherName: "MD Akhtar Ansari",
   fatherOccupation: "Businessman",
-  motherName: "Shahnaz Parween",
+  motherName: "Gulshan Khatun",
 
   hobbies: [
     "Coding & building side projects",
     "Exploring new AI tools & frameworks",
-    "Playing cricket",
     "Watching tech YouTube channels",
     "Reading tech blogs & documentation",
+    "Astronomical observations & stargazing",
   ],
 
   interests: [
@@ -136,12 +136,5 @@ export const externalDetails: ExternalDetails = {
     "Any exciting AI startup",
   ],
 
-  funFacts: [
-    "Born on India's Independence Day (15th August)!",
-    "Started coding during COVID lockdown in 2020 with HTML & CSS.",
-    "Has 20+ industry certifications including Oracle Cloud, Microsoft, Docker, and GitHub.",
-    "Built his first full-stack project within 6 months of learning React.",
-    "Believes in 'learn by building' — every project in the portfolio solves a real problem.",
-    "Passionate about Agentic AI — building autonomous AI workflows with LangGraph.js.",
-  ],
+  funFacts: [],
 };
