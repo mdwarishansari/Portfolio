@@ -1,10 +1,13 @@
 import { NextRequest, NextResponse } from "next/server";
 import { generateChatResponse, ChatMessage } from "@/lib/chatbot/gemini";
 
+export const dynamic = "force-dynamic";
+export const revalidate = 0;
+
 // In-memory rate limiting map (IP -> timestamp array)
 const rateLimitMap = new Map<string, number[]>();
 const RATE_LIMIT_WINDOW_MS = 60 * 1000; // 1 minute
-const MAX_REQUESTS_PER_WINDOW = 20;
+const MAX_REQUESTS_PER_WINDOW = 30;
 
 function isRateLimited(ip: string): boolean {
   const now = Date.now();

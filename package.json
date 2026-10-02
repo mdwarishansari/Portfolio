@@ -9,6 +9,11 @@
     "lint": "eslint",
     "typecheck": "tsc --noEmit"
   },
+  "allowScripts": {
+    "@google/genai": true,
+    "protobufjs": true,
+    "unrs-resolver": true
+  },
   "dependencies": {
     "@google/genai": "^2.26.0",
     "@react-three/drei": "^10.7.9",

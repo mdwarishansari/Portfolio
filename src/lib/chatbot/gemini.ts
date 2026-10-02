@@ -28,10 +28,14 @@ ${PORTFOLIO_KNOWLEDGE}
 `;
 
 export async function generateChatResponse(messages: ChatMessage[]): Promise<string> {
-  const apiKey =
+  const apiKey = (
     process.env.GEMINI_API_KEY ||
     process.env.NEXT_PUBLIC_GEMINI_API_KEY ||
-    process.env.GOOGLE_API_KEY;
+    process.env.GOOGLE_API_KEY ||
+    process.env.GEMINI_KEY ||
+    process.env.API_KEY ||
+    ""
+  ).trim();
 
   if (!apiKey) {
     return "I am currently running in **Demo Mode** (No \`GEMINI_API_KEY\` set on Vercel/Server environment).\n\nYou can set \`GEMINI_API_KEY\` in your Vercel Environment Variables to activate live Gemini AI responses!\n\nIn the meantime, feel free to explore Warish's portfolio sections:\n- [Explore Projects](#projects)\n- [View Skills](#skills)\n- [Check Certifications](#certifications)\n- [Contact Warish](mailto:warishansari.official@gmail.com)";
