@@ -6,18 +6,57 @@ export interface ChatMessage {
   content: string;
 }
 
-export async function generateChatResponse(messages: ChatMessage[]): Promise<string> {
-  const apiKey = (
+/** Strip surrounding quotes that .env editors sometimes add */
+function stripQuotes(value: string): string {
+  const trimmed = value.trim();
+  if (
+    (trimmed.startsWith('"') && trimmed.endsWith('"')) ||
+    (trimmed.startsWith("'") && trimmed.endsWith("'"))
+  ) {
+    return trimmed.slice(1, -1).trim();
+  }
+  return trimmed;
+}
+
+/**
+ * Resolve the Gemini API key from environment variables.
+ * Checks multiple common env-var names for flexibility.
+ */
+function resolveApiKey(): string {
+  const raw =
     process.env.GEMINI_API_KEY ||
-    process.env.NEXT_PUBLIC_GEMINI_API_KEY ||
     process.env.GOOGLE_API_KEY ||
     process.env.GEMINI_KEY ||
     process.env.API_KEY ||
-    ""
-  ).trim();
+    "";
+  return stripQuotes(raw);
+}
+
+/**
+ * Resolve the Gemini model identifier.
+ * Reads GEMINI_MODEL env var; falls back to "gemini-2.5-flash" (stable, GA).
+ */
+function resolveModel(): string {
+  const raw = process.env.GEMINI_MODEL || "";
+  const model = stripQuotes(raw);
+  return model || "gemini-2.5-flash";
+}
+
+export async function generateChatResponse(
+  messages: ChatMessage[]
+): Promise<string> {
+  const apiKey = resolveApiKey();
 
   if (!apiKey) {
-    return "I am currently running in **Demo Mode** (No \`GEMINI_API_KEY\` set in \`.env\` or Vercel environment).\n\nTo enable live Gemini AI responses, add \`GEMINI_API_KEY=your_key\` to your \`.env\` file or Vercel Environment Variables!\n\nIn the meantime, feel free to explore Warish's portfolio sections:\n- [Explore Projects](#projects)\n- [View Tech Stack](#skills)\n- [Check Certifications](#certifications)\n- [Contact Email](mailto:warishansari.official@gmail.com)";
+    return (
+      "I am currently running in **Demo Mode** (No `GEMINI_API_KEY` configured).\n\n" +
+      "To enable live AI responses, add `GEMINI_API_KEY=your_key` to your `.env` file or Vercel Environment Variables.\n\n" +
+      "In the meantime, explore the portfolio:\n" +
+      "- [Explore Projects](#projects)\n" +
+      "- [View Tech Stack](#skills)\n" +
+      "- [Check Certifications](#certifications)\n" +
+      "- [Contact Email](mailto:warishansari.official@gmail.com)"
+    );
   }
 
   const portfolioKnowledge = buildPortfolioKnowledge();
@@ -45,7 +84,7 @@ ${portfolioKnowledge}
 
   try {
     const ai = new GoogleGenAI({ apiKey });
-    
+
     // Trim context: keep last 10 messages max to stay within optimal token limits
     const trimmedMessages = messages.slice(-10);
 
@@ -54,17 +93,23 @@ ${portfolioKnowledge}
       parts: [{ text: msg.content }],
     }));
 
-    // List of candidate Gemini models in priority order
-    const candidateModels = [
-      "gemini-3.8-flash",
-      "gemini-3.5-flash-lite",
+    // Primary model from env var, with stable fallbacks
+    const primaryModel = resolveModel();
+    const fallbackModels = [
       "gemini-2.5-flash",
-      "gemini-1.5-flash",
+      "gemini-3.5-flash-lite",
+      "gemini-2.5-flash-lite",
     ];
 
-    let lastError: any = null;
+    // Build unique ordered list: primary first, then fallbacks (skip duplicates)
+    const modelChain = [primaryModel];
+    for (const fb of fallbackModels) {
+      if (!modelChain.includes(fb)) modelChain.push(fb);
+    }
 
-    for (const model of candidateModels) {
+    let lastError: unknown = null;
+
+    for (const model of modelChain) {
       try {
         const response = await ai.models.generateContent({
           model,
@@ -79,17 +124,24 @@ ${portfolioKnowledge}
         if (response?.text) {
           return response.text;
         }
-      } catch (err: any) {
-        console.warn(`Gemini Model ${model} failed, trying fallback...`, err?.message || err);
+      } catch (err: unknown) {
+        const errMsg =
+          err instanceof Error ? err.message : String(err);
+        console.warn(
+          `[Chatbot] Model "${model}" failed, trying fallback… (${errMsg})`
+        );
         lastError = err;
       }
     }
 
     throw lastError || new Error("No Gemini models returned output.");
-  } catch (error: any) {
-    console.error("Gemini API Exec Error:", error);
-    return `An error occurred while connecting to Google Gemini AI service: ${
-      error?.message || "Unknown error"
-    }. Please verify your \`GEMINI_API_KEY\` key configuration.`;
+  } catch (error: unknown) {
+    const errMsg =
+      error instanceof Error ? error.message : "Unknown error";
+    console.error("[Chatbot] Gemini API Error:", errMsg);
+    return (
+      `An error occurred while connecting to Google Gemini AI: ${errMsg}.\n\n` +
+      "Please verify your `GEMINI_API_KEY` is valid and not expired."
+    );
   }
 }

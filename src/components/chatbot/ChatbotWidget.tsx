@@ -226,7 +226,7 @@ export function ChatbotWidget() {
                       <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500" />
                     </span>
                   </h3>
-                  <p className="text-xs text-zinc-400">Powered by Gemini 2.5</p>
+                  <p className="text-xs text-zinc-400">Powered by Gemini AI</p>
                 </div>
               </div>
               <div className="flex items-center gap-1.5">
