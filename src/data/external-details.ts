@@ -88,7 +88,7 @@ export const externalDetails: ExternalDetails = {
       board: "JAC Board, Jharkhand",
       stream: "Science (PCM — Physics, Chemistry, Mathematics)",
       session: "2021–2023",
-      percentage: "69%",
+      percentage: "63%",
       status: "Completed",
       location: "Ramgarh, Jharkhand",
     },
